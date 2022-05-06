@@ -6,7 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/resources" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/resources/main" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/resources/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/resources/main/recources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/resources/main/resources" type="java-resource" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
