@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="982.0" prefWidth="1512.0" stylesheets="@iMatStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMatController">
+   <children>
+      <AnchorPane id="top-bar" prefHeight="144.0" prefWidth="1512.0" styleClass="main-color">
+         <children>
+            <Label id="iMat-logo" layoutX="37.0" layoutY="14.0" prefHeight="121.0" prefWidth="455.0" styleClass="main-font" text="iMat">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
