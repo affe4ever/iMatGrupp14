@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="988e677b-70a1-4310-94cb-1291b35e21e8" name="Changes" comment="den riktiga, plz work">
+      <change beforePath="$PROJECT_DIR$/resources/main/recources/Font/LexendDeca-VariableFont_wght.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/Font/LexendDeca-VariableFont_wght.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/recources/Font/Lexend_Deca.zip" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/Font/Lexend_Deca.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/recources/Font/OFL.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/Font/OFL.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/recources/Font/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/Font/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/recources/Font/static/LexendDeca-Black.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/Font/static/LexendDeca-Black.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/recources/Font/static/LexendDeca-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/Font/static/LexendDeca-Bold.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/recources/Font/static/LexendDeca-ExtraBold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/Font/static/LexendDeca-ExtraBold.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/recources/Font/static/LexendDeca-ExtraLight.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/Font/static/LexendDeca-ExtraLight.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/recources/Font/static/LexendDeca-Light.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/Font/static/LexendDeca-Light.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/recources/Font/static/LexendDeca-Medium.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/Font/static/LexendDeca-Medium.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/recources/Font/static/LexendDeca-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/Font/static/LexendDeca-Regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/recources/Font/static/LexendDeca-SemiBold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/Font/static/LexendDeca-SemiBold.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/recources/Font/static/LexendDeca-Thin.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/Font/static/LexendDeca-Thin.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/recources/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/iMatHomePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/recources/iMatStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/iMatStyle.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="28mjMUVA8QB2AYGXrR4gjikELZY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Labb2/RecipeSearch" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunManager">
+    <configuration name="iMatApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="iMatApplication" />
+      <module name="iMat" />
+      <option name="VM_PARAMETERS" value="--module-path $USER_HOME$/Downloads/Java/javafx-sdk-18/lib/ --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.iMatApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="988e677b-70a1-4310-94cb-1291b35e21e8" name="Changes" comment="" />
+      <created>1651828612052</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1651828612052</updated>
+    </task>
+    <task id="LOCAL-00001" summary="den riktiga, plz work">
+      <created>1651829212641</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1651829212641</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="den riktiga, plz work" />
+    <option name="LAST_COMMIT_MESSAGE" value="den riktiga, plz work" />
+  </component>
+</project>

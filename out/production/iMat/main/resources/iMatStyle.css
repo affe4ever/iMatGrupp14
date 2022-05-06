@@ -1,0 +1,35 @@
+.main-color{
+    -fx-background-color: #008000;
+}
+.main-font{
+    -fx-font-family: "Lexend Deca";
+    -fx-font-style: normal;
+}
+
+#iMat-logo{
+-fx-position: absolute;
+-fx-width: 190px;
+-fx-height: 106px;
+-fx-left: 23px;
+-fx-top: 5px;
+
+-fx-font-family: 'Lexend Deca';
+-fx-font-style: normal;
+-fx-font-weight: 600;
+-fx-font-size: 85px;
+-fx-line-height: 106px;
+
+-fx-text-fill: #FFFFFF;
+
+-fx-stroke: #000000;
+-fx-stroke-width: 1px;
+-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 10, 0.5, 4.0, 4.0);
+}
+
+#top-bar{
+-fx-position: absolute;
+-fx-width: 1514px;
+-fx-height: 111px;
+-fx-left: 0px;
+-fx-top: 0px;
+}
