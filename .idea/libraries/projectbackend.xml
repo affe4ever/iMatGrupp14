@@ -1,9 +1,7 @@
 <component name="libraryTable">
-  <library name="resources2">
+  <library name="projectbackend">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/resources/imat.zip!/" />
       <root url="jar://$PROJECT_DIR$/resources/projectbackend.jar!/" />
-      <root url="jar://$PROJECT_DIR$/resources/producteditor.zip!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
