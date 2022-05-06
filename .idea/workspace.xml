@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="988e677b-70a1-4310-94cb-1291b35e21e8" name="Changes" comment="den riktiga, plz work">
-      <change beforePath="$PROJECT_DIR$/resources/main/recources/Font/LexendDeca-VariableFont_wght.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/Font/LexendDeca-VariableFont_wght.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/main/recources/Font/Lexend_Deca.zip" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/Font/Lexend_Deca.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/main/recources/Font/OFL.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/Font/OFL.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/main/recources/Font/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/Font/README.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/main/recources/Font/static/LexendDeca-Black.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/Font/static/LexendDeca-Black.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/main/recources/Font/static/LexendDeca-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/Font/static/LexendDeca-Bold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/main/recources/Font/static/LexendDeca-ExtraBold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/Font/static/LexendDeca-ExtraBold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/main/recources/Font/static/LexendDeca-ExtraLight.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/Font/static/LexendDeca-ExtraLight.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/main/recources/Font/static/LexendDeca-Light.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/Font/static/LexendDeca-Light.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/main/recources/Font/static/LexendDeca-Medium.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/Font/static/LexendDeca-Medium.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/main/recources/Font/static/LexendDeca-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/Font/static/LexendDeca-Regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/main/recources/Font/static/LexendDeca-SemiBold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/Font/static/LexendDeca-SemiBold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/main/recources/Font/static/LexendDeca-Thin.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/Font/static/LexendDeca-Thin.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/main/recources/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/iMatHomePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/main/recources/iMatStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/iMatStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/java/iMatApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/java/iMatApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +24,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Labb2/RecipeSearch" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Labb2/RecipeSearch" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -46,7 +34,7 @@
     <configuration name="iMatApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="iMatApplication" />
       <module name="iMat" />
-      <option name="VM_PARAMETERS" value="--module-path $USER_HOME$/Downloads/Java/javafx-sdk-18/lib/ --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path $USER_HOME$/Documents/javafx-sdk-17.0.2/lib --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -65,6 +53,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1651828612052</updated>
+      <workItem from="1651829547872" duration="168000" />
     </task>
     <task id="LOCAL-00001" summary="den riktiga, plz work">
       <created>1651829212641</created>
@@ -76,6 +65,9 @@
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -86,6 +78,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="den riktiga, plz work" />
