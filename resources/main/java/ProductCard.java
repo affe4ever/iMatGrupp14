@@ -42,9 +42,8 @@ public class ProductCard extends AnchorPane {
         this.product = product;
         this.dataHandler = dataHandler;
         productImage.setImage(dataHandler.getFXImage(product));
-        productName.setText(product.getName().toUpperCase());
-        productPrice.setText(product.getPrice() + " :-/kg");
-
+        productName.setText(product.getName());
+        productPrice.setText(product.getPrice() + ":-");
         updateFavoriteIcon();
 
         if (product.isEcological()){

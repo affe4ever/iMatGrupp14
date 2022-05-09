@@ -10,9 +10,9 @@
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="340.0" style="-fx-background-color: white;" styleClass="productCard" stylesheets="@iMatStyle.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="productImage" fitHeight="181.0" fitWidth="340.0" pickOnBounds="true" AnchorPane.bottomAnchor="200.0" />
-      <Label fx:id="productName" layoutX="32.0" layoutY="195.0" styleClass="content" text="ProductName" wrapText="true" />
-      <Label id="ecologic" fx:id="ecologic" layoutX="250.0" layoutY="240.0" styleClass="content" />
-      <Label fx:id="productPrice" layoutX="32.0" layoutY="235.0" styleClass="content" text="x kr" textFill="GREEN" />
+      <Label fx:id="productName" alignment="TOP_LEFT" layoutX="32.0" layoutY="195.0" prefHeight="45.0" prefWidth="273.0" styleClass="content" text="ProductName" />
+      <Label id="ecologic" fx:id="ecologic" layoutX="32.0" layoutY="268.0" styleClass="content" textFill="GREEN" />
+      <Label fx:id="productPrice" layoutX="32.0" layoutY="235.0" styleClass="price" text="x kr" textFill="GREEN" />
       <Button fx:id="buyButton" layoutX="32.0" layoutY="300.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="57.0" prefWidth="275.0" text="KÖP" />
       <ImageView fx:id="heart" fitHeight="40.0" fitWidth="40.0" layoutX="270.0" layoutY="235.0" onMouseClicked="#addFavorite" pickOnBounds="true" preserveRatio="true">
          <image>

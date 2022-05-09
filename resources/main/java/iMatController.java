@@ -3,8 +3,12 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.FlowPane;
@@ -47,10 +51,18 @@ public class iMatController implements Initializable {
     @FXML
     private AnchorPane favoritePage;
     @FXML
+    private AnchorPane noResult;
+    @FXML
     private ScrollPane allProducts;
 
     @FXML
     private FlowPane categoryProductList;
+
+    @FXML
+    private TextField searchField;
+
+    @FXML
+    private Button searchButton;
 
 
     @Override
@@ -95,6 +107,11 @@ public class iMatController implements Initializable {
 
     }
 
+    public void search(Event event){
+       List<Product> result = dataHandler.findProducts(event.getSource().toString());
+
+    }
+
 
     private void refreshProductList(){
         for (Node product : productList.getChildren()){
@@ -109,6 +126,7 @@ public class iMatController implements Initializable {
 
     public void setCategory(String category){
         categoryName.setText(category.toUpperCase());
+        categoryName.setStyle("-fx-font-family: 'Lexend Deca Bold'");
         categoryProductList.getChildren().clear();
         populateCategoryList(category);
 
@@ -135,8 +153,22 @@ public class iMatController implements Initializable {
                 updateCategoryList(dataHandler.getProducts(ProductCategory.MELONS));
                 updateCategoryList(dataHandler.getProducts(ProductCategory.ROOT_VEGETABLE));
                 updateCategoryList(dataHandler.getProducts(ProductCategory.VEGETABLE_FRUIT));
-                updateCategoryList(dataHandler.getProducts(ProductCategory.POD));
-
+                updateCategoryList(dataHandler.getProducts(ProductCategory.POD));break;
+            case "Dryck":
+                updateCategoryList(dataHandler.getProducts(ProductCategory.COLD_DRINKS));
+                updateCategoryList(dataHandler.getProducts(ProductCategory.HOT_DRINKS));break;
+            case "Kött & Fisk":
+                updateCategoryList(dataHandler.getProducts(ProductCategory.MEAT));
+                updateCategoryList(dataHandler.getProducts(ProductCategory.FISH));break;
+            case "Nötter & Frön":
+                updateCategoryList(dataHandler.getProducts(ProductCategory.NUTS_AND_SEEDS));break;
+            case "Skafferi":
+                updateCategoryList(dataHandler.getProducts(ProductCategory.HERB));
+                updateCategoryList(dataHandler.getProducts(ProductCategory.SWEET));
+                updateCategoryList(dataHandler.getProducts(ProductCategory.FLOUR_SUGAR_SALT));
+                updateCategoryList(dataHandler.getProducts(ProductCategory.BREAD));break;
+            case "Mejeri":
+                updateCategoryList(dataHandler.getProducts(ProductCategory.DAIRIES));break;
 
         }
 
@@ -146,6 +178,37 @@ public class iMatController implements Initializable {
         for (Product product : products){
             categoryProductList.getChildren().add(new ProductCard(dataHandler, this, product));
         }
+
+    }
+
+    @FXML
+    public void checkSearch(KeyEvent event){
+
+        if (event.getCode().equals(KeyCode.ENTER))
+        {
+        performSearch();
+        }
+        if (searchField.getText().isEmpty()){
+            searchButton.setStyle("-fx-opacity: 0");
+        }else{
+            searchButton.setStyle("-fx-opacity: 1");
+        }
+    }
+
+    public void performSearch(){
+        List<Product> matches = dataHandler.findProducts(searchField.getText());
+
+        if (matches.isEmpty()){
+            noResult.toFront();
+        }else{
+            favoriteList.getChildren().clear();
+            for (Product product : matches){
+                favoriteList.getChildren().add(new ProductCard(dataHandler, this, product));
+            }
+            favoritePage.toFront();
+        }
+
+
 
     }
 

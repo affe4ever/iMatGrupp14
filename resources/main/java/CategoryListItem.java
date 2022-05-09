@@ -33,17 +33,15 @@ public class CategoryListItem extends AnchorPane {
 
     }
     @FXML
-    public void toCategoryPage(Event event){
-        controller.setCategory(((Label) event.getSource()).getText());
+    public void toCategoryPage(){
+        controller.setCategory(categoryLink.getText());
     }
 
     public void setActiveCategory(String category) {
         if (categoryLink.getAccessibleText().equals(category)) {
-            categoryLink.setStyle("-fx-background-color: rgb(222,222,222);" + "-fx-text-fill: black");
+            categoryLink.getStyleClass().add("category-used");
         }else{
-            categoryLink.setStyle("-fx-background-color: white;" + "-fx-border-color: #D9DBE9;" +
-                    "-fx-border-style: hidden hidden solid hidden;" +
-                    "-fx-border-radius: 1px;");
+            categoryLink.getStyleClass().remove("category-used");
         }
     }
 

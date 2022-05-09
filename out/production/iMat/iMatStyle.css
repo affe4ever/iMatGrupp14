@@ -60,6 +60,12 @@
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 4, 0, 0, 4);
 }
 
+.topButtons{
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 4, 0, 0, 4);
+}
+
 .categoryList{
     -fx-background-color: white;
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);
@@ -72,6 +78,14 @@
 }
 
 .category{
+    -fx-background-color: white;
+    -fx-border-color: #D9DBE9;
+    -fx-border-style: hidden hidden solid hidden;
+    -fx-border-radius: 1px;
+}
+
+.category-used{
+    -fx-background-color: #D3D3D3;
     -fx-border-color: #D9DBE9;
     -fx-border-style: hidden hidden solid hidden;
     -fx-border-radius: 1px;
@@ -81,10 +95,10 @@
     -fx-background-color: #F3F3F3;
 }
 
-.categoryName{
+.categoryName {
     -fx-font-size: 54px;
     -fx-text-fill: black;
-    -fx-font-family: "Lexend Deca Bold";
+
 }
 
 .search{
@@ -92,11 +106,21 @@
 }
 
 .productCard {
-    -fx-font-size: 32px;
+
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);
     -fx-border-radius: 25px;
     -fx-background-radius: 25px;
+
+}
+
+.productCard .text{
+    -fx-font-size: 32px;
     -fx-text-fill: black;
+    -fx-font-family: "Lexend Deca Bold";
+}
+
+.price .text{
+    -fx-font-size: 30px;
     -fx-font-family: "Lexend Deca Bold";
 }
 
@@ -104,15 +128,24 @@
     -fx-background-color: green;
     -fx-text-fill: white;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 10, 0.5, 4.0, 4.0);
+   -fx-border-radius: 14px;
+    -fx-background-radius: 14px;
 }
 
-.button .label{
+.button .text{
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 10, 0.5, 4.0, 4.0);
 }
 
-#ecologic{
-    -fx-font-size: 24px;
-    -fx-text-fill: green;
+.searchButton{
+    -fx-opacity: 0;
+}
+
+.noResult{
+    -fx-background-color: #F3F3F3;
+}
+
+#ecologic .text{
+    -fx-font-size: 20px;
 }
 .scroll-pane{
     -fx-border-color: #f3f3f3;
