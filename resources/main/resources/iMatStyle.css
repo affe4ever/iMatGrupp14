@@ -1,9 +1,10 @@
 .main-color{
     -fx-background-color: #008000;
 }
-.main-font{
-    -fx-font-family: "Lexend Deca";
-    -fx-font-style: normal;
+
+.text, .label{
+    -fx-font-family: "Lexend Deca SemiBold";
+
 }
 
 #iMat-logo{
@@ -13,18 +14,42 @@
 -fx-left: 23px;
 -fx-top: 5px;
 
--fx-font-family: 'Lexend Deca';
--fx-font-style: normal;
--fx-font-weight: 600;
 -fx-font-size: 85px;
 -fx-line-height: 106px;
-
 -fx-text-fill: #FFFFFF;
-
 -fx-stroke: #000000;
 -fx-stroke-width: 1px;
--fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 10, 0.5, 4.0, 4.0);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 4, 0, 0, 4);
 }
+
+.sideMap{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 4, 0, 0, 4);
+    -fx-border-radius: 0px 0px 10px 0px;
+
+}
+
+.sideItem{
+    -fx-font-size: 29px;
+    -fx-text-fill: white;
+    -fx-border-color: #D9DBE9;
+    -fx-border-style: hidden hidden solid hidden;
+    -fx-background-color: rgba(0,128,0, 0.5);
+
+}
+
+.sideItem .text{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 4, 0, 0, 4);
+}
+
+
+.sideItem:pressed{
+    -fx-background-color: rgba(0,128,0, 1);
+}
+
+.sideItem:hover{
+    -fx-background-color: rgba(0,128,0, 0.75);
+}
+
 
 #top-bar{
 -fx-position: absolute;
@@ -32,4 +57,118 @@
 -fx-height: 111px;
 -fx-left: 0px;
 -fx-top: 0px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 4, 0, 0, 4);
+}
+
+.categoryList{
+    -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);
+}
+
+.categoryList .label{
+    -fx-text-fill: #525252;
+    -fx-font-weight: 400;
+    -fx-font-size: 24px;
+}
+
+.category{
+    -fx-border-color: #D9DBE9;
+    -fx-border-style: hidden hidden solid hidden;
+    -fx-border-radius: 1px;
+}
+
+.category:hover{
+    -fx-background-color: #F3F3F3;
+}
+
+.categoryName{
+    -fx-font-size: 54px;
+    -fx-text-fill: black;
+    -fx-font-family: "Lexend Deca Bold";
+}
+
+.search{
+    -fx-background-radius: 28px;
+}
+
+.productCard {
+    -fx-font-size: 32px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);
+    -fx-border-radius: 25px;
+    -fx-background-radius: 25px;
+    -fx-text-fill: black;
+    -fx-font-family: "Lexend Deca Bold";
+}
+
+.button{
+    -fx-background-color: green;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 10, 0.5, 4.0, 4.0);
+}
+
+.button .label{
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 10, 0.5, 4.0, 4.0);
+}
+
+#ecologic{
+    -fx-font-size: 24px;
+    -fx-text-fill: green;
+}
+.scroll-pane{
+    -fx-border-color: #f3f3f3;
+}
+
+.icons{
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 10, 0.5, 4.0, 4.0);
+}
+
+scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+
+    -fx-border-color :transparent;
+    -fx-background-radius : 0.0em;
+    -fx-border-radius :2.0em;
+}
+
+
+.scroll-bar:horizontal .increment-button ,
+.scroll-bar:horizontal .decrement-button {
+    -fx-background-radius : 0.0em;
+    -fx-padding :0.0 0.0 10.0 0.0;
+
+}
+
+.scroll-bar:vertical .increment-button ,
+.scroll-bar:vertical .decrement-button {
+
+    -fx-background-radius : 0.0em;
+    -fx-padding :0.0 10.0 0.0 0.0;
+
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow{
+    -fx-shape : " ";
+    -fx-padding :0.15em 0.0;
+}
+
+.scroll-bar:vertical .increment-arrow,
+.scroll-bar:vertical .decrement-arrow{
+    -fx-shape : " ";
+    -fx-padding :0.0 0.15em;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color :rgba(0,0,0, 0.3);
+    -fx-background-insets : 2.0, 0.0, 0.0;
+    -fx-background-radius : 2.0em;
+}
+
+.scroll-bar:horizontal .thumb:hover,
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color : rgba(0,0,0, 0.6);
+    -fx-background-insets : 2.0, 0.0, 0.0;
+    -fx-background-radius : 2.0em;
+    -fx-cursor: hand;
 }

@@ -2,16 +2,107 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="988e677b-70a1-4310-94cb-1291b35e21e8" name="Changes" comment="den riktiga, plz work">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/projectbackend__2_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/main/java/CategoryListItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/main/java/ProductCard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/main/resources/categoryListItem.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/main/resources/productCard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iMat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/iMat.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/Font/LexendDeca-VariableFont_wght.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/Font/Lexend_Deca.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/Font/OFL.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/Font/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/Font/static/LexendDeca-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/Font/static/LexendDeca-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/Font/static/LexendDeca-ExtraBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/Font/static/LexendDeca-ExtraLight.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/Font/static/LexendDeca-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/Font/static/LexendDeca-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/Font/static/LexendDeca-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/Font/static/LexendDeca-SemiBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/Font/static/LexendDeca-Thin.ttf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/iMat/iMatApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/iMatApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/iMatController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/iMatController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/iMatHomePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/iMatStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/iMatStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/main/resources/Font/LexendDeca-VariableFont_wght.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/main/resources/Font/Lexend_Deca.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/main/resources/Font/OFL.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/main/resources/Font/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/main/resources/Font/static/LexendDeca-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/main/resources/Font/static/LexendDeca-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/main/resources/Font/static/LexendDeca-ExtraBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/main/resources/Font/static/LexendDeca-ExtraLight.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/main/resources/Font/static/LexendDeca-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/main/resources/Font/static/LexendDeca-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/main/resources/Font/static/LexendDeca-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/main/resources/Font/static/LexendDeca-SemiBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/main/resources/Font/static/LexendDeca-Thin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/main/resources/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/main/resources/iMatHomePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/main/resources/iMatStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/main/resources/iMatStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/resources/Font/LexendDeca-VariableFont_wght.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/resources/Font/Lexend_Deca.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/resources/Font/OFL.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/resources/Font/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/resources/Font/static/LexendDeca-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/resources/Font/static/LexendDeca-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/resources/Font/static/LexendDeca-ExtraBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/resources/Font/static/LexendDeca-ExtraLight.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/resources/Font/static/LexendDeca-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/resources/Font/static/LexendDeca-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/resources/Font/static/LexendDeca-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/resources/Font/static/LexendDeca-SemiBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/resources/Font/static/LexendDeca-Thin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/resources/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/resources/iMatHomePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/resources/iMatStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/resources/iMatStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/java/iMatApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/java/iMatApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/java/iMatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/java/iMatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/resources/Font/LexendDeca-VariableFont_wght.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/resources/Font/Lexend_Deca.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/resources/Font/OFL.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/resources/Font/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/resources/Font/static/LexendDeca-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/resources/Font/static/LexendDeca-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/resources/Font/static/LexendDeca-ExtraBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/resources/Font/static/LexendDeca-ExtraLight.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/resources/Font/static/LexendDeca-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/resources/Font/static/LexendDeca-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/resources/Font/static/LexendDeca-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/resources/Font/static/LexendDeca-SemiBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/resources/Font/static/LexendDeca-Thin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/resources/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/iMatHomePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/resources/iMatStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/iMatStyle.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="FxmlFile" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="JsBowerSettings">
+    <bower-package value="" />
+    <bower.json value="" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -27,17 +118,32 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Labb2/RecipeSearch" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+  </component>
+  <component name="ReaderModeSettings">
+    <option name="enabled" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/main/resources/icons" />
+      <recent name="$PROJECT_DIR$/resources/main/resources" />
+      <recent name="$PROJECT_DIR$/resources/main" />
+      <recent name="$PROJECT_DIR$/resources/main/java" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="iMatApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="iMatApplication" />
       <module name="iMat" />
-      <option name="VM_PARAMETERS" value="--module-path $PROJECT_DIR$/resources/javafx-sdk-18/lib/ --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path $USER_HOME$/Documents/javafx-sdk-17.0.2/lib --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -57,6 +163,17 @@
       <option name="presentableId" value="Default" />
       <updated>1651828612052</updated>
       <workItem from="1651829547872" duration="168000" />
+      <workItem from="1651840900972" duration="1098000" />
+      <workItem from="1651842828821" duration="192000" />
+      <workItem from="1651843036102" duration="101000" />
+      <workItem from="1651843154685" duration="57000" />
+      <workItem from="1651843336153" duration="93000" />
+      <workItem from="1651843449843" duration="97000" />
+      <workItem from="1651843758166" duration="10521000" />
+      <workItem from="1651921951580" duration="111000" />
+      <workItem from="1651922078337" duration="80000" />
+      <workItem from="1651922288852" duration="42280000" />
+      <workItem from="1652041759631" duration="9360000" />
     </task>
     <task id="LOCAL-00001" summary="den riktiga, plz work">
       <created>1651829212641</created>
@@ -81,9 +198,14 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="den riktiga, plz work" />
     <option name="LAST_COMMIT_MESSAGE" value="den riktiga, plz work" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

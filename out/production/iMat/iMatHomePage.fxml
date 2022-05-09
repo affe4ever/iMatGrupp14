@@ -1,19 +1,134 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="982.0" prefWidth="1512.0" stylesheets="@iMatStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMatController">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="843.0" prefWidth="1512.0" style="-fx-background-color: F3F3F3;" stylesheets="@iMatStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMatController">
    <children>
-      <AnchorPane id="top-bar" prefHeight="144.0" prefWidth="1512.0" styleClass="main-color">
+      <AnchorPane id="top-bar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="111.0" prefWidth="1512.0" styleClass="main-color">
          <children>
-            <Label id="iMat-logo" layoutX="37.0" layoutY="14.0" prefHeight="121.0" prefWidth="455.0" styleClass="main-font" text="iMat">
+            <Label id="iMat-logo" layoutX="23.0" onMouseClicked="#toStartPage" prefHeight="121.0" prefWidth="217.0" styleClass="main-font" text="iMat" wrapText="true">
                <font>
                   <Font size="40.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Label>
+            <TextField layoutX="368.0" layoutY="17.0" prefHeight="74.0" prefWidth="470.0" promptText="Sök varor..." styleClass="search" />
          </children>
       </AnchorPane>
+      <AnchorPane fx:id="content" prefHeight="862.0" prefWidth="1185.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="116.0">
+         <children>
+            <AnchorPane fx:id="favoritePage" prefHeight="729.0" prefWidth="1215.0">
+               <children>
+                  <ScrollPane fitToWidth="true" prefHeight="728.0" prefWidth="1212.0">
+                     <content>
+                        <FlowPane fx:id="favoriteList" hgap="20.0" prefHeight="726.0" prefWidth="1249.0" vgap="20.0">
+                           <padding>
+                              <Insets left="20.0" right="20.0" />
+                           </padding>
+                        </FlowPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+            <ScrollPane fx:id="startPage" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutX="134.0" layoutY="100.0" prefHeight="862.0" prefWidth="1212.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <content>
+                  <FlowPane prefHeight="870.0" prefWidth="1213.0">
+                     <children>
+                        <Label text="HEM" />
+                     </children>
+                  </FlowPane>
+               </content>
+            </ScrollPane>
+            <AnchorPane fx:id="categoryPage" prefHeight="729.0" prefWidth="1213.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="862.0" prefWidth="1213.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <FlowPane fx:id="categoryProductList" hgap="20.0" prefHeight="860.0" prefWidth="1213.0" vgap="20.0">
+                           <padding>
+                              <Insets left="20.0" right="20.0" top="110.0" />
+                           </padding>
+                        </FlowPane>
+                     </content>
+                  </ScrollPane>
+                  <Label fx:id="categoryName" alignment="CENTER" styleClass="categoryName" text="Category" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0" />
+               </children>
+            </AnchorPane>
+            <ScrollPane fx:id="allProducts" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="862.0" prefWidth="1213.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <content>
+                  <FlowPane fx:id="productList" hgap="20.0" prefHeight="860.0" prefWidth="1213.0" vgap="20.0">
+                     <padding>
+                        <Insets left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </FlowPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="126.0" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" styleClass="sideMap" AnchorPane.leftAnchor="0.0">
+         <children>
+            <Label fx:id="home" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#toStartPage" prefHeight="67.0" prefWidth="300.0" styleClass="sideItem" text="Hem" AnchorPane.topAnchor="0.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <tooltip>
+                  <Tooltip text="Gå till Startsida" />
+               </tooltip>
+               <padding>
+                  <Insets left="65.0" />
+               </padding>
+            </Label>
+            <Label layoutY="67.0" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#toFavorites" prefHeight="67.0" prefWidth="300.0" styleClass="sideItem" text="Dina Favoriter">
+               <font>
+                  <Font name="Kailasa Regular" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <padding>
+                  <Insets left="65.0" />
+               </padding>
+            </Label>
+            <Label id="lastItem" layoutY="134.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="67.0" prefWidth="300.0" styleClass="sideItem" text="Hjälp">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <padding>
+                  <Insets left="65.0" />
+               </padding>
+            </Label>
+            <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="19.0" layoutY="15.0" pickOnBounds="true" styleClass="icons">
+               <image>
+                  <Image url="@icons/shop/24/Outline.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="19.0" layoutY="81.0" pickOnBounds="true" styleClass="icons">
+               <image>
+                  <Image url="@icons/Outline.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="19.0" layoutY="148.0" pickOnBounds="true" styleClass="icons">
+               <image>
+                  <Image url="@icons/Help/24/Outline.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutY="350.0" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="493.0" prefWidth="300.0" styleClass="categoryList" vbarPolicy="NEVER">
+         <content>
+            <FlowPane fx:id="categoryList" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="493.0" prefWidth="296.0" styleClass="categoryList" />
+         </content>
+      </ScrollPane>
    </children>
 </AnchorPane>
