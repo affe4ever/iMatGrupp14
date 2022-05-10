@@ -19,7 +19,7 @@
             <Button id="addBuy" fx:id="addBuy" contentDisplay="CENTER" disable="true" layoutX="116.0" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#addOne" prefHeight="40.0" prefWidth="40.0" styleClass="round_button" text="+" textAlignment="CENTER" AnchorPane.topAnchor="7.0" />
             <Button id="subBuy" fx:id="subBuy" contentDisplay="CENTER" disable="true" layoutX="4.0" layoutY="4.0" mnemonicParsing="false" onMouseClicked="#subOne" prefHeight="40.0" prefWidth="40.0" styleClass="round_button" text="-" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="7.0" />
             <TextField fx:id="nmrBuy" alignment="CENTER" disable="true" layoutX="46.0" layoutY="20.0" prefHeight="26.0" prefWidth="67.0" text="1" AnchorPane.topAnchor="20.0" />
-            <Button fx:id="buyButton" layoutX="161.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#twoStepBuy" prefHeight="60.0" prefWidth="106.0" text="KÖP" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Button fx:id="buyButton" layoutX="161.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#twoStepBuy" prefHeight="60.0" prefWidth="290.0" text="KÖP" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
          </children>
       </AnchorPane>
       <ImageView fx:id="heart" fitHeight="40.0" fitWidth="40.0" layoutX="270.0" layoutY="235.0" onMouseClicked="#addFavorite" pickOnBounds="true" preserveRatio="true">

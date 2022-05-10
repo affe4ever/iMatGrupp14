@@ -58,6 +58,7 @@ public class iMatController implements Initializable {
             }
         }));
         inFront = "start";
+        setBackground();
         for (String category : categories){
             categoryList.getChildren().add(new CategoryListItem(category, this));
         }
@@ -107,6 +108,11 @@ public class iMatController implements Initializable {
                 home.setStyle("-fx-background-color: rgba(0,128,0, 0.5)");
                 favorites.setStyle("-fx-background-color: rgba(0,128,0, 0.5)");
                 break;
+            case "category":
+                home.setStyle("-fx-background-color: rgba(0,128,0, 0.5)");
+                favorites.setStyle("-fx-background-color: rgba(0,128,0, 0.5)");
+                help.setStyle("-fx-background-color: rgba(0,128,0, 0.5)");
+                break;
         }
     }
 
@@ -150,7 +156,8 @@ public class iMatController implements Initializable {
         categoryName.setStyle("-fx-font-family: 'Lexend Deca Bold'");
         categoryProductList.getChildren().clear();
         populateCategoryList(category);
-
+        inFront = "category";
+        setBackground();
         categoryPage.toFront();
         for (Node item : categoryList.getChildren()){
                 ((CategoryListItem) item).setActiveCategory(category);
