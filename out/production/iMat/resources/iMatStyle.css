@@ -2,9 +2,12 @@
     -fx-background-color: #008000;
 }
 
+.pageBackground{
+    -fx-background-color: #F3F3F3;
+}
+
 .text, .label{
     -fx-font-family: "Lexend Deca SemiBold";
-
 }
 
 #iMat-logo{
@@ -41,7 +44,6 @@
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 4, 0, 0, 4);
 }
 
-
 .sideItem:pressed{
     -fx-background-color: rgba(0,128,0, 1);
 }
@@ -49,7 +51,6 @@
 .sideItem:hover{
     -fx-background-color: rgba(0,128,0, 0.75);
 }
-
 
 #top-bar{
 -fx-position: absolute;
@@ -64,6 +65,22 @@
     -fx-text-fill: white;
     -fx-font-size: 24px;
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 4, 0, 0, 4);
+}
+
+.veckan_erbjudande{
+    -fx-width: 1084px;
+    -fx-height: 355px;
+    -fx-background-color: #FFFFFF;
+}
+
+.veckans_text{
+    -fx-font-family: 'Mochiy Pop P One';
+    -fx-font-style: normal;
+    -fx-font-weight: 400;
+    -fx-font-size: 28px;
+    -fx-line-height: 41px;
+
+    -fx-color: #000000;
 }
 
 .categoryList{
@@ -103,6 +120,7 @@
 
 .search{
     -fx-background-radius: 28px;
+    -fx-font-size: 20px;
 }
 
 .productCard {
@@ -110,7 +128,6 @@
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);
     -fx-border-radius: 25px;
     -fx-background-radius: 25px;
-
 }
 
 .productCard .text{
@@ -128,11 +145,35 @@
     -fx-background-color: green;
     -fx-text-fill: white;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 10, 0.5, 4.0, 4.0);
-    -fx-background-image: 15px;
+    -fx-background-radius: 15px;
+    -fx-width: 290px;
 }
 
 .button .label{
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 10, 0.5, 4.0, 4.0);
+}
+
+.round_button{
+    -fx-height: 35px;
+    -fx-width: 35px;
+    -fx-border-radius: 90px;
+    -fx-background-radius: 90px;
+}
+
+#addBuy{
+    -fx-text-fill: #008000;
+    -fx-background-color: #F3F3F3;
+}
+
+#subBuy{
+    -fx-text-fill: #ff0000;
+    -fx-background-color: #F3F3F3;
+}
+
+#nmrBuy{
+    -fx-border-color: #008000;
+    -fx-border-width: 3;
+    -fx-border-radius: 10px;
 }
 
 #ecologic .text{

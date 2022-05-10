@@ -3,6 +3,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -13,7 +14,14 @@
       <Label fx:id="productName" alignment="TOP_LEFT" layoutX="32.0" layoutY="195.0" prefHeight="45.0" prefWidth="273.0" styleClass="content" text="ProductName" />
       <Label id="ecologic" fx:id="ecologic" layoutX="32.0" layoutY="268.0" styleClass="content" textFill="GREEN" />
       <Label fx:id="productPrice" layoutX="32.0" layoutY="235.0" styleClass="price" text="x kr" textFill="GREEN" />
-      <Button fx:id="buyButton" layoutX="32.0" layoutY="300.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="57.0" prefWidth="275.0" text="KÖP" />
+      <AnchorPane layoutX="35.0" layoutY="297.0" prefHeight="60.0" prefWidth="290.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="295.0">
+         <children>
+            <Button id="addBuy" fx:id="addBuy" contentDisplay="CENTER" disable="true" layoutX="116.0" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#addOne" prefHeight="40.0" prefWidth="40.0" styleClass="round_button" text="+" textAlignment="CENTER" AnchorPane.topAnchor="7.0" />
+            <Button id="subBuy" fx:id="subBuy" contentDisplay="CENTER" disable="true" layoutX="4.0" layoutY="4.0" mnemonicParsing="false" onMouseClicked="#subOne" prefHeight="40.0" prefWidth="40.0" styleClass="round_button" text="-" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="7.0" />
+            <TextField fx:id="nmrBuy" alignment="CENTER" disable="true" layoutX="46.0" layoutY="20.0" prefHeight="26.0" prefWidth="67.0" text="1" AnchorPane.topAnchor="20.0" />
+            <Button fx:id="buyButton" layoutX="161.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#twoStepBuy" prefHeight="60.0" prefWidth="106.0" text="KÖP" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
       <ImageView fx:id="heart" fitHeight="40.0" fitWidth="40.0" layoutX="270.0" layoutY="235.0" onMouseClicked="#addFavorite" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@icons/red.png" />

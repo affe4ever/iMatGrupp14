@@ -29,68 +29,58 @@ public class iMatController implements Initializable {
     private final ArrayList<String> categories = new ArrayList<String>(Arrays.asList("Visa alla produkter","Pasta, Potatis & Ris",
             "Frukt & Grönt", "Nötter & Frön", "Kött & Fisk", "Skafferi", "Dryck", "Mejeri"));
 
-    @FXML
-    private ScrollPane startPage;
-    @FXML
-    private FlowPane categoryList;
-
-    @FXML
-    private Label categoryName;
-
-    @FXML
-    private Label home;
-
-    @FXML
-    private AnchorPane categoryPage;
-
-    @FXML
-    private FlowPane productList;
-
-    @FXML
-    private FlowPane favoriteList;
-    @FXML
-    private AnchorPane favoritePage;
-    @FXML
-    private AnchorPane noResult;
-    @FXML
-    private ScrollPane allProducts;
-
-    @FXML
-    private FlowPane categoryProductList;
-
-    @FXML
-    private TextField searchField;
-
-    @FXML
-    private Button searchButton;
+    @FXML private ScrollPane startPage;
+    @FXML private FlowPane categoryList;
+    @FXML private Label categoryName;
+    @FXML private Label home;
+    @FXML private Label favorites;
+    @FXML private Label help;
+    private String inFront;
+    @FXML private AnchorPane categoryPage;
+    @FXML private FlowPane productList;
+    @FXML private FlowPane favoriteList;
+    public ArrayList<String> stringFavoriteList = new ArrayList<>();
+    @FXML private AnchorPane favoritePage;
+    @FXML private AnchorPane noResult;
+    @FXML private AnchorPane helpPage;
+    @FXML private ScrollPane allProducts;
+    @FXML private FlowPane categoryProductList;
+    @FXML private TextField searchField;
+    @FXML private Button searchButton;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-
         Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
             public void run() {
                 dataHandler.shutDown();
-
             }
         }));
-
+        inFront = "start";
         for (String category : categories){
             categoryList.getChildren().add(new CategoryListItem(category, this));
-
         }
+
         for (Product product : dataHandler.getProducts()){
             productList.getChildren().add(new ProductCard(dataHandler,this, product));
         }
 
         for (Product favorite : dataHandler.favorites()){
             favoriteList.getChildren().add(new ProductCard(dataHandler,this, favorite));
+            stringFavoriteList.add(favorite.getName());
         }
     }
 
     public void addToFavorites(Product product){
-        favoriteList.getChildren().add(new ProductCard(dataHandler, this, product));
+        boolean alreadyPresent = false;
+        for(String name : stringFavoriteList){
+            if(product.getName() == name) {
+                alreadyPresent = true;
+                break; //an optimisation but not strictly necessary //abolsut inte tagit från stack overflow
+            }
+        }
+        if (!alreadyPresent) favoriteList.getChildren().add(new ProductCard(dataHandler, this, product));
     }
 
     public void updateFavorites(){
@@ -100,16 +90,52 @@ public class iMatController implements Initializable {
         }
     }
 
+    private void setBackground(){
+        switch (inFront){
+            case "start":
+                home.setStyle("-fx-background-color: rgba(0,128,0, 1);");
+                favorites.setStyle("-fx-background-color: rgba(0,128,0, 0.5)");
+                help.setStyle("-fx-background-color: rgba(0,128,0, 0.5)");
+                break;
+            case "favorites":
+                favorites.setStyle("-fx-background-color: rgba(0,128,0, 1);");
+                home.setStyle("-fx-background-color: rgba(0,128,0, 0.5)");
+                help.setStyle("-fx-background-color: rgba(0,128,0, 0.5)");
+                break;
+            case "help":
+                help.setStyle("-fx-background-color: rgba(0,128,0, 1);");
+                home.setStyle("-fx-background-color: rgba(0,128,0, 0.5)");
+                favorites.setStyle("-fx-background-color: rgba(0,128,0, 0.5)");
+                break;
+        }
+    }
+
+    @FXML
     public void toStartPage(){
         refreshProductList();
-        allProducts.toFront();
-        home.setStyle("-fx-background-color: rgba(0,128,0, 1);");
+        startPage.toFront();
+        inFront = "start";
+        setBackground();
+    }
 
+    @FXML
+    public void toFavorites(){
+        updateFavorites();
+        favoritePage.toFront();
+        inFront = "favorites";
+        setBackground();
+    }
+
+    @FXML
+    public void toHelp(){
+        updateFavorites();
+        helpPage.toFront();
+        inFront = "help";
+        setBackground();
     }
 
     public void search(Event event){
        List<Product> result = dataHandler.findProducts(event.getSource().toString());
-
     }
 
 
@@ -117,11 +143,6 @@ public class iMatController implements Initializable {
         for (Node product : productList.getChildren()){
             ((ProductCard) product).updateFavoriteIcon();
         }
-    }
-
-    public void toFavorites(){
-        updateFavorites();
-        favoritePage.toFront();
     }
 
     public void setCategory(String category){
