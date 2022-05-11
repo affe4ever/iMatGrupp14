@@ -105,7 +105,8 @@ public class ProductCard extends AnchorPane {
     }
 
     private void addProducts(){ //todo
-
+        dataHandler.getShoppingCart().addProduct(this.product, Integer.valueOf(nmrBuy.getText()));
+        controller.updateCart();
     }
 
     @FXML

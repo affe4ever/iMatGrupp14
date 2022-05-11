@@ -43,10 +43,20 @@ public class iMatController implements Initializable {
     @FXML private AnchorPane favoritePage;
     @FXML private AnchorPane noResult;
     @FXML private AnchorPane helpPage;
+    @FXML private AnchorPane cartPage;
     @FXML private ScrollPane allProducts;
     @FXML private FlowPane categoryProductList;
     @FXML private TextField searchField;
     @FXML private Button searchButton;
+    @FXML private Label kundvagn;
+    public ArrayList<ProductCard> products = new ArrayList<>();
+    public ArrayList<ProductCard> pasta_potatis_ris = new ArrayList<>();
+    public ArrayList<ProductCard> frukt_gront = new ArrayList<>();
+    public ArrayList<ProductCard> kott_fisk = new ArrayList<>();
+    public ArrayList<ProductCard> dryck = new ArrayList<>();
+    public ArrayList<ProductCard> skafferi = new ArrayList<>();
+    public ArrayList<ProductCard> mejeri = new ArrayList<>();
+    public ArrayList<ProductCard> notter_fron = new ArrayList<>();
 
 
     @Override
@@ -59,18 +69,42 @@ public class iMatController implements Initializable {
         }));
         inFront = "start";
         setBackground();
+        updateCart();
         for (String category : categories){
             categoryList.getChildren().add(new CategoryListItem(category, this));
         }
-
         for (Product product : dataHandler.getProducts()){
-            productList.getChildren().add(new ProductCard(dataHandler,this, product));
+                products.add(new ProductCard(dataHandler, this, product));
         }
 
-        for (Product favorite : dataHandler.favorites()){
-            favoriteList.getChildren().add(new ProductCard(dataHandler,this, favorite));
-            stringFavoriteList.add(favorite.getName());
-        }
+        fillCategories(dataHandler.getProducts(ProductCategory.PASTA), 1);
+        fillCategories(dataHandler.getProducts(ProductCategory.POTATO_RICE), 1);
+
+        fillCategories(dataHandler.getProducts(ProductCategory.BERRY), 2);
+        fillCategories(dataHandler.getProducts(ProductCategory.CABBAGE), 2);
+        fillCategories(dataHandler.getProducts(ProductCategory.CITRUS_FRUIT), 2);
+        fillCategories(dataHandler.getProducts(ProductCategory.EXOTIC_FRUIT), 2);
+        fillCategories(dataHandler.getProducts(ProductCategory.FRUIT), 2);
+        fillCategories(dataHandler.getProducts(ProductCategory.MELONS), 2);
+        fillCategories(dataHandler.getProducts(ProductCategory.ROOT_VEGETABLE), 2);
+        fillCategories(dataHandler.getProducts(ProductCategory.VEGETABLE_FRUIT), 2);
+        fillCategories(dataHandler.getProducts(ProductCategory.POD), 2);
+
+        fillCategories(dataHandler.getProducts(ProductCategory.COLD_DRINKS), 3);
+        fillCategories(dataHandler.getProducts(ProductCategory.HOT_DRINKS), 3);
+
+        fillCategories(dataHandler.getProducts(ProductCategory.MEAT), 4);
+        fillCategories(dataHandler.getProducts(ProductCategory.FISH), 4);
+
+        fillCategories(dataHandler.getProducts(ProductCategory.NUTS_AND_SEEDS), 5);
+
+        fillCategories(dataHandler.getProducts(ProductCategory.HERB), 6);
+        fillCategories(dataHandler.getProducts(ProductCategory.SWEET),6);
+        fillCategories(dataHandler.getProducts(ProductCategory.FLOUR_SUGAR_SALT), 6);
+        fillCategories(dataHandler.getProducts(ProductCategory.BREAD), 6);
+
+        fillCategories(dataHandler.getProducts(ProductCategory.DAIRIES), 7);
+
     }
 
     public void addToFavorites(Product product){
@@ -91,29 +125,43 @@ public class iMatController implements Initializable {
         }
     }
 
+    private void clearCategory(){
+
+        for (Node item : categoryList.getChildren()){
+            ((CategoryListItem) item).setActiveCategory("none");
+        }
+
+    }
+
     private void setBackground(){
+        clearCategory();
         switch (inFront){
             case "start":
-                home.setStyle("-fx-background-color: rgba(0,128,0, 1);");
-                favorites.setStyle("-fx-background-color: rgba(0,128,0, 0.5)");
-                help.setStyle("-fx-background-color: rgba(0,128,0, 0.5)");
+                home.getStyleClass().add("sideItem-pressed");
+                favorites.getStyleClass().remove("sideItem-pressed");
+                help.getStyleClass().remove("sideItem-pressed");
                 break;
             case "favorites":
-                favorites.setStyle("-fx-background-color: rgba(0,128,0, 1);");
-                home.setStyle("-fx-background-color: rgba(0,128,0, 0.5)");
-                help.setStyle("-fx-background-color: rgba(0,128,0, 0.5)");
+                favorites.getStyleClass().add("sideItem-pressed");
+                home.getStyleClass().remove("sideItem-pressed");
+                help.getStyleClass().remove("sideItem-pressed");
                 break;
             case "help":
-                help.setStyle("-fx-background-color: rgba(0,128,0, 1);");
-                home.setStyle("-fx-background-color: rgba(0,128,0, 0.5)");
-                favorites.setStyle("-fx-background-color: rgba(0,128,0, 0.5)");
+                help.getStyleClass().add("sideItem-pressed");
+                home.getStyleClass().remove("sideItem-pressed");
+                favorites.getStyleClass().remove("sideItem-pressed");
                 break;
             case "category":
-                home.setStyle("-fx-background-color: rgba(0,128,0, 0.5)");
-                favorites.setStyle("-fx-background-color: rgba(0,128,0, 0.5)");
-                help.setStyle("-fx-background-color: rgba(0,128,0, 0.5)");
+            case "cart":
+                home.getStyleClass().remove("sideItem-pressed");
+                favorites.getStyleClass().remove("sideItem-pressed");
+                help.getStyleClass().remove("sideItem-pressed");
                 break;
         }
+    }
+
+    public void updateCart(){
+        kundvagn.setText("Kundvagn " + dataHandler.getShoppingCart().getTotal() + ":-");
     }
 
     @FXML
@@ -130,6 +178,7 @@ public class iMatController implements Initializable {
         favoritePage.toFront();
         inFront = "favorites";
         setBackground();
+
     }
 
     @FXML
@@ -138,6 +187,15 @@ public class iMatController implements Initializable {
         helpPage.toFront();
         inFront = "help";
         setBackground();
+
+    }
+
+    @FXML
+    public void toCart(){
+        cartPage.toFront();
+        inFront = "cart";
+        setBackground();
+
     }
 
     public void search(Event event){
@@ -166,45 +224,49 @@ public class iMatController implements Initializable {
 
     public void populateCategoryList(String category){
 
-        categoryProductList.getChildren().clear();
         switch(category){
-            case "Visa alla produkter": updateCategoryList(dataHandler.getProducts()); break;
-            case "Pasta, Potatis & Ris":
-                updateCategoryList(dataHandler.getProducts(ProductCategory.PASTA));
-                updateCategoryList(dataHandler.getProducts(ProductCategory.POTATO_RICE));break;
-            case "Frukt & Grönt":
-                updateCategoryList(dataHandler.getProducts(ProductCategory.BERRY));
-                updateCategoryList(dataHandler.getProducts(ProductCategory.CABBAGE));
-                updateCategoryList(dataHandler.getProducts(ProductCategory.CITRUS_FRUIT));
-                updateCategoryList(dataHandler.getProducts(ProductCategory.EXOTIC_FRUIT));
-                updateCategoryList(dataHandler.getProducts(ProductCategory.FRUIT));
-                updateCategoryList(dataHandler.getProducts(ProductCategory.MELONS));
-                updateCategoryList(dataHandler.getProducts(ProductCategory.ROOT_VEGETABLE));
-                updateCategoryList(dataHandler.getProducts(ProductCategory.VEGETABLE_FRUIT));
-                updateCategoryList(dataHandler.getProducts(ProductCategory.POD));break;
-            case "Dryck":
-                updateCategoryList(dataHandler.getProducts(ProductCategory.COLD_DRINKS));
-                updateCategoryList(dataHandler.getProducts(ProductCategory.HOT_DRINKS));break;
-            case "Kött & Fisk":
-                updateCategoryList(dataHandler.getProducts(ProductCategory.MEAT));
-                updateCategoryList(dataHandler.getProducts(ProductCategory.FISH));break;
-            case "Nötter & Frön":
-                updateCategoryList(dataHandler.getProducts(ProductCategory.NUTS_AND_SEEDS));break;
-            case "Skafferi":
-                updateCategoryList(dataHandler.getProducts(ProductCategory.HERB));
-                updateCategoryList(dataHandler.getProducts(ProductCategory.SWEET));
-                updateCategoryList(dataHandler.getProducts(ProductCategory.FLOUR_SUGAR_SALT));
-                updateCategoryList(dataHandler.getProducts(ProductCategory.BREAD));break;
-            case "Mejeri":
-                updateCategoryList(dataHandler.getProducts(ProductCategory.DAIRIES));break;
+            case "Visa alla produkter": showProducts(0); break;
+            case "Pasta, Potatis & Ris": showProducts(1);break;
+            case "Frukt & Grönt": showProducts(2); break;
+            case "Dryck": showProducts(3); break;
+            case "Kött & Fisk": showProducts(4); break;
+            case "Nötter & Frön": showProducts(5); break;
+            case "Skafferi": showProducts(6); break;
+            case "Mejeri": showProducts(7); break;
 
         }
 
     }
 
-    public void updateCategoryList(List<Product> products){
+    private void showProducts(int category){
+        ArrayList<ProductCard> items;
+        switch(category){
+            case 1: items = pasta_potatis_ris;break;
+            case 2: items = frukt_gront;break;
+            case 3: items = dryck;break;
+            case 4: items = kott_fisk;break;
+            case 5: items = notter_fron;break;
+            case 6: items = skafferi;break;
+            case 7: items = mejeri;break;
+            default: items = products;break;
+        }
+        for (ProductCard card : items){
+            categoryProductList.getChildren().add(card);
+        }
+    }
+
+    public void fillCategories(List<Product> products, int category){
         for (Product product : products){
-            categoryProductList.getChildren().add(new ProductCard(dataHandler, this, product));
+            switch(category){
+                case 1: pasta_potatis_ris.add(new ProductCard(dataHandler, this, product));break;
+                case 2: frukt_gront.add(new ProductCard(dataHandler, this, product));break;
+                case 3: dryck.add(new ProductCard(dataHandler, this, product));break;
+                case 4: kott_fisk.add(new ProductCard(dataHandler, this, product));break;
+                case 5: notter_fron.add(new ProductCard(dataHandler, this, product));break;
+                case 6: skafferi.add(new ProductCard(dataHandler, this, product));break;
+                case 7: mejeri.add(new ProductCard(dataHandler, this, product));break;
+            }
+
         }
 
     }
