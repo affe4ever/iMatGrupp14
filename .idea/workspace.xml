@@ -8,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/out/production/iMat/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/iMatHomePage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/iMat/main/resources/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/main/resources/iMatHomePage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/iMat/resources/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/resources/iMatHomePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/main/java/iMatApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/java/iMatApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/main/java/iMatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/java/iMatController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/main/resources/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/iMatHomePage.fxml" afterDir="false" />
     </list>
@@ -171,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652344412458</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="mer work på shoppingcart">
+      <created>1652348511511</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1652348511511</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

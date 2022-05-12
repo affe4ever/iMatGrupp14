@@ -36,6 +36,7 @@ public class iMatController implements Initializable {
     @FXML private Label favorites;
     @FXML private Label help;
     private String inFront;
+    private String previous;
     @FXML private AnchorPane categoryPage;
     @FXML private FlowPane productList;
     @FXML private FlowPane favoriteList;
@@ -54,6 +55,7 @@ public class iMatController implements Initializable {
     @FXML private AnchorPane stepThree;
     @FXML private ScrollPane shoppingCartItems;
     @FXML private AnchorPane checkoutPage;
+    @FXML private Label iMatLogo;
     public ArrayList<ProductCard> products = new ArrayList<>();
     public ArrayList<ProductCard> pasta_potatis_ris = new ArrayList<>();
     public ArrayList<ProductCard> frukt_gront = new ArrayList<>();
@@ -162,6 +164,9 @@ public class iMatController implements Initializable {
                 help.getStyleClass().remove("sideItem-pressed");
                 break;
             case "cart":
+                home.getStyleClass().remove("sideItem-pressed");
+                favorites.getStyleClass().remove("sideItem-pressed");
+                help.getStyleClass().remove("sideItem-pressed");
                 break;
         }
     }
@@ -174,10 +179,12 @@ public class iMatController implements Initializable {
         System.out.println("Cart is populated :D");
     }
 
+
     @FXML
     private void toStartPage(){
         refreshProductList();
         startPage.toFront();
+        cartPage.toBack();
         inFront = "start";
         setBackground();
     }
@@ -201,6 +208,7 @@ public class iMatController implements Initializable {
     @FXML
     private void toCart(){
         cartPage.toFront();
+        inFront = "cart";
         populateCart();
     }
 
