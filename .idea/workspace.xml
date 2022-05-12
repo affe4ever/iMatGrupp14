@@ -3,13 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="988e677b-70a1-4310-94cb-1291b35e21e8" name="Changes" comment="se drive document för bättre todo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/iMatController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/iMatController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/iMat/iMatController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/iMatController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/iMat/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/iMatHomePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/iMat/iMatStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/iMatStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/main/java/ProductCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/java/ProductCard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/main/java/iMatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/java/iMatController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/main/resources/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/iMatHomePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/main/resources/iMatStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/iMatStyle.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +54,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/javafx-sdk-18/lib" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -79,7 +77,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="iMatApplication" />
       <module name="iMat" />
-      <option name="VM_PARAMETERS" value="--module-path $USER_HOME$/Documents/javafx-sdk-17.0.2/lib --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path $PROJECT_DIR$/resources/javafx-sdk-18/lib/ --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -120,8 +118,6 @@
       <workItem from="1651922288852" duration="42280000" />
       <workItem from="1652041759631" duration="9579000" />
       <workItem from="1652085655562" duration="13419000" />
-      <workItem from="1652250638336" duration="212000" />
-      <workItem from="1652258497323" duration="10892000" />
     </task>
     <task id="LOCAL-00001" summary="den riktiga, plz work">
       <created>1651829212641</created>
@@ -167,7 +163,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

@@ -16,6 +16,7 @@
 
 <AnchorPane prefHeight="850.0" prefWidth="1440.0" style="-fx-background-color: F3F3F3;" stylesheets="@iMatStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMatController">
    <children>
+      <AnchorPane prefHeight="836.0" prefWidth="1512.0" style="-fx-background-color: #F3F3F3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <AnchorPane id="top-bar" minHeight="-Infinity" prefHeight="111.0" prefWidth="1512.0" styleClass="main-color" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label id="iMat-logo" layoutX="23.0" onMouseClicked="#toStartPage" prefHeight="121.0" prefWidth="217.0" styleClass="main-font" text="iMat" wrapText="true">
@@ -151,15 +152,6 @@
                   </FlowPane>
                </content>
             </ScrollPane>
-            <AnchorPane fx:id="cartPage" layoutX="20.0" layoutY="10.0" prefHeight="729.0" prefWidth="1213.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <Label alignment="CENTER" prefWidth="1213.0" styleClass="categoryName" text="KUNDVAGN" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0" />
-               </children>
-               <styleClass>
-                  <String fx:value="noResult" />
-                  <String fx:value="pageBackground" />
-               </styleClass>
-            </AnchorPane>
          </children>
       </AnchorPane>
       <AnchorPane layoutY="126.0" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" styleClass="sideMap" AnchorPane.leftAnchor="0.0">
@@ -216,5 +208,31 @@
             <FlowPane fx:id="categoryList" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="493.0" prefWidth="296.0" styleClass="categoryList" />
          </content>
       </ScrollPane>
+      <AnchorPane fx:id="cartPage" layoutY="124.0" prefHeight="725.0" prefWidth="1512.0">
+         <children>
+            <Label alignment="CENTER" prefWidth="1213.0" styleClass="categoryName" text="KUNDVAGN" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0" />
+            <Button layoutX="67.0" layoutY="46.0" mnemonicParsing="false" onMouseClicked="#backFromCart" prefHeight="92.0" prefWidth="235.0" text="Fortsätt Handla" />
+            <Button layoutX="649.0" layoutY="109.0" mnemonicParsing="false" text="1">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Button>
+            <Button layoutX="747.0" layoutY="109.0" mnemonicParsing="false" text="2">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Button>
+            <Button layoutX="835.0" layoutY="109.0" mnemonicParsing="false" text="3">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Button>
+            <AnchorPane layoutX="67.0" layoutY="164.0" prefHeight="526.0" prefWidth="1374.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="170.0" />
+         </children>
+         <styleClass>
+            <String fx:value="noResult" />
+            <String fx:value="pageBackground" />
+         </styleClass>
+      </AnchorPane>
    </children>
 </AnchorPane>

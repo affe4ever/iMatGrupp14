@@ -112,7 +112,7 @@ public class iMatController implements Initializable {
         for(String name : stringFavoriteList){
             if(product.getName() == name) {
                 alreadyPresent = true;
-                break; //an optimisation but not strictly necessary //abolsut inte tagit från stack overflow
+                break; //an optimisation but not strictly necessary //absolut inte tagit från stack overflow
             }
         }
         if (!alreadyPresent) favoriteList.getChildren().add(new ProductCard(dataHandler, this, product));
@@ -152,10 +152,11 @@ public class iMatController implements Initializable {
                 favorites.getStyleClass().remove("sideItem-pressed");
                 break;
             case "category":
-            case "cart":
                 home.getStyleClass().remove("sideItem-pressed");
                 favorites.getStyleClass().remove("sideItem-pressed");
                 help.getStyleClass().remove("sideItem-pressed");
+                break;
+            case "cart":
                 break;
         }
     }
@@ -178,7 +179,6 @@ public class iMatController implements Initializable {
         favoritePage.toFront();
         inFront = "favorites";
         setBackground();
-
     }
 
     @FXML
@@ -187,15 +187,16 @@ public class iMatController implements Initializable {
         helpPage.toFront();
         inFront = "help";
         setBackground();
-
     }
 
     @FXML
     public void toCart(){
         cartPage.toFront();
-        inFront = "cart";
-        setBackground();
+    }
 
+    @FXML
+    public void backFromCart(){
+        cartPage.toBack();
     }
 
     public void search(Event event){
