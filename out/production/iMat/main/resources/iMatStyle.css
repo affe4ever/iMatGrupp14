@@ -44,12 +44,16 @@
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 4, 0, 0, 4);
 }
 
-.sideItem:pressed{
+.sideItem-pressed{
+    -fx-font-size: 29px;
+    -fx-text-fill: white;
+    -fx-border-color: #D9DBE9;
+    -fx-border-style: hidden hidden solid hidden;
     -fx-background-color: rgba(0,128,0, 1);
 }
 
 .sideItem:hover{
-    -fx-background-color: rgba(0,128,0, 0.75);
+    -fx-background-color: rgba(0,128,0, 0.6);
 }
 
 #top-bar{
