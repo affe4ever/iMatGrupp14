@@ -1,9 +1,15 @@
+
+*{
+    -fx-mainColor: #008000;
+    -fx-pageBackground: #F3F3F3;
+}
+
 .main-color{
-    -fx-background-color: #008000;
+    -fx-background-color: -fx-mainColor;
 }
 
 .pageBackground{
-    -fx-background-color: #F3F3F3;
+    -fx-background-color: -fx-pageBackground;
 }
 
 .text, .label{
@@ -87,6 +93,10 @@
     -fx-color: #000000;
 }
 
+.shoppingCartSteps{
+    -fx-background-color: -fx-pageBackground;
+}
+
 .categoryList{
     -fx-background-color: white;
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);
@@ -113,7 +123,7 @@
 }
 
 .category:hover{
-    -fx-background-color: #F3F3F3;
+    -fx-background-color: -fx-pageBackground;
 }
 
 .categoryName {
@@ -165,17 +175,17 @@
 }
 
 #addBuy{
-    -fx-text-fill: #008000;
-    -fx-background-color: #F3F3F3;
+    -fx-text-fill: -fx-mainColor;
+    -fx-background-color: -fx-pageBackground;
 }
 
 #subBuy{
     -fx-text-fill: #ff0000;
-    -fx-background-color: #F3F3F3;
+    -fx-background-color: -fx-pageBackground;
 }
 
 #nmrBuy{
-    -fx-border-color: #008000;
+    -fx-border-color: -fx-mainColor;
     -fx-border-width: 3;
     -fx-border-radius: 10px;
 }
@@ -184,7 +194,7 @@
     -fx-font-size: 20px;
 }
 .scroll-pane{
-    -fx-border-color: #f3f3f3;
+    -fx-border-color: -fx-pageBackground;
 }
 
 .icons{

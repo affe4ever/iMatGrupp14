@@ -49,6 +49,9 @@ public class iMatController implements Initializable {
     @FXML private TextField searchField;
     @FXML private Button searchButton;
     @FXML private Label kundvagn;
+    @FXML private AnchorPane stepOne;
+    @FXML private AnchorPane stepTwo;
+    @FXML private AnchorPane stepThree;
     public ArrayList<ProductCard> products = new ArrayList<>();
     public ArrayList<ProductCard> pasta_potatis_ris = new ArrayList<>();
     public ArrayList<ProductCard> frukt_gront = new ArrayList<>();
@@ -162,7 +165,7 @@ public class iMatController implements Initializable {
     }
 
     public void updateCart(){
-        kundvagn.setText("Kundvagn " + dataHandler.getShoppingCart().getTotal() + ":-");
+        kundvagn.setText("Kundvagn " + Math.round(dataHandler.getShoppingCart().getTotal()) + ":-");
     }
 
     @FXML
@@ -197,6 +200,21 @@ public class iMatController implements Initializable {
     @FXML
     public void backFromCart(){
         cartPage.toBack();
+    }
+
+    @FXML
+    public void shopStepOne(){
+        stepOne.toFront();
+    }
+
+    @FXML
+    public void shopStepTwo(){
+        stepTwo.toFront();
+    }
+
+    @FXML
+    public void shopStepThree(){
+        stepThree.toFront();
     }
 
     public void search(Event event){
