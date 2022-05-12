@@ -16,7 +16,63 @@
 
 <AnchorPane prefHeight="850.0" prefWidth="1440.0" style="-fx-background-color: F3F3F3;" stylesheets="@iMatStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMatController">
    <children>
-      <AnchorPane prefHeight="836.0" prefWidth="1512.0" style="-fx-background-color: #F3F3F3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <AnchorPane fx:id="checkoutPage" layoutX="10.0" layoutY="134.0" prefHeight="725.0" prefWidth="1512.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
+         <children>
+            <Label alignment="CENTER" prefWidth="1213.0" styleClass="categoryName" text="CHECKOUT" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0" />
+            <Button layoutX="36.0" layoutY="28.0" mnemonicParsing="false" onMouseClicked="#toCart" prefHeight="76.0" prefWidth="223.0" text="Avbryt Checkout" wrapText="true" />
+            <Button layoutX="640.0" layoutY="109.0" mnemonicParsing="false" onMouseClicked="#shopStepOne" text="1">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Button>
+            <Button layoutX="738.0" layoutY="109.0" mnemonicParsing="false" onMouseClicked="#shopStepTwo" text="2">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Button>
+            <Button layoutX="826.0" layoutY="109.0" mnemonicParsing="false" onMouseClicked="#shopStepThree" text="3">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Button>
+            <AnchorPane layoutX="67.0" layoutY="164.0" prefHeight="526.0" prefWidth="1374.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="170.0">
+               <children>
+                  <AnchorPane fx:id="stepThree" prefHeight="200.0" prefWidth="200.0" styleClass="shoppingCartSteps" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label text="Step3" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="stepTwo" prefHeight="200.0" prefWidth="200.0" styleClass="shoppingCartSteps" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label text="Step2" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="stepOne" prefHeight="464.0" prefWidth="1158.0" styleClass="shoppingCartSteps" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label text="Step1" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+         <styleClass>
+            <String fx:value="noResult" />
+            <String fx:value="pageBackground" />
+         </styleClass>
+      </AnchorPane>
+      <AnchorPane fx:id="whiteBLock" prefHeight="836.0" prefWidth="1512.0" style="-fx-background-color: #F3F3F3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <AnchorPane id="top-bar" minHeight="-Infinity" prefHeight="111.0" prefWidth="1512.0" styleClass="main-color" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label id="iMat-logo" layoutX="23.0" onMouseClicked="#toStartPage" prefHeight="121.0" prefWidth="217.0" styleClass="main-font" text="iMat" wrapText="true">
@@ -208,54 +264,17 @@
             <FlowPane fx:id="categoryList" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="493.0" prefWidth="296.0" styleClass="categoryList" />
          </content>
       </ScrollPane>
-      <AnchorPane fx:id="cartPage" layoutY="124.0" prefHeight="725.0" prefWidth="1512.0">
+      <AnchorPane fx:id="cartPage" prefHeight="725.0" prefWidth="1512.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
          <children>
             <Label alignment="CENTER" prefWidth="1213.0" styleClass="categoryName" text="KUNDVAGN" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0" />
-            <Button layoutX="67.0" layoutY="46.0" mnemonicParsing="false" onMouseClicked="#backFromCart" prefHeight="92.0" prefWidth="235.0" text="Fortsätt Handla" />
-            <Button layoutX="640.0" layoutY="109.0" mnemonicParsing="false" onMouseClicked="#shopStepOne" text="1">
-               <font>
-                  <Font size="25.0" />
-               </font>
-            </Button>
-            <Button layoutX="738.0" layoutY="109.0" mnemonicParsing="false" onMouseClicked="#shopStepTwo" text="2">
-               <font>
-                  <Font size="25.0" />
-               </font>
-            </Button>
-            <Button layoutX="826.0" layoutY="109.0" mnemonicParsing="false" onMouseClicked="#shopStepThree" text="3">
-               <font>
-                  <Font size="25.0" />
-               </font>
-            </Button>
-            <AnchorPane layoutX="67.0" layoutY="164.0" prefHeight="526.0" prefWidth="1374.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="170.0">
+            <Button layoutX="36.0" layoutY="28.0" mnemonicParsing="false" onMouseClicked="#backFromCart" prefHeight="76.0" prefWidth="223.0" text="Fortsätt Handla" />
+            <AnchorPane layoutX="67.0" layoutY="164.0" prefHeight="525.0" prefWidth="1172.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="170.0">
                <children>
-                  <AnchorPane fx:id="stepThree" prefHeight="200.0" prefWidth="200.0" styleClass="shoppingCartSteps" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <Label text="Step3" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane fx:id="stepTwo" prefHeight="200.0" prefWidth="200.0" styleClass="shoppingCartSteps" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <Label text="Step2" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane fx:id="stepOne" prefHeight="464.0" prefWidth="1158.0" styleClass="shoppingCartSteps" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <Label text="Step1" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
+                  <ScrollPane fx:id="shoppingCartItems" prefHeight="518.0" prefWidth="1452.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+                    </content>
+                  </ScrollPane>
                </children>
             </AnchorPane>
          </children>

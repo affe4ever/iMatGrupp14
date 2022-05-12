@@ -18,8 +18,6 @@ public class iMatApplication extends Application{
         stage.setTitle("iMat");
         stage.setScene(scene);
         stage.show();
-
-
     }
 
 

@@ -52,6 +52,8 @@ public class iMatController implements Initializable {
     @FXML private AnchorPane stepOne;
     @FXML private AnchorPane stepTwo;
     @FXML private AnchorPane stepThree;
+    @FXML private ScrollPane shoppingCartItems;
+    @FXML private AnchorPane checkoutPage;
     public ArrayList<ProductCard> products = new ArrayList<>();
     public ArrayList<ProductCard> pasta_potatis_ris = new ArrayList<>();
     public ArrayList<ProductCard> frukt_gront = new ArrayList<>();
@@ -168,8 +170,12 @@ public class iMatController implements Initializable {
         kundvagn.setText("Kundvagn " + Math.round(dataHandler.getShoppingCart().getTotal()) + ":-");
     }
 
+    private void populateCart(){
+        System.out.println("Cart is populated :D");
+    }
+
     @FXML
-    public void toStartPage(){
+    private void toStartPage(){
         refreshProductList();
         startPage.toFront();
         inFront = "start";
@@ -177,7 +183,7 @@ public class iMatController implements Initializable {
     }
 
     @FXML
-    public void toFavorites(){
+    private void toFavorites(){
         updateFavorites();
         favoritePage.toFront();
         inFront = "favorites";
@@ -185,7 +191,7 @@ public class iMatController implements Initializable {
     }
 
     @FXML
-    public void toHelp(){
+    private void toHelp(){
         updateFavorites();
         helpPage.toFront();
         inFront = "help";
@@ -193,27 +199,28 @@ public class iMatController implements Initializable {
     }
 
     @FXML
-    public void toCart(){
+    private void toCart(){
         cartPage.toFront();
+        populateCart();
     }
 
     @FXML
-    public void backFromCart(){
+    private void backFromCart(){
         cartPage.toBack();
     }
 
     @FXML
-    public void shopStepOne(){
+    private void shopStepOne(){
         stepOne.toFront();
     }
 
     @FXML
-    public void shopStepTwo(){
+    private void shopStepTwo(){
         stepTwo.toFront();
     }
 
     @FXML
-    public void shopStepThree(){
+    private void shopStepThree(){
         stepThree.toFront();
     }
 
