@@ -163,6 +163,10 @@
     -fx-width: 290px;
 }
 
+.buyButton:hover{
+    -fx-background-color: darkgreen;
+}
+
 .button .label{
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 10, 0.5, 4.0, 4.0);
 }
@@ -199,6 +203,23 @@
 
 .icons{
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 10, 0.5, 4.0, 4.0);
+}
+
+.cart{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);
+}
+
+#cartImage{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);
+}
+
+.cartTotal, .totalText{
+    -fx-font-size: 48px;
+
+}
+
+.cartTotal .text, .totalText .text {
+    -fx-font-family: "Lexend Deca Bold";
 }
 
 scroll-bar:horizontal .track,

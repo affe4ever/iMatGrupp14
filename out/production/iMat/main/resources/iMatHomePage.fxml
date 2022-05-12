@@ -268,15 +268,22 @@
          <children>
             <Label alignment="CENTER" prefWidth="1213.0" styleClass="categoryName" text="KUNDVAGN" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0" />
             <Button layoutX="36.0" layoutY="28.0" mnemonicParsing="false" onMouseClicked="#backFromCart" prefHeight="76.0" prefWidth="223.0" text="Fortsätt Handla" />
-            <AnchorPane layoutX="67.0" layoutY="164.0" prefHeight="525.0" prefWidth="1172.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="170.0">
+            <AnchorPane layoutX="67.0" layoutY="170.0" prefHeight="525.0" prefWidth="1172.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="138.0">
                <children>
-                  <ScrollPane fx:id="shoppingCartItems" prefHeight="518.0" prefWidth="1452.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-                    </content>
+                  <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="1078.0" styleClass="cart" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <FlowPane fx:id="shoppingCartItems" prefHeight="521.0" prefWidth="1080.0" style="-fx-background-color: white;" vgap="20.0">
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                        </FlowPane>
+                     </content>
                   </ScrollPane>
                </children>
             </AnchorPane>
+            <Button layoutX="1173.0" layoutY="556.0" mnemonicParsing="false" prefHeight="140.0" prefWidth="300.0" text="TILL KASSAN" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="50.0" />
+            <Label fx:id="cartTotal" alignment="TOP_LEFT" layoutX="1168.0" layoutY="472.0" prefHeight="74.0" prefWidth="212.0" styleClass="cartTotal" text="x:-" textFill="GREEN" wrapText="true" AnchorPane.rightAnchor="134.0" />
+            <Label layoutX="1164.0" layoutY="425.0" prefHeight="60.0" prefWidth="234.0" styleClass="totalText" text="TOTALT:" AnchorPane.rightAnchor="114.0" />
          </children>
          <styleClass>
             <String fx:value="noResult" />

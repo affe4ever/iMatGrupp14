@@ -16,6 +16,7 @@ import javafx.scene.paint.Paint;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ProductCategory;
+import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -53,9 +54,10 @@ public class iMatController implements Initializable {
     @FXML private AnchorPane stepOne;
     @FXML private AnchorPane stepTwo;
     @FXML private AnchorPane stepThree;
-    @FXML private ScrollPane shoppingCartItems;
+    @FXML private FlowPane shoppingCartItems;
     @FXML private AnchorPane checkoutPage;
     @FXML private Label iMatLogo;
+    @FXML private Label cartTotal;
     public ArrayList<ProductCard> products = new ArrayList<>();
     public ArrayList<ProductCard> pasta_potatis_ris = new ArrayList<>();
     public ArrayList<ProductCard> frukt_gront = new ArrayList<>();
@@ -140,6 +142,10 @@ public class iMatController implements Initializable {
 
     }
 
+    public void updateCartTotal(){
+        cartTotal.setText(Math.round(dataHandler.getShoppingCart().getTotal()) + ":-");
+    }
+
     private void setBackground(){
         clearCategory();
         switch (inFront){
@@ -177,6 +183,10 @@ public class iMatController implements Initializable {
 
     private void populateCart(){
         System.out.println("Cart is populated :D");
+
+        for (ShoppingItem product : dataHandler.getShoppingCart().getItems()){
+                shoppingCartItems.getChildren().add(new CartItem(dataHandler, this, product));
+        }
     }
 
 
@@ -207,9 +217,12 @@ public class iMatController implements Initializable {
 
     @FXML
     private void toCart(){
-        cartPage.toFront();
         inFront = "cart";
         populateCart();
+        updateCartTotal();
+        cartPage.toFront();
+
+
     }
 
     @FXML
