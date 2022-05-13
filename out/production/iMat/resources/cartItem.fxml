@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="172.0" prefWidth="960.0" style="-fx-background-color: white;" styleClass="productCard" stylesheets="@iMatStyle.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+          <Button id="addBuy" fx:id="addBuy" contentDisplay="CENTER" disable="true" layoutX="686.0" layoutY="71.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="round_button" text="+" textAlignment="CENTER" AnchorPane.topAnchor="71.0" />
+          <Button id="subBuy" fx:id="subBuy" contentDisplay="CENTER" disable="true" layoutX="570.0" layoutY="71.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="round_button" text="-" textAlignment="CENTER" AnchorPane.leftAnchor="570.0" AnchorPane.topAnchor="71.0" />
+          <TextField fx:id="nmrBuy" alignment="CENTER" disable="true" layoutX="616.0" layoutY="84.0" prefHeight="26.0" prefWidth="67.0" text="1" AnchorPane.topAnchor="84.0" />
+      <ImageView id="cartImage" fx:id="cartImage" fitHeight="150.0" fitWidth="197.0" layoutX="16.0" layoutY="13.0" preserveRatio="true" />
+      <Label fx:id="cartText" layoutX="222.0" layoutY="76.0" text="x Product" />
+      <Label fx:id="cartPrice" layoutX="813.0" layoutY="76.0" text="Price" />
+    </children>
+</fx:root>
