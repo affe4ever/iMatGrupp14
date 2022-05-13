@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="988e677b-70a1-4310-94cb-1291b35e21e8" name="Changes" comment="mer work på shoppingcart">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iMat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/iMat.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/iMat/iMatController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/iMatController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/iMat/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/iMatHomePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/iMat/main/resources/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/main/resources/iMatHomePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/iMat/out/production/resources/iMatHomePage.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/iMat/resources/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/resources/iMatHomePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/main/java/iMatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/java/iMatController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/main/resources/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/iMatHomePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/out/production/resources/iMatHomePage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/java/ProductCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/java/ProductCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/resources/cartItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/cartItem.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -45,7 +45,13 @@ public class ProductCard extends AnchorPane {
         this.product = product;
         this.dataHandler = dataHandler;
         productImage.setImage(dataHandler.getFXImage(product));
-        productName.setText(product.getName());
+        String temp = product.getName().toLowerCase();
+        temp = temp.replace("ekologisk ", "");
+        temp = temp.replace("ekologiskt ", "");
+        temp = temp.replace("ekologiska ", "");
+        temp = temp.substring(0,1).toUpperCase() + temp.substring(1);
+        productName.setText(temp);
+
         productPrice.setText(product.getPrice() + ":-");
         nmrBuy.setText("1");
         updateFavoriteIcon();
