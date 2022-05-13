@@ -32,6 +32,6 @@ public class CartItem extends AnchorPane {
         }
         cartImage.setImage(dataHandler.getFXImage(product.getProduct()));
         cartText.setText((int) product.getAmount() + "st " + product.getProduct().getName());
-        cartPrice.setText(product.getTotal() + ":-");
+        cartPrice.setText(Math.round(product.getTotal()*100.00)/100.00 + ":-");
     }
 }

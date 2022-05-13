@@ -183,7 +183,7 @@ public class iMatController implements Initializable {
 
     private void populateCart(){
         //System.out.println("Cart is populated :D");
-
+        shoppingCartItems.getChildren().clear();
         for (ShoppingItem product : dataHandler.getShoppingCart().getItems()){
                 shoppingCartItems.getChildren().add(new CartItem(dataHandler, this, product));
         }
