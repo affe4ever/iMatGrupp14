@@ -110,7 +110,7 @@ public class ProductCard extends AnchorPane {
         } //change to 290
     }
 
-    private void addProducts(){ //todo
+    private void addProducts(){
         dataHandler.getShoppingCart().addProduct(this.product, Integer.valueOf(nmrBuy.getText()));
         controller.updateCart();
     }
