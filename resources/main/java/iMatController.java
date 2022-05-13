@@ -182,7 +182,7 @@ public class iMatController implements Initializable {
     }
 
     private void populateCart(){
-        System.out.println("Cart is populated :D");
+        //System.out.println("Cart is populated :D");
 
         for (ShoppingItem product : dataHandler.getShoppingCart().getItems()){
                 shoppingCartItems.getChildren().add(new CartItem(dataHandler, this, product));
@@ -195,6 +195,7 @@ public class iMatController implements Initializable {
         refreshProductList();
         startPage.toFront();
         cartPage.toBack();
+        checkoutPage.toBack();
         inFront = "start";
         setBackground();
     }
@@ -220,9 +221,13 @@ public class iMatController implements Initializable {
         inFront = "cart";
         populateCart();
         updateCartTotal();
+        checkoutPage.toBack();
         cartPage.toFront();
+    }
 
-
+    @FXML
+    private void toCheckout(){
+        checkoutPage.toFront();
     }
 
     @FXML
