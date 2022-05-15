@@ -29,12 +29,12 @@ public class CategoryListItem extends AnchorPane {
         }
         this.controller = controller;
         categoryLink.setText(category);
-        categoryLink.setAccessibleText(category);
+        categoryLink.setAccessibleText(category.toLowerCase());
 
     }
     @FXML
     public void toCategoryPage(){
-        controller.setCategory(categoryLink.getText());
+        controller.setCategory(categoryLink.getText().replace("Visa ", ""));
     }
 
     public void setActiveCategory(String category) {
