@@ -91,7 +91,7 @@
                   </ScrollPane>
                </children>
             </AnchorPane>
-            <Button layoutX="1173.0" layoutY="556.0" mnemonicParsing="false" onMouseClicked="#toCheckout" prefHeight="140.0" prefWidth="300.0" text="TILL KASSAN" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="50.0" />
+            <Button layoutX="1173.0" layoutY="556.0" mnemonicParsing="false" onMouseClicked="#toCheckout" prefHeight="140.0" prefWidth="300.0" styleClass="bigButton" text="TILL KASSAN" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="50.0" />
             <Label fx:id="cartTotal" alignment="TOP_LEFT" layoutX="1168.0" layoutY="472.0" prefHeight="74.0" prefWidth="212.0" styleClass="cartTotal" text="x:-" textFill="GREEN" wrapText="true" AnchorPane.rightAnchor="134.0" />
             <Label layoutX="1164.0" layoutY="425.0" prefHeight="60.0" prefWidth="234.0" styleClass="totalText" text="TOTALT:" AnchorPane.rightAnchor="114.0" />
             <Button id="backButton" layoutX="36.0" layoutY="28.0" mnemonicParsing="false" onMouseClicked="#backFromCart" prefHeight="76.0" prefWidth="223.0" styleClass="buyButton" text="Fortsätt Handla">
@@ -114,7 +114,7 @@
             </Button>
             <Pane fx:id="confirmDialog" disable="true" layoutX="1164.0" layoutY="119.0" prefHeight="192.0" prefWidth="312.0" styleClass="confirmDialog" visible="false" AnchorPane.rightAnchor="43.0">
                <children>
-                  <Label layoutX="74.0" layoutY="45.0" text="ÄR DU SÄKER?" />
+                  <Label alignment="CENTER" layoutX="4.0" layoutY="45.0" prefHeight="34.0" prefWidth="302.0" text="ÄR DU SÄKER?" textAlignment="CENTER" />
                   <Button layoutX="20.0" layoutY="116.0" mnemonicParsing="false" onAction="#acceptClear" prefHeight="54.0" prefWidth="129.0" text="JA" />
                   <Button layoutX="160.0" layoutY="115.0" mnemonicParsing="false" onAction="#cancelClear" prefHeight="54.0" prefWidth="129.0" style="-fx-background-color: red;" text="NEJ" />
                </children>
@@ -165,7 +165,7 @@
             </AnchorPane>
             <AnchorPane fx:id="categoryPage" prefHeight="729.0" prefWidth="1213.0" styleClass="pageBackground" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="862.0" prefWidth="1213.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <ScrollPane fx:id="categoryScroll" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="862.0" prefWidth="1213.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <content>
                         <FlowPane fx:id="categoryProductList" hgap="20.0" prefHeight="860.0" prefWidth="1194.0" vgap="20.0">
                            <padding>
@@ -570,5 +570,10 @@
             <Insets right="40.0" />
          </padding>
       </AnchorPane>
+      <Pane fx:id="cartNotification" disable="true" layoutX="1174.0" layoutY="129.0" prefHeight="76.0" prefWidth="282.0" styleClass="notification" visible="false" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="90.0">
+         <children>
+            <Label alignment="CENTER" layoutX="-3.0" layoutY="-5.0" prefHeight="84.0" prefWidth="287.0" style="-fx-opacity: 1;" text="PRODUKT TILLAGD" textFill="WHITE" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

@@ -240,6 +240,7 @@
 
 .confirmDialog .text{
     -fx-font-size: 28px;
+    -fx-font-family: "Lexend Deca Bold";
 }
 
 .button .text{
@@ -403,4 +404,23 @@ scroll-bar:horizontal .track,
 
 .backToStart{
     -fx-font-size: 36px;
+}
+
+.notification .text{
+    -fx-font-size: 24px;
+    -fx-font-family: "Lexend Deca Bold";
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 10, 0.5, 4.0, 4.0);
+
+}
+
+.notification{
+    -fx-background-color: green;
+    -fx-border-radius: 25px;
+    -fx-background-radius: 25px;
+}
+
+.bigButton{
+    -fx-font-size: 32px;
+    -fx-font-family: "Lexend Deca Bold";
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 10, 0.5, 4.0, 4.0);
 }

@@ -1,7 +1,4 @@
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
-import javafx.animation.KeyValue;
-import javafx.animation.Timeline;
+import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -25,6 +22,7 @@ import se.chalmers.cse.dat216.project.ProductCategory;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.net.URL;
+import java.security.Key;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -72,6 +70,8 @@ public class iMatController implements Initializable {
     @FXML
     private FlowPane categoryProductList;
     @FXML
+    private ScrollPane categoryScroll;
+    @FXML
     private TextField searchField;
     @FXML
     private TextField searchField1;
@@ -103,6 +103,8 @@ public class iMatController implements Initializable {
     private FlowPane resultList;
     @FXML
     private AnchorPane resultPage;
+    @FXML
+    private Pane cartNotification;
     @FXML
     private Label resultText;
     public ArrayList<ProductCard> products = new ArrayList<>();
@@ -213,6 +215,37 @@ public class iMatController implements Initializable {
 
     }
 
+
+    public void notifyCart(){
+        cartNotification.setVisible(true);
+        Animation animation = new Timeline(
+                new KeyFrame(Duration.millis(0),
+                        new KeyValue(cartNotification.opacityProperty(), 0.0)),
+                new KeyFrame(Duration.millis(50),
+                        new KeyValue(cartNotification.opacityProperty(), 0.2)),
+                new KeyFrame(Duration.millis(100),
+                        new KeyValue(cartNotification.opacityProperty(), 0.4)),
+                new KeyFrame(Duration.millis(150),
+                        new KeyValue(cartNotification.opacityProperty(), 0.6)),
+                new KeyFrame(Duration.millis(200),
+                        new KeyValue(cartNotification.opacityProperty(), 0.8)),
+                new KeyFrame(Duration.millis(250),
+                        new KeyValue(cartNotification.opacityProperty(), 1)),
+                new KeyFrame(Duration.millis(2000),
+                        new KeyValue(cartNotification.opacityProperty(), 0.8)),
+                new KeyFrame(Duration.millis(2050),
+                        new KeyValue(cartNotification.opacityProperty(), 0.6)),
+                new KeyFrame(Duration.millis(2100),
+                        new KeyValue(cartNotification.opacityProperty(), 0.4)),
+                new KeyFrame(Duration.millis(2150),
+                        new KeyValue(cartNotification.opacityProperty(), 0.2)),
+                new KeyFrame(Duration.millis(2200),
+                        new KeyValue(cartNotification.opacityProperty(), 0.0)));
+        animation.play();
+
+
+    }
+
     public void updateCartTotal() {
         cartTotal.setText(Math.round(dataHandler.getShoppingCart().getTotal()) + ":-");
     }
@@ -264,6 +297,7 @@ public class iMatController implements Initializable {
 
     @FXML
     private void toStartPage() {
+        startPage.setVvalue(0);
         refreshProductList();
         favoriteCarousel.getChildren().clear();
         for (Product favorite : dataHandler.favorites()) {
@@ -339,6 +373,8 @@ public class iMatController implements Initializable {
     }
 
     public void setCategory(String category) {
+        allProducts.setVvalue(0);
+        categoryScroll.setVvalue(0);
         categoryName.setText(category.toUpperCase());
         categoryName.setStyle("-fx-font-family: 'Lexend Deca Bold'");
         categoryProductList.getChildren().clear();
