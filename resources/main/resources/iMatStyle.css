@@ -174,9 +174,8 @@
 }
 
 
-
 .productCard .text{
-    -fx-font-size: 32px;
+    -fx-font-size: 28px;
     -fx-text-fill: black;
     -fx-font-family: "Lexend Deca Bold";
 }
@@ -423,4 +422,142 @@ scroll-bar:horizontal .track,
     -fx-font-size: 32px;
     -fx-font-family: "Lexend Deca Bold";
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 10, 0.5, 4.0, 4.0);
+}
+
+.emptyTitle .text{
+    -fx-font-family: "Lexend Deca Bold";
+    -fx-font-size: 40px;
+}
+
+.emptyHelp .text{
+    -fx-font-family: "Lexend Deca SemiBold";
+    -fx-font-size: 28px;
+}
+
+.tab-pane:top *.tab-header-area {
+    -fx-background-insets: 0, 0 0 1 0;
+    /* -fx-padding: 0.416667em 0.166667em 0.0em 0.833em; /* 5 2 0 10 */
+    -fx-padding: 0.416667em 0.166667em 0.0em 0.0em; /* overridden as 5 2 0 0 */
+
+}
+
+.tab-header-background {
+    -fx-background-color: transparent;
+
+
+}
+
+.tab-pane{
+    -fx-tab-min-width:335px;
+    -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);
+}
+
+.tab-pane .tab{
+    -fx-background-insets: 0 0 0 0,0,0;
+    -fx-border-radius: 25px;
+    -fx-background-radius: 25px;
+    -fx-background-color: white;
+    -fx-border-style: hidden hidden solid hidden;
+    -fx-border-color: #F3F3F3;
+    -fx-pref-height: 80px;
+    -fx-cursor: hand;
+
+
+}
+
+.tab-pane .tab:selected{
+    -fx-text-fill: black;
+    -fx-border-color: black;
+}
+
+.tab .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: gray;
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+}
+
+.tab:selected .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: black;
+}
+
+.tab:hover .tab-label{
+    -fx-text-fill: #575757;
+}
+
+
+
+.tab-pane {-fx-tab-max-height: 100000;}
+
+.tab-down-button{
+    -fx-padding: -10;
+    -fx-opacity: 0;
+}
+
+
+.tab-pane:focused{
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+}
+
+.accountTabs{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);
+    -fx-background-radius: 25px;
+    -fx-border-radius: 25px;
+}
+
+.shoppingList .content{
+    -fx-background-color: #F3F3F3;
+
+}
+
+.text-area{
+    -fx-font-size: 24px;
+}
+
+.titled-pane .title{
+    -fx-background-color: #E5E5E5;
+}
+
+.orderAccordion {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);
+    -fx-border-radius: 25px;
+    -fx-background-radius: 25px;
+}
+
+.orderAccordion .text{
+    -fx-font-family: "Lexend Deca Bold";
+    -fx-font-size: 24px;
+}
+
+.previousOrders{
+    -fx-background-color: white;
+}
+
+.anchor{
+    -fx-padding: 0;
+}
+
+.amountText .text {
+    -fx-font-family: "Lexend Deca SemiBold";
+}
+
+.titledBorder{
+    -fx-background-color: linear-gradient(to bottom,white, #F3F3F3);
+    -fx-font-size: 22px;
+}
+
+
+.accountTabs .text-field{
+    -fx-background-color: #F3F3F3;
+    -fx-border-color: darkgray;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-font-size: 18px;
+}
+
+.accountTabs .text-field:focused{
+    -fx-border-color: #1BB55C;
 }

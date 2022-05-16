@@ -1,22 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="988e677b-70a1-4310-94cb-1291b35e21e8" name="Changes" comment="startsida">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib2.xml" beforeDir="false" />
+    <list default="true" id="988e677b-70a1-4310-94cb-1291b35e21e8" name="Changes" comment="alertcart">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/main/java/OrderListItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/main/java/PlacedOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/main/resources/order.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/main/resources/orderListItem.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shoppingList.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/ProductCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/ProductCard.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/iMat/iMatController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/iMatController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/iMat/iMatController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/iMatController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/iMat/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/iMatHomePage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/iMat/iMatStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/iMatStyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/iMat/main/resources/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/main/resources/iMatHomePage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/iMat/main/resources/iMatStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/main/resources/iMatStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/main/resources/productCard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/main/resources/productCard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/productCard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/productCard.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/iMat/resources/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/resources/iMatHomePage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/iMat/resources/iMatStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/resources/iMatStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/main/java/ProductCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/java/ProductCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/resources/productCard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/resources/productCard.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/main/java/iMatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/java/iMatController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/main/resources/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/iMatHomePage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/main/resources/iMatStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/iMatStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/main/resources/productCard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/productCard.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +34,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -136,7 +144,8 @@
       <workItem from="1652540667112" duration="36000" />
       <workItem from="1652541503443" duration="27285000" />
       <workItem from="1652687437778" duration="106000" />
-      <workItem from="1652688069392" duration="3607000" />
+      <workItem from="1652688069392" duration="26275000" />
+      <workItem from="1652728421125" duration="9269000" />
     </task>
     <task id="LOCAL-00001" summary="den riktiga, plz work">
       <created>1651829212641</created>
@@ -222,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652647146853</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="alertcart">
+      <created>1652691761868</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1652691761868</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,7 +264,8 @@
     <MESSAGE value="mer work på shoppingcart" />
     <MESSAGE value="ekologiskt no more" />
     <MESSAGE value="startsida" />
-    <option name="LAST_COMMIT_MESSAGE" value="startsida" />
+    <MESSAGE value="alertcart" />
+    <option name="LAST_COMMIT_MESSAGE" value="alertcart" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

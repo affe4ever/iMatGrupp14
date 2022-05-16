@@ -1,13 +1,11 @@
 import javafx.animation.*;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
@@ -16,17 +14,12 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Paint;
 import javafx.util.Duration;
-import se.chalmers.cse.dat216.project.IMatDataHandler;
-import se.chalmers.cse.dat216.project.Product;
-import se.chalmers.cse.dat216.project.ProductCategory;
-import se.chalmers.cse.dat216.project.ShoppingItem;
+import se.chalmers.cse.dat216.project.*;
 
+import java.io.*;
 import java.net.URL;
 import java.security.Key;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class iMatController implements Initializable {
 
@@ -104,9 +97,23 @@ public class iMatController implements Initializable {
     @FXML
     private AnchorPane resultPage;
     @FXML
+    private AnchorPane accountPage;
+    @FXML
     private Pane cartNotification;
     @FXML
+    private Pane emptyPane;
+    @FXML
     private Label resultText;
+    @FXML
+    private Button clearCart;
+    @FXML
+    private Button toCheckout;
+    @FXML
+    private TextField nameInput;
+    @FXML
+    private TextArea shoppingList;
+    @FXML
+    private FlowPane previousOrders;
     public ArrayList<ProductCard> products = new ArrayList<>();
     public ArrayList<ProductCard> pasta_potatis_ris = new ArrayList<>();
     public ArrayList<ProductCard> frukt_gront = new ArrayList<>();
@@ -140,6 +147,10 @@ public class iMatController implements Initializable {
 
         }
 
+        for (Order order : dataHandler.getOrders()){
+            previousOrders.getChildren().add(new PlacedOrder(dataHandler, this, order));
+        }
+
         fillCategories(dataHandler.getProducts(ProductCategory.PASTA), 1);
         fillCategories(dataHandler.getProducts(ProductCategory.POTATO_RICE), 1);
 
@@ -168,7 +179,22 @@ public class iMatController implements Initializable {
 
         fillCategories(dataHandler.getProducts(ProductCategory.DAIRIES), 7);
 
+        fillShoppingList();
+
     }
+
+    private void fillShoppingList(){
+        try (BufferedReader reader = new BufferedReader(new FileReader("shoppingList.txt"))) {
+
+            String line;
+            while ((line = reader.readLine()) != null)
+                shoppingList.appendText(line);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public void acceptClear() {
         confirmDialog.setDisable(true);
@@ -270,10 +296,7 @@ public class iMatController implements Initializable {
                 favorites.getStyleClass().remove("sideItem-pressed");
                 break;
             case "category":
-                home.getStyleClass().remove("sideItem-pressed");
-                favorites.getStyleClass().remove("sideItem-pressed");
-                help.getStyleClass().remove("sideItem-pressed");
-                break;
+            case "account":
             case "cart":
                 home.getStyleClass().remove("sideItem-pressed");
                 favorites.getStyleClass().remove("sideItem-pressed");
@@ -289,11 +312,68 @@ public class iMatController implements Initializable {
     private void populateCart() {
         //System.out.println("Cart is populated :D");
         shoppingCartItems.getChildren().clear();
-        for (ShoppingItem product : dataHandler.getShoppingCart().getItems()) {
-            shoppingCartItems.getChildren().add(new CartItem(dataHandler, this, product));
+        if (dataHandler.getShoppingCart().getItems().isEmpty()){
+            emptyPane.setDisable(false);
+            emptyPane.setVisible(true);
+            clearCart.setDisable(true);
+            toCheckout.setDisable(true);
+
+        }else {
+            emptyPane.setDisable(true);
+            emptyPane.setVisible(false);
+            clearCart.setDisable(false);
+            toCheckout.setDisable(false);
+            for (ShoppingItem product : dataHandler.getShoppingCart().getItems()) {
+                shoppingCartItems.getChildren().add(new CartItem(dataHandler, this, product));
+            }
         }
     }
 
+    @FXML
+    private void checkNameInput(){
+       /// TODO: 2022-05-16 errorhandling
+    }
+
+    @FXML
+    private void saveAccountSettings(){
+        dataHandler.getCustomer().setFirstName(nameInput.getText());
+    }
+
+    @FXML
+    private void saveShoppingList(){
+        ObservableList<CharSequence> paragraph = shoppingList.getParagraphs();
+        Iterator<CharSequence> iter = paragraph.iterator();
+        try
+        {
+            BufferedWriter bf = new BufferedWriter(new FileWriter("shoppingList.txt"));
+            while(iter.hasNext())
+            {
+                CharSequence seq = iter.next();
+                bf.append(seq);
+                bf.newLine();
+            }
+            bf.flush();
+            bf.close();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    private void refreshAccount(){
+        nameInput.setText(dataHandler.getCustomer().getFirstName());
+    }
+
+    @FXML
+    private void toAccount(){
+        inFront = "account";
+        setBackground();
+        accountPage.toFront();
+        cartPage.toBack();
+        checkoutPage.toBack();
+
+    }
 
     @FXML
     private void toStartPage() {
@@ -334,6 +414,7 @@ public class iMatController implements Initializable {
         updateCartTotal();
         checkoutPage.toBack();
         cartPage.toFront();
+        setBackground();
     }
 
     @FXML
@@ -514,6 +595,8 @@ public class iMatController implements Initializable {
             }
             resultText.setText("Resultat för: " + '"' + searchField.getText() + '"');
             resultPage.toFront();
+            cartPage.toBack();
+            checkoutPage.toBack();
         }
 
     }
@@ -530,6 +613,8 @@ public class iMatController implements Initializable {
             }
             resultText.setText("Resultat för: " + '"' + searchField1.getText() + '"');
             resultPage.toFront();
+            cartPage.toBack();
+            checkoutPage.toBack();
         }
 
     }
@@ -556,6 +641,12 @@ public class iMatController implements Initializable {
     @FXML
     public void swipeLeft(){
         scrollToLeft(favoritePane);
+    }
+
+    @FXML
+    public void tempPurchase(){
+        dataHandler.placeOrder();
+
     }
 
 }
