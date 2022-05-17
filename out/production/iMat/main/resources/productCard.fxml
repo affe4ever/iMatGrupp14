@@ -7,6 +7,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="340.0" style="-fx-background-color: white;" styleClass="productCard" stylesheets="@iMatStyle.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -16,9 +17,21 @@
       <Label fx:id="productPrice" layoutX="32.0" layoutY="235.0" styleClass="price" text="x kr" textFill="GREEN" />
       <AnchorPane layoutX="35.0" layoutY="297.0" prefHeight="60.0" prefWidth="290.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="295.0">
          <children>
-            <Button id="addBuy" fx:id="addBuy" contentDisplay="CENTER" disable="true" layoutX="116.0" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#addOne" prefHeight="40.0" prefWidth="40.0" styleClass="round_button" text="+" textAlignment="CENTER" AnchorPane.topAnchor="7.0" />
-            <Button id="subBuy" fx:id="subBuy" contentDisplay="CENTER" disable="true" layoutX="4.0" layoutY="4.0" mnemonicParsing="false" onMouseClicked="#subOne" prefHeight="40.0" prefWidth="40.0" styleClass="round_button" text="-" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="7.0" />
-            <TextField fx:id="nmrBuy" alignment="CENTER" disable="true" layoutX="46.0" layoutY="20.0" prefHeight="26.0" prefWidth="67.0" text="1" AnchorPane.topAnchor="20.0" />
+            <Button id="subBuy" fx:id="subBuy" alignment="CENTER" contentDisplay="CENTER" layoutX="54.0" layoutY="12.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#subOne" prefHeight="40.0" prefWidth="40.0" styleClass="adder" text="-" textAlignment="CENTER" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="10.0">
+               <graphic>
+                  <Label alignment="CENTER" text="-" textFill="RED" />
+               </graphic>
+            </Button>
+            <TextField fx:id="nmrBuy" alignment="CENTER" layoutX="47.0" layoutY="10.0" prefHeight="26.0" prefWidth="67.0" text="1" AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <Button id="subBuy" fx:id="addBuy" alignment="CENTER" contentDisplay="CENTER" layoutX="121.0" layoutY="8.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#addOne" prefHeight="40.0" prefWidth="40.0" styleClass="adder" text="-" textAlignment="CENTER" AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="10.0">
+               <graphic>
+                  <Label alignment="CENTER" text="+" textFill="GREEN" />
+               </graphic>
+            </Button>
             <Button fx:id="buyButton" layoutX="161.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#twoStepBuy" prefHeight="60.0" prefWidth="290.0" styleClass="buyButton" text="VÄLJ ANTAL" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <cursor>
                   <Cursor fx:constant="HAND" />

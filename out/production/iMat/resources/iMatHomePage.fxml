@@ -4,6 +4,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
@@ -22,127 +23,6 @@
 
 <AnchorPane prefHeight="850.0" prefWidth="1440.0" style="-fx-background-color: F3F3F3;" stylesheets="@iMatStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMatController">
    <children>
-      <AnchorPane fx:id="checkoutPage" layoutX="10.0" layoutY="134.0" prefHeight="725.0" prefWidth="1512.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
-         <children>
-            <Label alignment="CENTER" prefWidth="1213.0" styleClass="categoryName" text="CHECKOUT" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0" />
-            <Button layoutX="36.0" layoutY="28.0" mnemonicParsing="false" onMouseClicked="#toCart" prefHeight="76.0" prefWidth="223.0" text="Avbryt Checkout" wrapText="true" />
-            <Button layoutX="640.0" layoutY="109.0" mnemonicParsing="false" onMouseClicked="#shopStepOne" text="1">
-               <font>
-                  <Font size="25.0" />
-               </font>
-            </Button>
-            <Button layoutX="738.0" layoutY="109.0" mnemonicParsing="false" onMouseClicked="#shopStepTwo" text="2">
-               <font>
-                  <Font size="25.0" />
-               </font>
-            </Button>
-            <Button layoutX="826.0" layoutY="109.0" mnemonicParsing="false" onMouseClicked="#shopStepThree" text="3">
-               <font>
-                  <Font size="25.0" />
-               </font>
-            </Button>
-            <AnchorPane layoutX="67.0" layoutY="164.0" prefHeight="526.0" prefWidth="1374.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="170.0">
-               <children>
-                  <AnchorPane fx:id="stepThree" prefHeight="200.0" prefWidth="200.0" styleClass="shoppingCartSteps" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <Label text="Step3" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane fx:id="stepTwo" prefHeight="200.0" prefWidth="200.0" styleClass="shoppingCartSteps" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <Label text="Step2" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane fx:id="stepOne" prefHeight="464.0" prefWidth="1158.0" styleClass="shoppingCartSteps" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <Label text="Step1" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-               </children>
-            </AnchorPane>
-         </children>
-         <styleClass>
-            <String fx:value="noResult" />
-            <String fx:value="pageBackground" />
-         </styleClass>
-      </AnchorPane>
-      <AnchorPane fx:id="cartPage" prefHeight="725.0" prefWidth="1508.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
-         <children>
-            <Label alignment="CENTER" prefWidth="1213.0" styleClass="categoryName" text="KUNDVAGN" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0" />
-            <AnchorPane layoutX="67.0" layoutY="170.0" prefHeight="525.0" prefWidth="1172.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="138.0">
-               <children>
-                  <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="1078.0" styleClass="cart" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <content>
-                        <FlowPane fx:id="shoppingCartItems" prefHeight="521.0" prefWidth="1080.0" style="-fx-background-color: white;" vgap="20.0">
-                           <padding>
-                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                           </padding>
-                        </FlowPane>
-                     </content>
-                  </ScrollPane>
-                  <Pane fx:id="emptyPane" disable="true" prefHeight="291.0" prefWidth="1078.0" visible="false">
-                     <children>
-                        <Label alignment="CENTER" layoutX="-23.0" layoutY="25.0" prefHeight="57.0" prefWidth="1079.0" styleClass="emptyTitle" text="Din kundvagn är tom!">
-                           <font>
-                              <Font size="46.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" layoutX="1.0" layoutY="100.0" prefHeight="21.0" prefWidth="1031.0" styleClass="emptyHelp" text="Klicka nedan för att fortsätta handla. ">
-                           <font>
-                              <Font size="30.0" />
-                           </font>
-                        </Label>
-                        <Button layoutX="283.0" layoutY="176.0" mnemonicParsing="false" onMouseClicked="#backFromCart" prefHeight="76.0" prefWidth="465.0" styleClass="bigButton" text="Tillbaka till startsida" />
-                     </children>
-                  </Pane>
-               </children>
-            </AnchorPane>
-            <Button id="toCheckout" fx:id="toCheckout" layoutX="1173.0" layoutY="556.0" mnemonicParsing="false" onMouseClicked="#tempPurchase" prefHeight="140.0" prefWidth="300.0" styleClass="bigButton" text="TILL KASSAN" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="50.0" />
-            <Label fx:id="cartTotal" alignment="TOP_LEFT" layoutX="1168.0" layoutY="472.0" prefHeight="74.0" prefWidth="212.0" styleClass="cartTotal" text="x:-" textFill="GREEN" wrapText="true" AnchorPane.rightAnchor="134.0" />
-            <Label layoutX="1164.0" layoutY="425.0" prefHeight="60.0" prefWidth="234.0" styleClass="totalText" text="TOTALT:" AnchorPane.rightAnchor="114.0" />
-            <Button id="backButton" layoutX="36.0" layoutY="28.0" mnemonicParsing="false" onMouseClicked="#backFromCart" prefHeight="76.0" prefWidth="223.0" styleClass="buyButton" text="Fortsätt Handla">
-               <graphic>
-                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../iMatGrupp14old/resources/main/resources/icons/reply/24/Outline.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button id="clearCart" fx:id="clearCart" alignment="BASELINE_LEFT" layoutX="1160.0" layoutY="151.0" mnemonicParsing="false" onAction="#confirmClear" prefHeight="70.0" prefWidth="298.0" text="Töm Kundvagn" AnchorPane.rightAnchor="50.0">
-               <graphic>
-                  <ImageView fitHeight="291.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../iMatGrupp14old/resources/main/resources/icons/Vector.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Pane fx:id="confirmDialog" disable="true" layoutX="1164.0" layoutY="119.0" prefHeight="192.0" prefWidth="312.0" styleClass="confirmDialog" visible="false" AnchorPane.rightAnchor="43.0">
-               <children>
-                  <Label alignment="CENTER" layoutX="4.0" layoutY="45.0" prefHeight="34.0" prefWidth="302.0" text="ÄR DU SÄKER?" textAlignment="CENTER" />
-                  <Button layoutX="20.0" layoutY="116.0" mnemonicParsing="false" onAction="#acceptClear" prefHeight="54.0" prefWidth="129.0" text="JA" />
-                  <Button layoutX="160.0" layoutY="115.0" mnemonicParsing="false" onAction="#cancelClear" prefHeight="54.0" prefWidth="129.0" style="-fx-background-color: red;" text="NEJ" />
-               </children>
-            </Pane>
-         </children>
-         <styleClass>
-            <String fx:value="noResult" />
-            <String fx:value="pageBackground" />
-         </styleClass>
-      </AnchorPane>
       <AnchorPane fx:id="whiteBLock" prefHeight="836.0" prefWidth="1512.0" style="-fx-background-color: #F3F3F3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <AnchorPane fx:id="content" prefHeight="862.0" prefWidth="1185.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="126.0">
          <children>
@@ -230,70 +110,6 @@
                   <Label fx:id="categoryName1" alignment="CENTER" prefHeight="66.0" prefWidth="1179.0" styleClass="categoryName" text="DINA FAVORITER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="10.0" />
                   <Separator prefHeight="1.0" prefWidth="900.0" AnchorPane.leftAnchor="186.0" AnchorPane.rightAnchor="186.0" AnchorPane.topAnchor="80.0" />
                </children>
-            </AnchorPane>
-            <AnchorPane fx:id="accountPage" layoutX="20.0" layoutY="10.0" prefHeight="729.0" prefWidth="1213.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <Label fx:id="noResultText1" alignment="CENTER" prefWidth="1213.0" styleClass="categoryName" text="MITT KONTO" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0" />
-                  <TabPane layoutX="44.0" layoutY="230.0" prefHeight="600.0" prefWidth="1114.0" styleClass="accountTabs" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="89.0">
-                    <tabs>
-                      <Tab styleClass="tabs" text="Användaruppgifter">
-                        <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="1133.0">
-                                 <padding>
-                                    <Insets top="16.0" />
-                                 </padding>
-                                 <children>
-                                    <TextField fx:id="nameInput" layoutX="60.0" layoutY="58.0" onMouseExited="#checkNameInput" prefHeight="56.0" prefWidth="392.0" promptText="Förnamn Efternamn" styleClass="accountInput" />
-                                    <Label layoutX="70.0" layoutY="45.0" styleClass="titledBorder" text="Namn" />
-                                    <TextField fx:id="nameInput1" layoutX="60.0" layoutY="153.0" onMouseExited="#checkNameInput" prefHeight="56.0" prefWidth="392.0" promptText="namn.namnsson@gmail.com" styleClass="accountInput" />
-                                    <Label layoutX="70.0" layoutY="140.0" styleClass="titledBorder" text="Mailadress" />
-                                    <TextField fx:id="nameInput2" layoutX="60.0" layoutY="250.0" onMouseExited="#checkNameInput" prefHeight="56.0" prefWidth="392.0" promptText="0737363825" styleClass="accountInput" />
-                                    <Label layoutX="70.0" layoutY="237.0" styleClass="titledBorder" text="Mobilnummer" />
-                                    <TextField fx:id="nameInput3" layoutX="625.0" layoutY="56.0" onMouseExited="#checkNameInput" prefHeight="56.0" prefWidth="392.0" promptText="Vägenvägen 23" styleClass="accountInput" />
-                                    <Label layoutX="635.0" layoutY="43.0" styleClass="titledBorder" text="Adress" />
-                                    <TextField fx:id="nameInput11" layoutX="625.0" layoutY="151.0" onMouseExited="#checkNameInput" prefHeight="56.0" prefWidth="392.0" promptText="42658" styleClass="accountInput" />
-                                    <Label layoutX="635.0" layoutY="138.0" styleClass="titledBorder" text="Postnummer" />
-                                    <TextField fx:id="nameInput21" layoutX="625.0" layoutY="248.0" onMouseExited="#checkNameInput" prefHeight="56.0" prefWidth="392.0" promptText="Västra Frölunda" styleClass="accountInput" />
-                                    <Label layoutX="635.0" layoutY="235.0" styleClass="titledBorder" text="Ort" />
-                                    <Button layoutX="441.0" layoutY="388.0" mnemonicParsing="false" onAction="#saveAccountSettings" prefHeight="100.0" prefWidth="200.0" styleClass="bigButton" text="SPARA" AnchorPane.bottomAnchor="26.5" />
-                                    <Separator layoutX="540.0" layoutY="81.0" orientation="VERTICAL" prefHeight="300.0" AnchorPane.topAnchor="20.0" />
-                                 </children></AnchorPane>
-                        </content>
-                      </Tab>
-                      <Tab closable="false" styleClass="tabs" text="Tidigare Köp">
-                        <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                 <children>
-                                    <ScrollPane fitToWidth="true" layoutX="-2.0" layoutY="14.0" prefHeight="500.0" prefWidth="1133.0" styleClass="testc'" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                       <content>
-                                          <FlowPane fx:id="previousOrders" alignment="TOP_CENTER" prefHeight="498.0" prefWidth="1133.0" styleClass="previousOrders" vgap="20.0">
-                                             <padding>
-                                                <Insets top="20.0" />
-                                             </padding></FlowPane>
-                                       </content>
-                                    </ScrollPane>
-                                 </children></AnchorPane>
-                        </content>
-                      </Tab>
-                        <Tab styleClass="tabs" text="Inköpslista">
-                          <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                 <children>
-                                    <TextArea fx:id="shoppingList" layoutX="15.0" layoutY="10.0" prefHeight="368.0" prefWidth="1108.0" promptText="Skriv ner varor du önskar..." styleClass="shoppingList" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="25.0" />
-                                    <Button layoutX="448.0" layoutY="391.0" mnemonicParsing="false" onAction="#saveShoppingList" prefHeight="100.0" prefWidth="200.0" styleClass="bigButton" text="SPARA" AnchorPane.bottomAnchor="23.5" />
-                                 </children></AnchorPane>
-                          </content>
-                        </Tab>
-                    </tabs>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                  </TabPane>
-               </children>
-               <styleClass>
-                  <String fx:value="noResult" />
-                  <String fx:value="pageBackground" />
-               </styleClass>
             </AnchorPane>
             <ScrollPane fx:id="startPage" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="862.0" prefWidth="1212.0" styleClass="pageBackground" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <content>
@@ -548,6 +364,103 @@
                   </FlowPane>
                </content>
             </ScrollPane>
+            <AnchorPane fx:id="accountPage" layoutX="20.0" layoutY="10.0" prefHeight="729.0" prefWidth="1213.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label fx:id="noResultText1" alignment="CENTER" prefWidth="1213.0" styleClass="categoryName" text="MITT KONTO" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                  <TabPane layoutX="44.0" layoutY="230.0" prefHeight="600.0" prefWidth="1114.0" styleClass="accountTabs" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="89.0">
+                    <tabs>
+                      <Tab styleClass="tabs" text="Användaruppgifter">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="1133.0">
+                                 <padding>
+                                    <Insets top="16.0" />
+                                 </padding>
+                                 <children>
+                                    <TextField fx:id="nameInput" layoutX="60.0" layoutY="58.0" onMouseExited="#checkNameInput" prefHeight="56.0" prefWidth="392.0" promptText="Förnamn Efternamn" styleClass="accountInput" />
+                                    <Label layoutX="70.0" layoutY="45.0" styleClass="titledBorder" text="Namn" />
+                                    <TextField fx:id="mailInput" layoutX="60.0" layoutY="153.0" onMouseExited="#checkNameInput" prefHeight="56.0" prefWidth="392.0" promptText="namn.namnsson@gmail.com" styleClass="accountInput" />
+                                    <Label layoutX="70.0" layoutY="140.0" styleClass="titledBorder" text="Mailadress" />
+                                    <TextField fx:id="numberInput" layoutX="60.0" layoutY="250.0" onMouseExited="#checkNameInput" prefHeight="56.0" prefWidth="392.0" promptText="0737363825" styleClass="accountInput" />
+                                    <Label layoutX="70.0" layoutY="237.0" styleClass="titledBorder" text="Mobilnummer" />
+                                    <TextField fx:id="streetInput" layoutX="625.0" layoutY="56.0" onMouseExited="#checkNameInput" prefHeight="56.0" prefWidth="392.0" promptText="Vägenvägen 23" styleClass="accountInput" />
+                                    <Label layoutX="635.0" layoutY="43.0" styleClass="titledBorder" text="Adress" />
+                                    <TextField fx:id="postInput" layoutX="625.0" layoutY="151.0" onMouseExited="#checkNameInput" prefHeight="56.0" prefWidth="392.0" promptText="42658" styleClass="accountInput" />
+                                    <Label layoutX="635.0" layoutY="138.0" styleClass="titledBorder" text="Postnummer" />
+                                    <TextField fx:id="ortInput" layoutX="625.0" layoutY="248.0" onMouseExited="#checkNameInput" prefHeight="56.0" prefWidth="392.0" promptText="Västra Frölunda" styleClass="accountInput" />
+                                    <Label layoutX="635.0" layoutY="235.0" styleClass="titledBorder" text="Ort" />
+                                    <Button fx:id="saveAccount" layoutX="441.0" layoutY="388.0" mnemonicParsing="false" onAction="#saveAccountSettings" prefHeight="100.0" prefWidth="200.0" styleClass="bigButton" text="SPARA" AnchorPane.bottomAnchor="26.5" />
+                                    <Separator layoutX="540.0" layoutY="81.0" orientation="VERTICAL" prefHeight="300.0" AnchorPane.topAnchor="20.0" />
+                                 </children></AnchorPane>
+                        </content>
+                           <graphic>
+                              <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="50.0">
+                                 <children>
+                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <image>
+                                          <Image url="@icons/user.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                      </Tab>
+                      <Tab closable="false" styleClass="tabs" text="Tidigare Köp">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ScrollPane fitToWidth="true" layoutX="-2.0" layoutY="14.0" prefHeight="500.0" prefWidth="1133.0" styleClass="testc'" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <content>
+                                          <FlowPane fx:id="previousOrders" alignment="TOP_CENTER" prefHeight="498.0" prefWidth="1133.0" styleClass="previousOrders" vgap="20.0">
+                                             <padding>
+                                                <Insets bottom="20.0" top="20.0" />
+                                             </padding></FlowPane>
+                                       </content>
+                                    </ScrollPane>
+                                 </children></AnchorPane>
+                        </content>
+                           <graphic>
+                              <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="50.0">
+                                 <children>
+                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+                                       <image>
+                                          <Image url="@icons/clock.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                      </Tab>
+                        <Tab styleClass="tabs" text="Inköpslista">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TextArea fx:id="shoppingList" layoutX="15.0" layoutY="10.0" prefHeight="368.0" prefWidth="1108.0" promptText="Skriv ner varor du önskar..." styleClass="shoppingList" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="25.0" />
+                                    <Button layoutX="448.0" layoutY="391.0" mnemonicParsing="false" onAction="#saveShoppingList" prefHeight="100.0" prefWidth="200.0" styleClass="bigButton" text="SPARA" AnchorPane.bottomAnchor="23.5" />
+                                 </children></AnchorPane>
+                          </content>
+                           <graphic>
+                              <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="50.0">
+                                 <children>
+                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+                                       <image>
+                                          <Image url="@icons/list.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                           </graphic>
+                        </Tab>
+                    </tabs>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </TabPane>
+               </children>
+               <styleClass>
+                  <String fx:value="noResult" />
+                  <String fx:value="pageBackground" />
+               </styleClass>
+            </AnchorPane>
          </children>
       </AnchorPane>
       <AnchorPane id="top-bar" minHeight="-Infinity" prefHeight="111.0" styleClass="main-color" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -560,19 +473,19 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Label>
-            <TextField fx:id="searchField" layoutX="368.0" layoutY="17.0" onKeyPressed="#checkSearch" prefHeight="74.0" prefWidth="470.0" promptText="Sök varor..." styleClass="search" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="652.0">
+            <TextField id="topItems" fx:id="searchField" layoutX="368.0" layoutY="17.0" onKeyPressed="#checkSearch" prefHeight="74.0" prefWidth="470.0" promptText="Sök varor..." styleClass="search" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="652.0">
                <font>
                   <Font size="18.0" />
                </font></TextField>
-            <Label layoutX="1071.0" layoutY="-1.0" onMouseClicked="#toAccount" prefHeight="111.0" prefWidth="145.0" styleClass="topButtons" text="Mitt Konto" AnchorPane.rightAnchor="235.0" AnchorPane.topAnchor="0.0">
+            <Label id="topItems" fx:id="konto" layoutX="1071.0" layoutY="-1.0" onMouseClicked="#toAccount" prefHeight="111.0" prefWidth="145.0" styleClass="topButtons" text="Mitt Konto" AnchorPane.rightAnchor="235.0" AnchorPane.topAnchor="0.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Label>
-            <Label fx:id="kundvagn" alignment="CENTER" layoutX="1268.0" layoutY="-1.0" onMouseClicked="#toCart" prefHeight="110.0" prefWidth="156.0" styleClass="topButtons" text="Kundvagn 0:-" textAlignment="CENTER" wrapText="true" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="0.0">
+            <Label id="topItems" fx:id="kundvagn" alignment="CENTER" layoutX="1268.0" layoutY="-1.0" onMouseClicked="#toCart" prefHeight="110.0" prefWidth="156.0" styleClass="topButtons" text="Kundvagn 0:-" textAlignment="CENTER" wrapText="true" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="0.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Label>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="985.0" layoutY="32.0" onMouseClicked="#toAccount" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="398.0" AnchorPane.topAnchor="32.0">
+            <ImageView id="topItems" fx:id="kontoLogo" fitHeight="50.0" fitWidth="50.0" layoutX="985.0" layoutY="32.0" onMouseClicked="#toAccount" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="398.0" AnchorPane.topAnchor="32.0">
                <image>
                   <Image url="@icons/Avatar.png" />
                </image>
@@ -580,7 +493,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
-            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="822.0" layoutY="29.0" onMouseClicked="#toCart" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="188.0" AnchorPane.topAnchor="36.0">
+            <ImageView id="topItems" fx:id="kundvagnLogo" fitHeight="40.0" fitWidth="40.0" layoutX="822.0" layoutY="29.0" onMouseClicked="#toCart" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="188.0" AnchorPane.topAnchor="36.0">
                <image>
                   <Image url="@icons/kundvagn.png" />
                </image>
@@ -588,7 +501,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
-            <Button fx:id="searchButton" layoutX="723.0" layoutY="34.0" minHeight="-Infinity" mnemonicParsing="false" onAction="#performSearch" prefHeight="50.0" prefWidth="100.0" styleClass="searchButton" text="SÖK" AnchorPane.rightAnchor="670.0" AnchorPane.topAnchor="29.0">
+            <Button id="topItems" fx:id="searchButton" layoutX="723.0" layoutY="34.0" minHeight="-Infinity" mnemonicParsing="false" onAction="#performSearch" prefHeight="50.0" prefWidth="100.0" styleClass="searchButton" text="SÖK" AnchorPane.rightAnchor="670.0" AnchorPane.topAnchor="29.0">
                <font>
                   <Font size="26.0" />
                </font>
@@ -657,5 +570,164 @@
             <Label alignment="CENTER" layoutX="-3.0" layoutY="-5.0" prefHeight="84.0" prefWidth="287.0" style="-fx-opacity: 1;" text="PRODUKT TILLAGD" textFill="WHITE" />
          </children>
       </Pane>
+      <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="50.0" />
+      <AnchorPane fx:id="cartPage" prefHeight="725.0" prefWidth="1508.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
+         <children>
+            <Label alignment="CENTER" prefWidth="1213.0" styleClass="categoryName" text="KUNDVAGN" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0" />
+            <AnchorPane layoutX="67.0" layoutY="170.0" prefHeight="525.0" prefWidth="1172.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="138.0">
+               <children>
+                  <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="1078.0" styleClass="cart" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <FlowPane fx:id="shoppingCartItems" prefHeight="521.0" prefWidth="1080.0" style="-fx-background-color: white;" vgap="20.0">
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                        </FlowPane>
+                     </content>
+                  </ScrollPane>
+                  <Pane fx:id="emptyPane" disable="true" prefHeight="291.0" prefWidth="1078.0" visible="false">
+                     <children>
+                        <Label alignment="CENTER" layoutX="-23.0" layoutY="25.0" prefHeight="57.0" prefWidth="1079.0" styleClass="emptyTitle" text="Din kundvagn är tom!">
+                           <font>
+                              <Font size="46.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="1.0" layoutY="100.0" prefHeight="21.0" prefWidth="1031.0" styleClass="emptyHelp" text="Klicka nedan för att fortsätta handla. ">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="283.0" layoutY="176.0" mnemonicParsing="false" onMouseClicked="#backFromCart" prefHeight="76.0" prefWidth="465.0" styleClass="bigButton" text="Tillbaka till startsida" />
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+            <Button id="toCheckout" fx:id="toCheckout" layoutX="1173.0" layoutY="556.0" mnemonicParsing="false" onMouseClicked="#toCheckout" prefHeight="140.0" prefWidth="300.0" styleClass="bigButton" text="TILL KASSAN" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="50.0" />
+            <Label fx:id="cartTotal" alignment="TOP_LEFT" layoutX="1168.0" layoutY="472.0" prefHeight="74.0" prefWidth="212.0" styleClass="cartTotal" text="x:-" textFill="GREEN" wrapText="true" AnchorPane.rightAnchor="134.0" />
+            <Label layoutX="1164.0" layoutY="425.0" prefHeight="60.0" prefWidth="234.0" styleClass="totalText" text="TOTALT:" AnchorPane.rightAnchor="114.0" />
+            <Button id="backButton" layoutX="36.0" layoutY="28.0" mnemonicParsing="false" onMouseClicked="#backFromCart" prefHeight="76.0" prefWidth="223.0" styleClass="buyButton" text="Fortsätt Handla">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../iMatGrupp14old/resources/main/resources/icons/reply/24/Outline.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="clearCart" fx:id="clearCart" alignment="BASELINE_LEFT" layoutX="1160.0" layoutY="151.0" mnemonicParsing="false" onAction="#confirmClear" prefHeight="70.0" prefWidth="298.0" text="Töm Kundvagn" AnchorPane.rightAnchor="50.0">
+               <graphic>
+                  <ImageView fitHeight="291.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../iMatGrupp14old/resources/main/resources/icons/Vector.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Pane fx:id="confirmDialog" disable="true" layoutX="1164.0" layoutY="119.0" prefHeight="192.0" prefWidth="312.0" styleClass="confirmDialog" visible="false" AnchorPane.rightAnchor="43.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="4.0" layoutY="45.0" prefHeight="34.0" prefWidth="302.0" text="ÄR DU SÄKER?" textAlignment="CENTER" />
+                  <Button layoutX="20.0" layoutY="116.0" mnemonicParsing="false" onAction="#acceptClear" prefHeight="54.0" prefWidth="129.0" text="JA" />
+                  <Button layoutX="160.0" layoutY="115.0" mnemonicParsing="false" onAction="#cancelClear" prefHeight="54.0" prefWidth="129.0" style="-fx-background-color: red;" text="NEJ" />
+               </children>
+            </Pane>
+         </children>
+         <styleClass>
+            <String fx:value="noResult" />
+            <String fx:value="pageBackground" />
+         </styleClass>
+      </AnchorPane>
+      <AnchorPane fx:id="checkoutPage" layoutX="10.0" layoutY="134.0" prefHeight="725.0" prefWidth="1512.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
+         <children>
+            <Label alignment="CENTER" prefWidth="1213.0" styleClass="categoryName" text="UTCHECKNING" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+            <Button layoutX="36.0" layoutY="28.0" mnemonicParsing="false" onMouseClicked="#toCart" prefHeight="76.0" prefWidth="223.0" text="Avbryt Checkout" wrapText="true" />
+            <AnchorPane layoutX="67.0" layoutY="164.0" minHeight="-Infinity" prefHeight="525.0" prefWidth="912.0" style="-fx-background-color: white;" styleClass="checkoutPane" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="455.0" AnchorPane.topAnchor="135.0">
+               <children>
+                  <AnchorPane fx:id="stepThree" styleClass="shoppingCartSteps" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label text="Step3" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <Button layoutX="413.0" layoutY="28.0" mnemonicParsing="false" onMouseClicked="#shopStepOne" text="1">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="511.0" layoutY="28.0" mnemonicParsing="false" onMouseClicked="#shopStepTwo" text="2">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="599.0" layoutY="28.0" mnemonicParsing="false" onMouseClicked="#shopStepThree" text="3">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Button>
+                  <AnchorPane fx:id="stepTwo" styleClass="shoppingCartSteps" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <DatePicker layoutX="418.0" layoutY="175.0" showWeekNumbers="true" />
+                        <Button fx:id="saveAccount11" layoutX="376.0" layoutY="409.0" mnemonicParsing="false" onMouseClicked="#shopStepThree" prefHeight="100.0" prefWidth="604.0" styleClass="bigButton" text="FORTSÄTT TILL BETALNING" AnchorPane.rightAnchor="43.0" />
+                        <Button fx:id="saveAccount111" layoutX="52.0" layoutY="410.0" mnemonicParsing="false" onAction="#shopStepOne" prefHeight="100.0" prefWidth="257.0" styleClass="bigButton" text="Tillbaka" AnchorPane.leftAnchor="43.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="stepOne" prefHeight="525.0" style="-fx-background-color: white;" styleClass="shoppingCartSteps" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TextField fx:id="nameInput1" layoutX="45.0" layoutY="93.0" onMouseExited="#checkNameInput" prefHeight="56.0" prefWidth="392.0" promptText="Förnamn Efternamn" styleClass="accountInput" AnchorPane.leftAnchor="45.0" />
+                        <Label layoutX="63.0" layoutY="82.0" styleClass="titledBorder" text="Namn" />
+                        <TextField fx:id="mailInput1" layoutX="45.0" layoutY="190.0" onMouseExited="#checkNameInput" prefHeight="56.0" prefWidth="392.0" promptText="namn.namnsson@gmail.com" styleClass="accountInput" AnchorPane.leftAnchor="45.0" />
+                        <Label layoutX="63.0" layoutY="179.0" styleClass="titledBorder" text="Mailadress" />
+                        <Button fx:id="saveAccount1" layoutX="245.0" layoutY="412.0" mnemonicParsing="false" onMouseClicked="#shopStepTwo" prefHeight="100.0" prefWidth="539.0" styleClass="bigButton" text="FORTSÄTT TILL LEVERANSDAG" AnchorPane.leftAnchor="242.0" AnchorPane.rightAnchor="242.0" />
+                        <TextField fx:id="numberInput1" layoutX="45.0" layoutY="291.0" onMouseExited="#checkNameInput" prefHeight="56.0" prefWidth="392.0" promptText="0737363825" styleClass="accountInput" AnchorPane.leftAnchor="45.0" />
+                        <Label layoutX="63.0" layoutY="279.0" styleClass="titledBorder" text="Mobilnummer" />
+                        <Separator layoutX="508.0" layoutY="77.0" orientation="VERTICAL" prefHeight="300.0" AnchorPane.leftAnchor="508.0" AnchorPane.rightAnchor="508.0" />
+                        <TextField fx:id="streetInput1" layoutX="586.0" layoutY="93.0" onMouseExited="#checkNameInput" prefHeight="56.0" prefWidth="392.0" promptText="Vägenvägen 23" styleClass="accountInput" AnchorPane.rightAnchor="45.0" />
+                        <Label layoutX="600.0" layoutY="82.0" styleClass="titledBorder" text="Adress" AnchorPane.rightAnchor="342.0" />
+                        <TextField fx:id="postInput1" layoutX="586.0" layoutY="190.0" onMouseExited="#checkNameInput" prefHeight="56.0" prefWidth="392.0" promptText="42658" styleClass="accountInput" AnchorPane.rightAnchor="45.0" />
+                        <Label layoutX="600.0" layoutY="179.0" styleClass="titledBorder" text="Postnummer" AnchorPane.rightAnchor="280.0" />
+                        <TextField fx:id="ortInput1" layoutX="586.0" layoutY="291.0" onMouseExited="#checkNameInput" prefHeight="56.0" prefWidth="392.0" promptText="Västra Frölunda" styleClass="accountInput" AnchorPane.rightAnchor="45.0" />
+                        <Label layoutX="661.5" layoutY="279.0" prefHeight="28.0" styleClass="titledBorder" text="Ort" AnchorPane.rightAnchor="382.0" />
+                        <Button layoutX="393.0" layoutY="18.0" mnemonicParsing="false" onMouseClicked="#shopStepOne" text="1">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="491.0" layoutY="18.0" mnemonicParsing="false" onMouseClicked="#shopStepTwo" text="2">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="579.0" layoutY="18.0" mnemonicParsing="false" onMouseClicked="#shopStepThree" text="3">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="1142.0" layoutY="227.0" minWidth="-Infinity" prefHeight="528.0" prefWidth="399.0" style="-fx-background-color: white;" styleClass="checkoutCartList" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="135.0">
+               <children>
+                  <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutX="39.0" layoutY="57.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+                     <content>
+                        <FlowPane fx:id="checkoutCartList" alignment="TOP_CENTER" prefHeight="396.0" prefWidth="425.0" styleClass="checkoutCartList" vgap="10.0">
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding></FlowPane>
+                     </content>
+                  </ScrollPane>
+                  <Label alignment="CENTER" layoutX="3.0" layoutY="2.0" prefHeight="54.0" prefWidth="399.0" styleClass="checkoutTextHeader" text="Kundvagn" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Label layoutX="124.0" layoutY="511.0" prefHeight="49.0" prefWidth="272.0" styleClass="checkoutText" text="TOTAL SUMMA: " AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="122.0" />
+                  <Label fx:id="checkoutCartTotal" layoutX="322.0" layoutY="511.0" prefHeight="49.0" prefWidth="116.0" styleClass="checkoutText" text="X:-" textFill="GREEN" AnchorPane.rightAnchor="0.0" />
+               </children>
+            </AnchorPane>
+         </children>
+         <styleClass>
+            <String fx:value="noResult" />
+            <String fx:value="pageBackground" />
+         </styleClass>
+      </AnchorPane>
    </children>
 </AnchorPane>

@@ -1,8 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="988e677b-70a1-4310-94cb-1291b35e21e8" name="Changes" comment="konto">
+    <list default="true" id="988e677b-70a1-4310-94cb-1291b35e21e8" name="Changes" comment="kontov2">
+      <change afterPath="$PROJECT_DIR$/resources/main/resources/icons/clock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/main/resources/icons/list.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/main/resources/icons/user.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/lib2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/ProductCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/ProductCard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/iMatController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/iMatController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/iMatController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/iMatController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/iMatHomePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/iMatStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/iMatStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/main/resources/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/main/resources/iMatHomePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/main/resources/iMatStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/main/resources/iMatStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/main/resources/productCard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/main/resources/productCard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/productCard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/productCard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/resources/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/resources/iMatHomePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/resources/iMatStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/resources/iMatStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/resources/productCard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/resources/productCard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/java/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/java/CartItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/java/OrderListItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/java/OrderListItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/java/PlacedOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/java/PlacedOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/java/ProductCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/java/ProductCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/java/iMatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/java/iMatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/resources/cartItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/cartItem.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/resources/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/iMatHomePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/resources/iMatStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/iMatStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/resources/order.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/order.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/resources/orderListItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/orderListItem.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/resources/productCard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/productCard.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +150,7 @@
       <workItem from="1652541503443" duration="27285000" />
       <workItem from="1652687437778" duration="106000" />
       <workItem from="1652688069392" duration="26275000" />
-      <workItem from="1652728421125" duration="9580000" />
+      <workItem from="1652728421125" duration="29856000" />
     </task>
     <task id="LOCAL-00001" summary="den riktiga, plz work">
       <created>1651829212641</created>
@@ -223,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652738602111</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="kontov2">
+      <created>1652739084826</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1652739084826</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,7 +285,8 @@
     <MESSAGE value="startsida" />
     <MESSAGE value="alertcart" />
     <MESSAGE value="konto" />
-    <option name="LAST_COMMIT_MESSAGE" value="konto" />
+    <MESSAGE value="kontov2" />
+    <option name="LAST_COMMIT_MESSAGE" value="kontov2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

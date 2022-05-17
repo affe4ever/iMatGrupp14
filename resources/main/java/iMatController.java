@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
@@ -29,6 +30,13 @@ public class iMatController implements Initializable {
 
     @FXML
     private ScrollPane startPage;
+    @FXML
+    private ImageView kontoLogo;
+    @FXML
+    private Label konto;
+    @FXML
+    private ImageView kundvagnLogo;
+
     @FXML
     private FlowPane categoryList;
     @FXML
@@ -111,9 +119,39 @@ public class iMatController implements Initializable {
     @FXML
     private TextField nameInput;
     @FXML
+    private TextField mailInput;
+    @FXML
+    private TextField numberInput;
+    @FXML
+    private TextField streetInput;
+    @FXML
+    private TextField postInput;
+    @FXML
+    private TextField ortInput;
+
+    @FXML
+    private TextField nameInput1;
+    @FXML
+    private TextField mailInput1;
+    @FXML
+    private TextField numberInput1;
+    @FXML
+    private TextField streetInput1;
+    @FXML
+    private TextField postInput1;
+    @FXML
+    private TextField ortInput1;
+    @FXML
     private TextArea shoppingList;
     @FXML
     private FlowPane previousOrders;
+    @FXML
+    private Button saveAccount;
+    @FXML
+    private FlowPane checkoutCartList;
+    @FXML
+    private Label checkoutCartTotal;
+
     public ArrayList<ProductCard> products = new ArrayList<>();
     public ArrayList<ProductCard> pasta_potatis_ris = new ArrayList<>();
     public ArrayList<ProductCard> frukt_gront = new ArrayList<>();
@@ -336,7 +374,31 @@ public class iMatController implements Initializable {
 
     @FXML
     private void saveAccountSettings(){
+
+        Animation animation = new Timeline(
+                new KeyFrame(Duration.millis(0),
+                        new KeyValue(saveAccount.textProperty(), "SPARAT!")),
+                new KeyFrame(Duration.millis(3000),
+                        new KeyValue(saveAccount.textProperty(), "SPARA")));
+        animation.play();
         dataHandler.getCustomer().setFirstName(nameInput.getText());
+        dataHandler.getCustomer().setAddress(streetInput.getText());
+        dataHandler.getCustomer().setEmail(mailInput.getText());
+        dataHandler.getCustomer().setPhoneNumber(numberInput.getText());
+        dataHandler.getCustomer().setPostCode(postInput.getText());
+        dataHandler.getCustomer().setPostAddress(ortInput.getText());
+
+    }
+
+    private void saveAccount1Settings(){
+
+        dataHandler.getCustomer().setFirstName(nameInput1.getText());
+        dataHandler.getCustomer().setAddress(streetInput1.getText());
+        dataHandler.getCustomer().setEmail(mailInput1.getText());
+        dataHandler.getCustomer().setPhoneNumber(numberInput1.getText());
+        dataHandler.getCustomer().setPostCode(postInput1.getText());
+        dataHandler.getCustomer().setPostAddress(ortInput1.getText());
+
     }
 
     @FXML
@@ -363,10 +425,25 @@ public class iMatController implements Initializable {
 
     private void refreshAccount(){
         nameInput.setText(dataHandler.getCustomer().getFirstName());
+        streetInput.setText(dataHandler.getCustomer().getAddress());
+        mailInput.setText(dataHandler.getCustomer().getEmail());
+        numberInput.setText(dataHandler.getCustomer().getPhoneNumber());
+        postInput.setText(dataHandler.getCustomer().getPostCode());
+        ortInput.setText(dataHandler.getCustomer().getPostAddress());
+    }
+
+    private void refreshAccount1(){
+        nameInput1.setText(dataHandler.getCustomer().getFirstName());
+        streetInput1.setText(dataHandler.getCustomer().getAddress());
+        mailInput1.setText(dataHandler.getCustomer().getEmail());
+        numberInput1.setText(dataHandler.getCustomer().getPhoneNumber());
+        postInput1.setText(dataHandler.getCustomer().getPostCode());
+        ortInput1.setText(dataHandler.getCustomer().getPostAddress());
     }
 
     @FXML
     private void toAccount(){
+        refreshAccount();
         inFront = "account";
         setBackground();
         accountPage.toFront();
@@ -389,6 +466,12 @@ public class iMatController implements Initializable {
         checkoutPage.toBack();
         inFront = "start";
         setBackground();
+        searchField.setVisible(true);
+        searchButton.setVisible(true);
+        kundvagnLogo.setVisible(true);
+        kundvagn.setVisible(true);
+        konto.setVisible(true);
+        kontoLogo.setVisible(true);
     }
 
     @FXML
@@ -408,18 +491,43 @@ public class iMatController implements Initializable {
     }
 
     @FXML
-    private void toCart() {
+    public void toCart() {
         inFront = "cart";
         populateCart();
         updateCartTotal();
         checkoutPage.toBack();
         cartPage.toFront();
         setBackground();
+        searchField.setVisible(true);
+        searchButton.setVisible(true);
+        kundvagnLogo.setVisible(true);
+        kundvagn.setVisible(true);
+        konto.setVisible(true);
+        kontoLogo.setVisible(true);
+    }
+
+    private void updateCheckoutList(){
+        checkoutCartList.getChildren().clear();
+        checkoutCartTotal.setText(dataHandler.getShoppingCart().getTotal() + ":-");
+        for (ShoppingItem item : dataHandler.getShoppingCart().getItems()){
+            checkoutCartList.getChildren().add(new OrderListItem(dataHandler, this, item, "small"));
+
+        }
     }
 
     @FXML
     private void toCheckout() {
         checkoutPage.toFront();
+        updateCheckoutList();
+        refreshAccount1();
+        searchField.setVisible(false);
+        searchButton.setVisible(false);
+        kundvagnLogo.setVisible(false);
+        kundvagn.setVisible(false);
+        konto.setVisible(false);
+        kontoLogo.setVisible(false);
+
+
     }
 
     @FXML
@@ -435,6 +543,7 @@ public class iMatController implements Initializable {
     @FXML
     private void shopStepTwo() {
         stepTwo.toFront();
+        saveAccount1Settings();
     }
 
     @FXML
@@ -646,6 +755,29 @@ public class iMatController implements Initializable {
     @FXML
     public void tempPurchase(){
         dataHandler.placeOrder();
+
+    }
+
+    public void addCartItem(CartItem item){
+        item.getItem().setAmount(item.getItem().getAmount() + 1);
+        updateCartTotal();
+        updateCart();
+        populateCart();
+    }
+
+    public void removeCartItem(CartItem item){
+        dataHandler.getShoppingCart().removeItem(item.getItem());
+        updateCartTotal();
+        updateCart();
+        populateCart();
+
+    }
+
+    public void subCartItem(CartItem item){
+        item.getItem().setAmount(item.getItem().getAmount() - 1);
+        updateCartTotal();
+        updateCart();
+        populateCart();
 
     }
 

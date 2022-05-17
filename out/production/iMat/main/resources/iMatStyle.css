@@ -174,7 +174,15 @@
 }
 
 
+
+
 .productCard .text{
+    -fx-font-size: 28px;
+    -fx-text-fill: black;
+    -fx-font-family: "Lexend Deca Bold";
+}
+
+.productListItem {
     -fx-font-size: 28px;
     -fx-text-fill: black;
     -fx-font-family: "Lexend Deca Bold";
@@ -250,11 +258,13 @@
     -fx-font-size: 36px;
 }
 
-.round_button{
-    -fx-height: 35px;
-    -fx-width: 35px;
-    -fx-border-radius: 90px;
-    -fx-background-radius: 90px;
+.adder:hover{
+    -fx-background-color: GRAY;
+}
+
+
+.adder .text{
+    -fx-effect: none;
 }
 
 #addBuy{
@@ -550,7 +560,7 @@ scroll-bar:horizontal .track,
 }
 
 
-.accountTabs .text-field{
+.accountTabs .text-field, .shoppingCartSteps .text-field{
     -fx-background-color: #F3F3F3;
     -fx-border-color: darkgray;
     -fx-border-radius: 8px;
@@ -558,6 +568,28 @@ scroll-bar:horizontal .track,
     -fx-font-size: 18px;
 }
 
-.accountTabs .text-field:focused{
+
+.accountTabs .text-field:focused, .shoppingCartSteps .text-field:focused{
     -fx-border-color: #1BB55C;
+}
+
+.checkoutTextHeader .text{
+    -fx-font-size: 30px;
+    -fx-font-family: "Lexend Deca Bold";
+}
+
+.checkoutCartList, .checkoutPane{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);
+}
+
+
+.checkoutText .text{
+    -fx-font-size: 26px;
+    -fx-font-family: "Lexend Deca Bold";
+}
+
+.date-picker{
+    -fx-font-size: 18px;
+
+
 }

@@ -26,6 +26,10 @@ public class PlacedOrder extends TitledPane {
 
     private double orderPrice;
 
+    private IMatDataHandler dataHandler;
+    private iMatController controller;
+    private Order order;
+
     public PlacedOrder(IMatDataHandler dataHandler, iMatController controller, Order order){
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("order.fxml"));
@@ -37,6 +41,10 @@ public class PlacedOrder extends TitledPane {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
+
+        this.dataHandler = dataHandler;
+        this.controller = controller;
+        this.order = order;
 
         String curTime = String.format("%02d:%02d", order.getDate().getHours(), order.getDate().getMinutes());
         String detailString = "# " + Month.of(order.getDate().getMonth() + 1) + " " +
@@ -50,8 +58,19 @@ public class PlacedOrder extends TitledPane {
         orderTotal.setText(orderPrice + "kr");
 
         for (ShoppingItem item : order.getItems()){
-            orderItemList.getChildren().add(new OrderListItem(dataHandler, controller, item));
+            orderItemList.getChildren().add(new OrderListItem(dataHandler, controller, item, "normal"));
         }
+
+    }
+
+    @FXML
+    public void buyAgain(){
+        dataHandler.getShoppingCart().clear();
+        for (ShoppingItem item : order.getItems()){
+            dataHandler.getShoppingCart().addItem(item);
+        }
+        controller.updateCart();
+        controller.toCart();
 
     }
 

@@ -3,6 +3,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.ShoppingItem;
@@ -20,7 +21,7 @@ public class OrderListItem extends AnchorPane {
     @FXML
     private Label orderItemPrice;
 
-    public OrderListItem(IMatDataHandler dataHandler, iMatController controller, ShoppingItem item) {
+    public OrderListItem(IMatDataHandler dataHandler, iMatController controller, ShoppingItem item, String size) {
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("orderListItem.fxml"));
         fxmlLoader.setRoot(this);
@@ -36,5 +37,12 @@ public class OrderListItem extends AnchorPane {
         this.orderItem.setText(item.getProduct().getName());
         this.orderAmount.setText((int)item.getAmount() + "st");
         this.orderItemPrice.setText(item.getTotal() +":-");
+
+        if (size.equals("small")){
+            this.prefWidthProperty().set(400);
+        }else{
+            this.prefWidthProperty().set(500);
+        }
+
     }
 }
