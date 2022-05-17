@@ -1,4 +1,6 @@
 import javafx.animation.*;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -151,6 +153,25 @@ public class iMatController implements Initializable {
     private FlowPane checkoutCartList;
     @FXML
     private Label checkoutCartTotal;
+    @FXML
+    private ComboBox dayPicker;
+    @FXML
+    private ComboBox timePicker;
+    @FXML
+    private Label mailText;
+    @FXML
+    private AnchorPane thankYouPage;
+    @FXML
+    private Label nameError;
+
+    @FXML
+    private TextField cardInput;
+    @FXML
+    private TextField nameOnCard;
+    @FXML
+    private TextField cardDate;
+    @FXML
+    private TextField cvcCode;
 
     public ArrayList<ProductCard> products = new ArrayList<>();
     public ArrayList<ProductCard> pasta_potatis_ris = new ArrayList<>();
@@ -189,6 +210,10 @@ public class iMatController implements Initializable {
             previousOrders.getChildren().add(new PlacedOrder(dataHandler, this, order));
         }
 
+        dayPicker.getItems().addAll("Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag");
+        timePicker.getItems().addAll("08:00 - 09:00", "10:00 - 11:00", "12:00 - 13:00", "14:00 - 15:00", "16:00 - 17:00");
+
+
         fillCategories(dataHandler.getProducts(ProductCategory.PASTA), 1);
         fillCategories(dataHandler.getProducts(ProductCategory.POTATO_RICE), 1);
 
@@ -218,6 +243,14 @@ public class iMatController implements Initializable {
         fillCategories(dataHandler.getProducts(ProductCategory.DAIRIES), 7);
 
         fillShoppingList();
+
+
+    }
+
+    public void checkKey(KeyEvent event){
+        if (event.getCharacter().matches("[0-9]+")){
+            event.consume();
+        }
 
     }
 
@@ -441,6 +474,13 @@ public class iMatController implements Initializable {
         ortInput1.setText(dataHandler.getCustomer().getPostAddress());
     }
 
+    private void refreshPayment(){
+        cardInput.setText(dataHandler.getCreditCard().getCardNumber());
+        nameOnCard.setText(dataHandler.getCreditCard().getHoldersName());
+        cardDate.setText(dataHandler.getCreditCard().getValidMonth() + "");
+        cvcCode.setText(dataHandler.getCreditCard().getVerificationCode() + "");
+    }
+
     @FXML
     private void toAccount(){
         refreshAccount();
@@ -464,6 +504,7 @@ public class iMatController implements Initializable {
         startPage.toFront();
         cartPage.toBack();
         checkoutPage.toBack();
+        thankYouPage.toBack();
         inFront = "start";
         setBackground();
         searchField.setVisible(true);
@@ -504,6 +545,7 @@ public class iMatController implements Initializable {
         kundvagn.setVisible(true);
         konto.setVisible(true);
         kontoLogo.setVisible(true);
+
     }
 
     private void updateCheckoutList(){
@@ -526,6 +568,8 @@ public class iMatController implements Initializable {
         kundvagn.setVisible(false);
         konto.setVisible(false);
         kontoLogo.setVisible(false);
+        stepOne.toFront();
+        refreshPayment();
 
 
     }
@@ -706,6 +750,7 @@ public class iMatController implements Initializable {
             resultPage.toFront();
             cartPage.toBack();
             checkoutPage.toBack();
+            thankYouPage.toBack();
         }
 
     }
@@ -724,6 +769,7 @@ public class iMatController implements Initializable {
             resultPage.toFront();
             cartPage.toBack();
             checkoutPage.toBack();
+            thankYouPage.toBack();
         }
 
     }
@@ -753,8 +799,18 @@ public class iMatController implements Initializable {
     }
 
     @FXML
-    public void tempPurchase(){
+    public void completePurchase(){
         dataHandler.placeOrder();
+        mailText.setText(mailInput1.getText());
+        cartPage.toBack();
+        checkoutPage.toBack();
+        thankYouPage.toFront();
+        updateCart();
+        dataHandler.getCreditCard().setCardNumber(cardInput.getText());
+        dataHandler.getCreditCard().setHoldersName(nameOnCard.getText());
+        dataHandler.getCreditCard().setValidMonth(Integer.valueOf(cardDate.getText()));
+        dataHandler.getCreditCard().setVerificationCode(Integer.valueOf(cvcCode.getText()));
+
 
     }
 
@@ -771,6 +827,7 @@ public class iMatController implements Initializable {
         updateCart();
         populateCart();
 
+
     }
 
     public void subCartItem(CartItem item){
@@ -780,5 +837,7 @@ public class iMatController implements Initializable {
         populateCart();
 
     }
+
+
 
 }

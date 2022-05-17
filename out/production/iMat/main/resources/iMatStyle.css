@@ -107,12 +107,17 @@
 }
 
 .veckans_text .text{
-    -fx-font-family: 'Lexend Deca Bold';
+    -fx-font-family: "Lexend Deca Bold";
+    -fx-font-size: 34px;
+    -fx-line-height: 41px;
+
+}
+
+.veckaninfo{
+    -fx-font-family: "Lexend Deca Bold";
     -fx-font-style: normal;
     -fx-font-weight: 400;
     -fx-font-size: 28px;
-    -fx-line-height: 41px;
-    -fx-color: #000000;
 }
 
 .shoppingCartSteps{
@@ -573,13 +578,19 @@ scroll-bar:horizontal .track,
     -fx-border-color: #1BB55C;
 }
 
-.checkoutTextHeader .text{
-    -fx-font-size: 30px;
-    -fx-font-family: "Lexend Deca Bold";
-}
+
 
 .checkoutCartList, .checkoutPane{
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);
+}
+
+.checkoutCartList .text{
+    -fx-font-size: 22px;
+}
+
+.checkoutTextHeader .text{
+    -fx-font-size: 30px;
+    -fx-font-family: "Lexend Deca Bold";
 }
 
 
@@ -588,8 +599,50 @@ scroll-bar:horizontal .track,
     -fx-font-family: "Lexend Deca Bold";
 }
 
-.date-picker{
-    -fx-font-size: 18px;
-
+.pickers{
+    -fx-background-color: #F3F3F3;
+    -fx-border-color: darkgray;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
 
 }
+
+.pickers .text{
+    -fx-font-size: 22px;
+    -fx-font-family: "Lexend Deca Bold";
+
+}
+
+.wizard, .wizard-on{
+    -fx-font-size: 22px;
+    -fx-font-family: "Lexend Deca Bold";
+}
+
+
+.wizard-on:hover {
+    -fx-background-color: rgba(0,128,0, 1);
+    -fx-cursor: default;
+}
+
+.wizard:hover {
+    -fx-background-color: rgba(0,128,0, 0.5);
+    -fx-cursor: default;
+}
+.wizard{
+    -fx-background-color: rgba(0,128,0, 0.5);
+}
+
+.wizard-on{
+    -fx-background-color: rgba(0,128,0, 1);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,1), 5, 0, 0, 0);
+}
+
+.thankyou .text{
+    -fx-font-family: "Lexend Deca Bold";
+
+}
+
+.mailAdr .text{
+    -fx-font-family: "Lexend Deca Semi Bold";
+}
+

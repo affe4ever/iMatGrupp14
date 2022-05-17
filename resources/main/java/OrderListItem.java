@@ -17,8 +17,6 @@ public class OrderListItem extends AnchorPane {
     @FXML
     private Label orderItem;
     @FXML
-    private Label orderAmount;
-    @FXML
     private Label orderItemPrice;
 
     public OrderListItem(IMatDataHandler dataHandler, iMatController controller, ShoppingItem item, String size) {
@@ -34,8 +32,7 @@ public class OrderListItem extends AnchorPane {
         }
 
         this.orderImage.setImage(dataHandler.getFXImage(item.getProduct()));
-        this.orderItem.setText(item.getProduct().getName());
-        this.orderAmount.setText((int)item.getAmount() + "st");
+        this.orderItem.setText((int) item.getAmount() + "st " + item.getProduct().getName());
         this.orderItemPrice.setText(item.getTotal() +":-");
 
         if (size.equals("small")){
