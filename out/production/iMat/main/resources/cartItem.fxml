@@ -13,7 +13,7 @@
          <graphic>
             <Label alignment="CENTER" text="-" textFill="RED" />
          </graphic></Button>
-          <TextField fx:id="nmrBuy" alignment="CENTER" layoutX="616.0" layoutY="84.0" prefHeight="26.0" prefWidth="67.0" text="1" AnchorPane.bottomAnchor="57.0" AnchorPane.topAnchor="57.0">
+          <TextField fx:id="nmrBuy" alignment="CENTER" layoutX="616.0" layoutY="84.0" onKeyPressed="#changeAmount" prefHeight="26.0" prefWidth="67.0" text="1" AnchorPane.bottomAnchor="57.0" AnchorPane.topAnchor="57.0">
          <font>
             <Font size="20.0" />
          </font></TextField>

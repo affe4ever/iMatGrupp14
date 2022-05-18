@@ -814,6 +814,13 @@ public class iMatController implements Initializable {
 
     }
 
+    public void setCartItem(CartItem item, int amount){
+        item.getItem().setAmount((int) amount);
+        updateCartTotal();
+        updateCart();
+        populateCart();
+    }
+
     public void addCartItem(CartItem item){
         item.getItem().setAmount(item.getItem().getAmount() + 1);
         updateCartTotal();
@@ -826,7 +833,6 @@ public class iMatController implements Initializable {
         updateCartTotal();
         updateCart();
         populateCart();
-
 
     }
 

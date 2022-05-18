@@ -1,14 +1,18 @@
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import javax.print.attribute.standard.DateTimeAtCompleted;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 
 public class CartItem extends AnchorPane {
@@ -44,11 +48,28 @@ public class CartItem extends AnchorPane {
         cartText.setText((int) product.getAmount() + "st " + product.getProduct().getName());
         cartPrice.setText(Math.round(product.getTotal()*100.00)/100.00 + ":-");
         nmrBuy.setText((int) product.getAmount() + "");
+
+
     }
 
     public ShoppingItem getItem(){
         return this.item;
     }
+
+    @FXML
+    private void changeAmount(KeyEvent event){
+        if (event.getCode().equals(KeyCode.ENTER)){
+            if (!nmrBuy.getText().isEmpty()){
+                controller.setCartItem(this, Integer.valueOf(nmrBuy.getText()));
+            }else{
+                nmrBuy.setText((int) item.getAmount() + "");
+            }
+
+        }
+
+
+    }
+
 
     @FXML
     private void addCart(){
