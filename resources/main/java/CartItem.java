@@ -60,7 +60,12 @@ public class CartItem extends AnchorPane {
     private void changeAmount(KeyEvent event){
         if (event.getCode().equals(KeyCode.ENTER)){
             if (!nmrBuy.getText().isEmpty()){
-                controller.setCartItem(this, Integer.valueOf(nmrBuy.getText()));
+                try {
+                    controller.setCartItem(this, Integer.valueOf(nmrBuy.getText()));
+                }
+                catch (Exception e){
+                    nmrBuy.setText(String.valueOf((int)item.getAmount()));
+                }
             }else{
                 nmrBuy.setText((int) item.getAmount() + "");
             }
@@ -72,7 +77,7 @@ public class CartItem extends AnchorPane {
 
 
     @FXML
-    private void addCart(){
+    private void addCart() {
         controller.addCartItem(this);
         nmrBuy.setText((int) item.getAmount() + 1 + "");
     }
