@@ -26,71 +26,6 @@
 <AnchorPane prefHeight="850.0" prefWidth="1440.0" style="-fx-background-color: F3F3F3;" stylesheets="@iMatStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMatController">
    <children>
       <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="50.0" />
-      <AnchorPane fx:id="cartPage" prefHeight="725.0" prefWidth="1508.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
-         <children>
-            <Label alignment="CENTER" prefWidth="1213.0" styleClass="categoryName" text="KUNDVAGN" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0" />
-            <AnchorPane layoutX="67.0" layoutY="170.0" prefHeight="525.0" prefWidth="1172.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="138.0">
-               <children>
-                  <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="1078.0" styleClass="cart" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <content>
-                        <FlowPane fx:id="shoppingCartItems" prefHeight="521.0" prefWidth="1080.0" style="-fx-background-color: white;" vgap="20.0">
-                           <padding>
-                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                           </padding>
-                        </FlowPane>
-                     </content>
-                  </ScrollPane>
-                  <Pane fx:id="emptyPane" disable="true" prefHeight="291.0" prefWidth="1078.0" visible="false">
-                     <children>
-                        <Label alignment="CENTER" layoutX="-23.0" layoutY="25.0" prefHeight="57.0" prefWidth="1079.0" styleClass="emptyTitle" text="Din kundvagn är tom!">
-                           <font>
-                              <Font size="46.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" layoutX="1.0" layoutY="100.0" prefHeight="21.0" prefWidth="1031.0" styleClass="emptyHelp" text="Klicka nedan för att fortsätta handla. ">
-                           <font>
-                              <Font size="30.0" />
-                           </font>
-                        </Label>
-                        <Button layoutX="283.0" layoutY="176.0" mnemonicParsing="false" onMouseClicked="#backFromCart" prefHeight="76.0" prefWidth="465.0" styleClass="bigButton" text="Tillbaka till startsida" />
-                     </children>
-                  </Pane>
-               </children>
-            </AnchorPane>
-            <Button id="toCheckout" fx:id="toCheckout" layoutX="1173.0" layoutY="556.0" mnemonicParsing="false" onMouseClicked="#toCheckout" prefHeight="140.0" prefWidth="300.0" styleClass="bigButton" text="TILL KASSAN" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="50.0" />
-            <Label fx:id="cartTotal" alignment="TOP_LEFT" layoutX="1168.0" layoutY="472.0" prefHeight="74.0" prefWidth="212.0" styleClass="cartTotal" text="x:-" textFill="GREEN" wrapText="true" AnchorPane.rightAnchor="134.0" />
-            <Label layoutX="1164.0" layoutY="425.0" prefHeight="60.0" prefWidth="234.0" styleClass="totalText" text="TOTALT:" AnchorPane.rightAnchor="114.0" />
-            <Button id="backButton" layoutX="36.0" layoutY="28.0" mnemonicParsing="false" onMouseClicked="#backFromCart" prefHeight="76.0" prefWidth="223.0" styleClass="buyButton" text="Fortsätt Handla">
-               <graphic>
-                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../iMatGrupp14old/resources/main/resources/icons/reply/24/Outline.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button id="clearCart" fx:id="clearCart" alignment="BASELINE_LEFT" layoutX="1160.0" layoutY="151.0" mnemonicParsing="false" onAction="#confirmClear" prefHeight="70.0" prefWidth="298.0" text="Töm Kundvagn" AnchorPane.rightAnchor="50.0">
-               <graphic>
-                  <ImageView fitHeight="291.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../iMatGrupp14old/resources/main/resources/icons/Vector.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Pane fx:id="confirmDialog" disable="true" layoutX="1164.0" layoutY="119.0" prefHeight="192.0" prefWidth="312.0" styleClass="confirmDialog" visible="false" AnchorPane.rightAnchor="43.0">
-               <children>
-                  <Label alignment="CENTER" layoutX="4.0" layoutY="45.0" prefHeight="34.0" prefWidth="302.0" text="ÄR DU SÄKER?" textAlignment="CENTER" />
-                  <Button layoutX="20.0" layoutY="116.0" mnemonicParsing="false" onAction="#acceptClear" prefHeight="54.0" prefWidth="129.0" text="JA" />
-                  <Button layoutX="160.0" layoutY="115.0" mnemonicParsing="false" onAction="#cancelClear" prefHeight="54.0" prefWidth="129.0" style="-fx-background-color: red;" text="NEJ" />
-               </children>
-            </Pane>
-         </children>
-         <styleClass>
-            <String fx:value="noResult" />
-            <String fx:value="pageBackground" />
-         </styleClass>
-      </AnchorPane>
       <AnchorPane fx:id="thankYouPage" layoutX="20.0" layoutY="144.0" prefHeight="725.0" prefWidth="1512.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
          <children>
             <Label alignment="CENTER" layoutX="2.0" layoutY="200.0" prefHeight="18.0" prefWidth="1501.0" text="TACK FÖR DITT KÖP" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0">
@@ -866,5 +801,70 @@
             <Label alignment="CENTER" layoutX="-3.0" layoutY="-5.0" prefHeight="84.0" prefWidth="287.0" style="-fx-opacity: 1;" text="PRODUKT TILLAGD" textFill="WHITE" />
          </children>
       </Pane>
+      <AnchorPane fx:id="cartPage" prefHeight="725.0" prefWidth="1508.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
+         <children>
+            <Label alignment="CENTER" prefWidth="1213.0" styleClass="categoryName" text="KUNDVAGN" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0" />
+            <AnchorPane layoutX="67.0" layoutY="170.0" prefHeight="525.0" prefWidth="1172.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="138.0">
+               <children>
+                  <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="1078.0" styleClass="cart" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <FlowPane fx:id="shoppingCartItems" prefHeight="521.0" prefWidth="1080.0" style="-fx-background-color: white;" vgap="20.0">
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                        </FlowPane>
+                     </content>
+                  </ScrollPane>
+                  <Pane fx:id="emptyPane" disable="true" prefHeight="291.0" prefWidth="1078.0" visible="false">
+                     <children>
+                        <Label alignment="CENTER" layoutX="-23.0" layoutY="25.0" prefHeight="57.0" prefWidth="1079.0" styleClass="emptyTitle" text="Din kundvagn är tom!">
+                           <font>
+                              <Font size="46.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="1.0" layoutY="100.0" prefHeight="21.0" prefWidth="1031.0" styleClass="emptyHelp" text="Klicka nedan för att fortsätta handla. ">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="283.0" layoutY="176.0" mnemonicParsing="false" onMouseClicked="#backFromCart" prefHeight="76.0" prefWidth="465.0" styleClass="bigButton" text="Tillbaka till startsida" />
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+            <Button id="toCheckout" fx:id="toCheckout" layoutX="1173.0" layoutY="556.0" mnemonicParsing="false" onMouseClicked="#toCheckout" prefHeight="140.0" prefWidth="300.0" styleClass="bigButton" text="TILL KASSAN" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="50.0" />
+            <Label fx:id="cartTotal" alignment="TOP_LEFT" layoutX="1168.0" layoutY="472.0" prefHeight="74.0" prefWidth="212.0" styleClass="cartTotal" text="x:-" textFill="GREEN" wrapText="true" AnchorPane.rightAnchor="134.0" />
+            <Label layoutX="1164.0" layoutY="425.0" prefHeight="60.0" prefWidth="234.0" styleClass="totalText" text="TOTALT:" AnchorPane.rightAnchor="114.0" />
+            <Button id="backButton" layoutX="36.0" layoutY="28.0" mnemonicParsing="false" onMouseClicked="#backFromCart" prefHeight="76.0" prefWidth="223.0" styleClass="buyButton" text="Fortsätt Handla">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../iMatGrupp14old/resources/main/resources/icons/reply/24/Outline.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="clearCart" fx:id="clearCart" alignment="BASELINE_LEFT" layoutX="1160.0" layoutY="151.0" mnemonicParsing="false" onAction="#confirmClear" prefHeight="70.0" prefWidth="298.0" text="Töm Kundvagn" AnchorPane.rightAnchor="50.0">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/Vector.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Pane fx:id="confirmDialog" disable="true" layoutX="1164.0" layoutY="119.0" prefHeight="192.0" prefWidth="312.0" styleClass="confirmDialog" visible="false" AnchorPane.rightAnchor="43.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="4.0" layoutY="45.0" prefHeight="34.0" prefWidth="302.0" text="ÄR DU SÄKER?" textAlignment="CENTER" />
+                  <Button layoutX="20.0" layoutY="116.0" mnemonicParsing="false" onAction="#acceptClear" prefHeight="54.0" prefWidth="129.0" text="JA" />
+                  <Button layoutX="160.0" layoutY="115.0" mnemonicParsing="false" onAction="#cancelClear" prefHeight="54.0" prefWidth="129.0" style="-fx-background-color: red;" text="NEJ" />
+               </children>
+            </Pane>
+         </children>
+         <styleClass>
+            <String fx:value="noResult" />
+            <String fx:value="pageBackground" />
+         </styleClass>
+      </AnchorPane>
    </children>
 </AnchorPane>
