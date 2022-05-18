@@ -106,30 +106,36 @@ public class ProductCard extends AnchorPane {
             nmrBuy.setDisable(false);
         }
         else if (clickedBuy){ //second step
-            addProducts();
-            buyButton.setPrefWidth(290);
-            addBuy.setDisable(true);
-            subBuy.setDisable(true);
-            nmrBuy.setDisable(true);
+            try {
 
-            clickedBuy = false;
+                addProducts();
+                buyButton.setPrefWidth(290);
+                addBuy.setDisable(true);
+                subBuy.setDisable(true);
+                nmrBuy.setDisable(true);
 
-            Animation animation = new Timeline(
-                    new KeyFrame(Duration.millis(0),
-                            new KeyValue(buyButton.textProperty(), nmrBuy.getText() + "st Tillagd!")),
-                    new KeyFrame(Duration.millis(4000),
-                            new KeyValue(buyButton.textProperty(),  "VÄLJ ANTAL")));
-            animation.play();
-            nmrBuy.setText("1");
+                clickedBuy = false;
+
+                Animation animation = new Timeline(
+                        new KeyFrame(Duration.millis(0),
+                                new KeyValue(buyButton.textProperty(), nmrBuy.getText() + "st Tillagd!")),
+                        new KeyFrame(Duration.millis(4000),
+                                new KeyValue(buyButton.textProperty(),  "VÄLJ ANTAL")));
+                animation.play();
+                nmrBuy.setText("1");
+            }
+            catch(Exception e){
+                nmrBuy.setText("1");
+            }
 
 
         } //change to 290
     }
 
     private void addProducts(){
-        dataHandler.getShoppingCart().addProduct(this.product, Integer.valueOf(nmrBuy.getText()));
-        controller.notifyCart();
-        controller.updateCart();
+            dataHandler.getShoppingCart().addProduct(this.product, Integer.valueOf(nmrBuy.getText()));
+            controller.notifyCart();
+            controller.updateCart();
     }
 
     @FXML

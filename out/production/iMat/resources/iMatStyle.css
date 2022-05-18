@@ -621,7 +621,6 @@ scroll-bar:horizontal .track,
     -fx-font-family: "Lexend Deca Bold";
 }
 
-
 .wizard-on:hover {
     -fx-background-color: rgba(0,128,0, 1);
     -fx-cursor: default;
@@ -666,7 +665,6 @@ scroll-bar:horizontal .track,
     -fx-border-radius: 12px;
     -fx-border-color: white;
 }
-
 
 .questions .text{
     -fx-font-size: 26px;
