@@ -32,7 +32,7 @@ public class OrderListItem extends AnchorPane {
         }
 
         this.orderImage.setImage(dataHandler.getFXImage(item.getProduct()));
-        this.orderItem.setText((int) item.getAmount() + "st " + item.getProduct().getName());
+        this.orderItem.setText((int) item.getAmount() + item.getProduct().getUnit().replace("kr/", "") + " " + item.getProduct().getName());
         this.orderItemPrice.setText(item.getTotal() +":-");
 
         if (size.equals("small")){

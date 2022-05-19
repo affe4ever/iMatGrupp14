@@ -59,7 +59,7 @@ public class ProductCard extends AnchorPane {
         temp = temp.substring(0,1).toUpperCase() + temp.substring(1);
         productName.setText(temp);
 
-        productPrice.setText(product.getPrice() + ":-");
+        productPrice.setText(product.getPrice() + " " + product.getUnit());
         nmrBuy.setText("1");
         updateFavoriteIcon();
 
