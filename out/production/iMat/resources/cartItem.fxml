@@ -13,9 +13,9 @@
          <graphic>
             <Label alignment="CENTER" text="-" textFill="RED" />
          </graphic></Button>
-          <TextField fx:id="nmrBuy" alignment="CENTER" layoutX="616.0" layoutY="84.0" onKeyPressed="#changeAmount" prefHeight="26.0" prefWidth="67.0" text="1" AnchorPane.bottomAnchor="57.0" AnchorPane.topAnchor="57.0">
+          <TextField fx:id="nmrBuy" alignment="CENTER" layoutX="616.0" layoutY="57.0" minHeight="-Infinity" onKeyPressed="#changeAmount" prefHeight="39.0" prefWidth="67.0" text="1" AnchorPane.bottomAnchor="53.0" AnchorPane.topAnchor="57.0">
          <font>
-            <Font size="20.0" />
+            <Font size="24.0" />
          </font></TextField>
       <ImageView id="cartImage" fx:id="cartImage" fitHeight="140.0" fitWidth="140.0" layoutX="16.0" layoutY="18.0" preserveRatio="true" AnchorPane.leftAnchor="16.0" />
       <Label fx:id="cartText" layoutX="230.0" prefHeight="172.0" prefWidth="328.0" text="x Product" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="190.0" AnchorPane.topAnchor="0.0" />

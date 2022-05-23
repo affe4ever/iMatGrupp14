@@ -119,8 +119,14 @@ public class ProductCard extends AnchorPane {
                 Animation animation = new Timeline(
                         new KeyFrame(Duration.millis(0),
                                 new KeyValue(buyButton.textProperty(), nmrBuy.getText() + "st Tillagd!")),
+                        new KeyFrame(Duration.millis(0),
+                                new KeyValue(buyButton.disableProperty(), true)),
+
                         new KeyFrame(Duration.millis(4000),
-                                new KeyValue(buyButton.textProperty(),  "VÄLJ ANTAL")));
+                                new KeyValue(buyButton.textProperty(),  "VÄLJ ANTAL")),
+                        new KeyFrame(Duration.millis(4000),
+                                new KeyValue(buyButton.disableProperty(),  false)));
+
                 animation.play();
                 nmrBuy.setText("1");
             }

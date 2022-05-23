@@ -46,8 +46,8 @@ public class CartItem extends AnchorPane {
         this.dataHandler = dataHandler;
         cartImage.setImage(dataHandler.getFXImage(product.getProduct()));
         cartText.setText((int) product.getAmount() + product.getProduct().getUnit().replace("kr/", "") + " " + product.getProduct().getName());
-        cartPrice.setText(Math.round(product.getTotal()*100.00)/100.00 + " ");
-        nmrBuy.setText((int) product.getAmount() + " ");
+        cartPrice.setText(Math.round(product.getTotal()*100.00)/100.00 + ":-");
+        nmrBuy.setText((int) product.getAmount() + "");
 
 
     }

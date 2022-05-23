@@ -1,16 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="988e677b-70a1-4310-94cb-1291b35e21e8" name="Changes" comment="checkout">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-05-12_09_15_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-05-12_09_15__Changes_.xml" beforeDir="false" />
+    <list default="true" id="988e677b-70a1-4310-94cb-1291b35e21e8" name="Changes" comment="kr/kg">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-05-13_09_23_[Changes]/iMatController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-05-13_09_23_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-05-13_09_23__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/iMat/CartItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/CartItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/CategoryListItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/CategoryListItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/OrderListItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/OrderListItem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/iMat/ProductCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/ProductCard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/cartItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/cartItem.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/iMatController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/iMatController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/iMatController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/iMatController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/iMatHomePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/iMatStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/iMatStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/main/resources/cartItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/main/resources/cartItem.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/main/resources/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/main/resources/iMatHomePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/main/resources/iMatStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/main/resources/iMatStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/main/resources/productCard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/main/resources/productCard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/productCard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/productCard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/resources/cartItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/resources/cartItem.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/resources/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/resources/iMatHomePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/resources/iMatStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/resources/iMatStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/iMat/resources/productCard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/resources/productCard.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/main/java/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/java/CartItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/main/java/OrderListItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/java/OrderListItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/java/CategoryListItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/java/CategoryListItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/main/java/ProductCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/java/ProductCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/java/iMatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/java/iMatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/resources/cartItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/cartItem.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/resources/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/iMatHomePage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/resources/iMatStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/iMatStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/main/resources/productCard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/productCard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoppingList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/shoppingList.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,13 +80,12 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="ReaderModeSettings">
     <option name="enabled" value="false" />
@@ -132,7 +156,9 @@
       <workItem from="1652687437778" duration="106000" />
       <workItem from="1652688069392" duration="26275000" />
       <workItem from="1652728421125" duration="55393000" />
-      <workItem from="1652949552857" duration="509000" />
+      <workItem from="1652949552857" duration="15050000" />
+      <workItem from="1652988928017" duration="643000" />
+      <workItem from="1652989584705" duration="9043000" />
     </task>
     <task id="LOCAL-00001" summary="den riktiga, plz work">
       <created>1651829212641</created>
@@ -260,7 +286,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652821121735</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="kr/kg">
+      <created>1652950216355</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1652950216355</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,7 +324,8 @@
     <MESSAGE value="kontov2" />
     <MESSAGE value="cart" />
     <MESSAGE value="checkout" />
-    <option name="LAST_COMMIT_MESSAGE" value="checkout" />
+    <MESSAGE value="kr/kg" />
+    <option name="LAST_COMMIT_MESSAGE" value="kr/kg" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -29,7 +29,7 @@ public class CategoryListItem extends AnchorPane {
         }
         this.controller = controller;
         categoryLink.setText(category);
-        categoryLink.setAccessibleText(category.toLowerCase());
+        categoryLink.setAccessibleText(category.toLowerCase().replace("visa ", ""));
 
     }
     @FXML

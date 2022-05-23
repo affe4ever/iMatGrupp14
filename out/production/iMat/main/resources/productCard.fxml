@@ -24,7 +24,7 @@
             </Button>
             <TextField fx:id="nmrBuy" alignment="CENTER" layoutX="47.0" layoutY="10.0" prefHeight="26.0" prefWidth="67.0" text="1" AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="10.0">
                <font>
-                  <Font size="20.0" />
+                  <Font size="24.0" />
                </font>
             </TextField>
             <Button id="subBuy" fx:id="addBuy" alignment="CENTER" contentDisplay="CENTER" layoutX="121.0" layoutY="8.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#addOne" prefHeight="40.0" prefWidth="40.0" styleClass="adder" text="-" textAlignment="CENTER" AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="10.0">

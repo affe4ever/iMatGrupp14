@@ -16,6 +16,7 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Paint;
+import javafx.scene.text.Font;
 import javafx.util.Duration;
 import se.chalmers.cse.dat216.project.*;
 
@@ -28,7 +29,7 @@ public class iMatController implements Initializable {
 
     IMatDataHandler dataHandler = IMatDataHandler.getInstance();
     private final ArrayList<String> categories = new ArrayList<String>(Arrays.asList("Visa alla produkter", "Pasta, Potatis & Ris",
-            "Frukt & Grönt", "Nötter & Frön", "Kött & Fisk", "Skafferi", "Dryck", "Mejeri"));
+            "Skafferi & Kryddor","Frukt & Grönt", "Nötter & Frön", "Kött & Fisk", "Dryck", "Mejeri"));
 
     @FXML
     private ScrollPane startPage;
@@ -54,8 +55,6 @@ public class iMatController implements Initializable {
     @FXML
     private AnchorPane categoryPage;
     @FXML
-    private FlowPane productList;
-    @FXML
     private FlowPane favoriteList;
     public ArrayList<String> stringFavoriteList = new ArrayList<>();
     @FXML
@@ -68,8 +67,6 @@ public class iMatController implements Initializable {
     private AnchorPane helpPage;
     @FXML
     private AnchorPane cartPage;
-    @FXML
-    private ScrollPane allProducts;
     @FXML
     private FlowPane categoryProductList;
     @FXML
@@ -172,6 +169,12 @@ public class iMatController implements Initializable {
     private TextField cardDate;
     @FXML
     private TextField cvcCode;
+    @FXML
+    private AnchorPane erbjudande;
+    @FXML
+    private Button shoppingListButton;
+    @FXML
+    private AnchorPane whiteBlock;
 
     public ArrayList<ProductCard> products = new ArrayList<>();
     public ArrayList<ProductCard> pasta_potatis_ris = new ArrayList<>();
@@ -201,7 +204,7 @@ public class iMatController implements Initializable {
             products.add(new ProductCard(dataHandler, this, product));
         }
 
-        for (Product favorite : dataHandler.favorites()) {
+        for (Product favorite : dataHandler.favorites()){
             favoriteCarousel.getChildren().add(new ProductCard(dataHandler, this, favorite));
 
         }
@@ -210,6 +213,9 @@ public class iMatController implements Initializable {
             previousOrders.getChildren().add(new PlacedOrder(dataHandler, this, order));
         }
 
+        Tooltip tooltip = new Tooltip("Gå till dryck");
+        tooltip.setFont(Font.font("Lexend Deca Bold", 24));
+        Tooltip.install(erbjudande, tooltip);
         dayPicker.getItems().addAll("Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag");
         timePicker.getItems().addAll("08:00 - 09:00", "10:00 - 11:00", "12:00 - 13:00", "14:00 - 15:00", "16:00 - 17:00");
 
@@ -235,22 +241,22 @@ public class iMatController implements Initializable {
 
         fillCategories(dataHandler.getProducts(ProductCategory.NUTS_AND_SEEDS), 5);
 
-        fillCategories(dataHandler.getProducts(ProductCategory.HERB), 6);
+
         fillCategories(dataHandler.getProducts(ProductCategory.SWEET), 6);
         fillCategories(dataHandler.getProducts(ProductCategory.FLOUR_SUGAR_SALT), 6);
         fillCategories(dataHandler.getProducts(ProductCategory.BREAD), 6);
+        fillCategories(dataHandler.getProducts(ProductCategory.HERB), 6);
 
         fillCategories(dataHandler.getProducts(ProductCategory.DAIRIES), 7);
+
 
         fillShoppingList();
 
 
     }
 
-    public void checkKey(KeyEvent event){
-        if (event.getCharacter().matches("[0-9]+")){
-            event.consume();
-        }
+    @FXML
+    private void checkNameInput(){
 
     }
 
@@ -366,6 +372,7 @@ public class iMatController implements Initializable {
                 home.getStyleClass().remove("sideItem-pressed");
                 favorites.getStyleClass().remove("sideItem-pressed");
                 break;
+            case "search":
             case "category":
             case "account":
             case "cart":
@@ -401,11 +408,6 @@ public class iMatController implements Initializable {
     }
 
     @FXML
-    private void checkNameInput(){
-       /// TODO: 2022-05-16 errorhandling
-    }
-
-    @FXML
     private void saveAccountSettings(){
 
         Animation animation = new Timeline(
@@ -436,6 +438,7 @@ public class iMatController implements Initializable {
 
     @FXML
     private void saveShoppingList(){
+
         ObservableList<CharSequence> paragraph = shoppingList.getParagraphs();
         Iterator<CharSequence> iter = paragraph.iterator();
         try
@@ -454,6 +457,13 @@ public class iMatController implements Initializable {
         {
             e.printStackTrace();
         }
+
+        Animation animation = new Timeline(
+                new KeyFrame(Duration.millis(0),
+                        new KeyValue(shoppingListButton.textProperty(), "SPARAT!")),
+                new KeyFrame(Duration.millis(3000),
+                        new KeyValue(shoppingListButton.textProperty(), "SPARA")));
+        animation.play();
     }
 
     private void refreshAccount(){
@@ -495,13 +505,13 @@ public class iMatController implements Initializable {
     @FXML
     private void toStartPage() {
         startPage.setVvalue(0);
-        refreshProductList();
         favoriteCarousel.getChildren().clear();
         for (Product favorite : dataHandler.favorites()) {
             favoriteCarousel.getChildren().add(new ProductCard(dataHandler, this, favorite));
 
         }
         startPage.toFront();
+        whiteBlock.toBack();
         cartPage.toBack();
         checkoutPage.toBack();
         thankYouPage.toBack();
@@ -537,7 +547,9 @@ public class iMatController implements Initializable {
         populateCart();
         updateCartTotal();
         checkoutPage.toBack();
+        whiteBlock.toFront();
         cartPage.toFront();
+
         setBackground();
         searchField.setVisible(true);
         searchButton.setVisible(true);
@@ -577,6 +589,7 @@ public class iMatController implements Initializable {
     @FXML
     private void backFromCart() {
         cartPage.toBack();
+        whiteBlock.toBack();
     }
 
     @FXML
@@ -601,18 +614,20 @@ public class iMatController implements Initializable {
 
 
     private void refreshProductList() {
-        for (Node product : productList.getChildren()) {
+        for (Node product : categoryProductList.getChildren()) {
             ((ProductCard) product).updateFavoriteIcon();
+
         }
     }
 
     public void setCategory(String category) {
-        allProducts.setVvalue(0);
         categoryScroll.setVvalue(0);
         categoryName.setText(category.toUpperCase());
         categoryName.setStyle("-fx-font-family: 'Lexend Deca Bold'");
         categoryProductList.getChildren().clear();
+        resultList.getChildren().clear();
         populateCategoryList(category.toLowerCase());
+        refreshProductList();
         inFront = "category";
         setBackground();
         categoryPage.toFront();
@@ -648,7 +663,7 @@ public class iMatController implements Initializable {
             case "nötter & frön":
                 showProducts(5);
                 break;
-            case "skafferi":
+            case "skafferi & kryddor":
                 showProducts(6);
                 break;
             case "mejeri":
@@ -722,6 +737,9 @@ public class iMatController implements Initializable {
 
     }
 
+
+
+
     @FXML
     public void checkSearch(KeyEvent event) {
 
@@ -737,7 +755,8 @@ public class iMatController implements Initializable {
 
     public void performSearch() {
         List<Product> matches = dataHandler.findProducts(searchField.getText());
-
+        inFront = "search";
+        setBackground();
         if (matches.isEmpty()) {
             noResultText.setText("Inga resultat för: " + '"' + searchField.getText() + '"');
             noResult.toFront();
@@ -757,7 +776,8 @@ public class iMatController implements Initializable {
 
     public void performSearch1() {
         List<Product> matches = dataHandler.findProducts(searchField1.getText());
-
+        inFront = "search";
+        setBackground();
         if (matches.isEmpty()) {
             noResult.toFront();
         } else {
@@ -842,6 +862,11 @@ public class iMatController implements Initializable {
         updateCart();
         populateCart();
 
+    }
+
+    @FXML
+    public void toOffer(){
+        setCategory("Dryck");
     }
 
 
