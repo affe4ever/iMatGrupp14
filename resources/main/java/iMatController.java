@@ -175,6 +175,12 @@ public class iMatController implements Initializable {
     private Button shoppingListButton;
     @FXML
     private AnchorPane whiteBlock;
+    @FXML
+    private Label errorMessage;
+    @FXML
+    private Label errorMessage1;
+    @FXML
+    private Label noChosen;
 
     public ArrayList<ProductCard> products = new ArrayList<>();
     public ArrayList<ProductCard> pasta_potatis_ris = new ArrayList<>();
@@ -184,6 +190,7 @@ public class iMatController implements Initializable {
     public ArrayList<ProductCard> skafferi = new ArrayList<>();
     public ArrayList<ProductCard> mejeri = new ArrayList<>();
     public ArrayList<ProductCard> notter_fron = new ArrayList<>();
+    public ArrayList<ShoppingItem> cart_item = new ArrayList<>();
 
 
     @Override
@@ -208,7 +215,7 @@ public class iMatController implements Initializable {
             favoriteCarousel.getChildren().add(new ProductCard(dataHandler, this, favorite));
 
         }
-
+        dataHandler.getOrders().sort(Comparator.comparing(Order::getDate).reversed());
         for (Order order : dataHandler.getOrders()){
             previousOrders.getChildren().add(new PlacedOrder(dataHandler, this, order));
         }
@@ -350,7 +357,7 @@ public class iMatController implements Initializable {
     }
 
     public void updateCartTotal() {
-        cartTotal.setText(Math.round(dataHandler.getShoppingCart().getTotal()) + ":-");
+        cartTotal.setText(Math.round(dataHandler.getShoppingCart().getTotal()*100.00)/100.00 + ":-");
     }
 
     private void setBackground() {
@@ -384,7 +391,7 @@ public class iMatController implements Initializable {
     }
 
     public void updateCart() {
-        kundvagn.setText("Kundvagn " + Math.round(dataHandler.getShoppingCart().getTotal()) + ":-");
+        kundvagn.setText("Kundvagn " + Math.round(dataHandler.getShoppingCart().getTotal()*100.00)/100.00 + ":-");
     }
 
     private void populateCart() {
@@ -402,8 +409,8 @@ public class iMatController implements Initializable {
             clearCart.setDisable(false);
             toCheckout.setDisable(false);
             for (ShoppingItem product : dataHandler.getShoppingCart().getItems()) {
-                shoppingCartItems.getChildren().add(new CartItem(dataHandler, this, product));
-            }
+                        shoppingCartItems.getChildren().add(new CartItem(dataHandler, this, product));
+                    }
         }
     }
 
@@ -417,6 +424,7 @@ public class iMatController implements Initializable {
                         new KeyValue(saveAccount.textProperty(), "SPARA")));
         animation.play();
         dataHandler.getCustomer().setFirstName(nameInput.getText());
+        dataHandler.getCustomer().setLastName(nameInput.getText());
         dataHandler.getCustomer().setAddress(streetInput.getText());
         dataHandler.getCustomer().setEmail(mailInput.getText());
         dataHandler.getCustomer().setPhoneNumber(numberInput.getText());
@@ -426,8 +434,8 @@ public class iMatController implements Initializable {
     }
 
     private void saveAccount1Settings(){
-
         dataHandler.getCustomer().setFirstName(nameInput1.getText());
+        dataHandler.getCustomer().setLastName(nameInput1.getText());
         dataHandler.getCustomer().setAddress(streetInput1.getText());
         dataHandler.getCustomer().setEmail(mailInput1.getText());
         dataHandler.getCustomer().setPhoneNumber(numberInput1.getText());
@@ -499,6 +507,7 @@ public class iMatController implements Initializable {
         accountPage.toFront();
         cartPage.toBack();
         checkoutPage.toBack();
+        whiteBlock.toBack();
 
     }
 
@@ -580,6 +589,9 @@ public class iMatController implements Initializable {
         kundvagn.setVisible(false);
         konto.setVisible(false);
         kontoLogo.setVisible(false);
+        errorMessage.setVisible(false);
+        errorMessage1.setVisible(false);
+        noChosen.setVisible(false);
         stepOne.toFront();
         refreshPayment();
 
@@ -593,19 +605,42 @@ public class iMatController implements Initializable {
     }
 
     @FXML
-    private void shopStepOne() {
+    private void BackOne(){
         stepOne.toFront();
     }
 
     @FXML
-    private void shopStepTwo() {
+    private void BackTwo(){
         stepTwo.toFront();
+    }
+
+
+
+    @FXML
+    private void shopStepTwo() {
+        errorMessage1.setVisible(false);
         saveAccount1Settings();
+        if (dataHandler.isCustomerComplete()) {
+            if (!mailInput1.getText().isEmpty()) {
+                stepTwo.toFront();
+                errorMessage.setVisible(false);
+            }
+
+            } else {
+                errorMessage.setVisible(true);
+            }
+
     }
 
     @FXML
     private void shopStepThree() {
-        stepThree.toFront();
+        noChosen.setVisible(false);
+        if (dayPicker.getSelectionModel().isEmpty() || timePicker.getSelectionModel().isEmpty()){
+            noChosen.setVisible(true);
+        }else{
+            noChosen.setVisible(false);
+            stepThree.toFront();
+        }
     }
 
     public void search(Event event) {
@@ -818,23 +853,32 @@ public class iMatController implements Initializable {
         scrollToLeft(favoritePane);
     }
 
+    private boolean checkEmpty(String string, String string2, String string3, String string4){
+        return (string.isEmpty() || string2.isEmpty() || string3.isEmpty() || string4.isEmpty());
+    }
+
     @FXML
     public void completePurchase(){
-        dataHandler.placeOrder();
-        mailText.setText(mailInput1.getText());
-        cartPage.toBack();
-        checkoutPage.toBack();
-        thankYouPage.toFront();
-        updateCart();
-        dataHandler.getCreditCard().setCardNumber(cardInput.getText());
-        dataHandler.getCreditCard().setHoldersName(nameOnCard.getText());
-        dataHandler.getCreditCard().setValidMonth(Integer.valueOf(cardDate.getText()));
-        dataHandler.getCreditCard().setVerificationCode(Integer.valueOf(cvcCode.getText()));
-
+        if (checkEmpty(cardInput.getText(), nameOnCard.getText(), cardDate.getText(), cvcCode.getText())) {
+            errorMessage1.setVisible(true);
+        }else {
+            errorMessage1.setVisible(false);
+            dataHandler.placeOrder();
+            mailText.setText(mailInput1.getText());
+            cartPage.toBack();
+            checkoutPage.toBack();
+            thankYouPage.toFront();
+            updateCart();
+            dataHandler.getCreditCard().setCardNumber(cardInput.getText());
+            dataHandler.getCreditCard().setHoldersName(nameOnCard.getText());
+            dataHandler.getCreditCard().setValidMonth(Integer.valueOf(cardDate.getText()));
+            dataHandler.getCreditCard().setVerificationCode(Integer.valueOf(cvcCode.getText()));
+        }
 
     }
 
     public void setCartItem(CartItem item, int amount){
+
         item.getItem().setAmount((int) amount);
         updateCartTotal();
         updateCart();

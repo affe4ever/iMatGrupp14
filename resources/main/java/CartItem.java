@@ -45,7 +45,7 @@ public class CartItem extends AnchorPane {
         this.controller = controller;
         this.dataHandler = dataHandler;
         cartImage.setImage(dataHandler.getFXImage(product.getProduct()));
-        cartText.setText((int) product.getAmount() + product.getProduct().getUnit().replace("kr/", "") + " " + product.getProduct().getName());
+        cartText.setText((int) product.getAmount() + " " + product.getProduct().getUnit().replace("kr/", "") + " " + product.getProduct().getName());
         cartPrice.setText(Math.round(product.getTotal()*100.00)/100.00 + ":-");
         nmrBuy.setText((int) product.getAmount() + "");
 
@@ -61,7 +61,14 @@ public class CartItem extends AnchorPane {
         if (event.getCode().equals(KeyCode.ENTER)){
             if (!nmrBuy.getText().isEmpty()){
                 try {
-                    controller.setCartItem(this, Integer.valueOf(nmrBuy.getText()));
+                    if (Integer.valueOf(nmrBuy.getText()) > 0) {
+                        controller.setCartItem(this, Integer.valueOf(nmrBuy.getText()));
+
+                    }else if ((Integer.valueOf(nmrBuy.getText()) == 0)) {
+                        controller.removeCartItem(this);
+                    }else{
+                        controller.setCartItem(this, (int) item.getAmount());
+                    }
                 }
                 catch (Exception e){
                     nmrBuy.setText(String.valueOf((int)item.getAmount()));

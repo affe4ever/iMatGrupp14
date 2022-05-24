@@ -52,10 +52,84 @@
             <Button id="backButton" layoutX="36.0" layoutY="28.0" mnemonicParsing="false" onMouseClicked="#toCart" prefHeight="76.0" prefWidth="230.0" styleClass="buyButton" text="Avbryt utcheckning" wrapText="true" />
             <AnchorPane layoutX="67.0" layoutY="164.0" minHeight="-Infinity" prefHeight="525.0" prefWidth="912.0" style="-fx-background-color: white;" styleClass="checkoutPane" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="455.0" AnchorPane.topAnchor="135.0">
                <children>
+                  <AnchorPane fx:id="stepOne" prefHeight="525.0" style="-fx-background-color: white;" styleClass="shoppingCartSteps" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TextField fx:id="nameInput1" layoutX="45.0" layoutY="150.0" prefHeight="56.0" prefWidth="392.0" promptText="Förnamn Efternamn" styleClass="accountInput" AnchorPane.leftAnchor="45.0" />
+                        <Label layoutX="63.0" layoutY="139.0" styleClass="titledBorder" text="Namn" />
+                        <TextField fx:id="mailInput1" layoutX="45.0" layoutY="247.0" prefHeight="56.0" prefWidth="392.0" promptText="namn.namnsson@gmail.com" styleClass="accountInput" AnchorPane.leftAnchor="45.0" />
+                        <Label layoutX="63.0" layoutY="236.0" styleClass="titledBorder" text="Mailadress" />
+                        <Button fx:id="saveAccount1" layoutX="219.0" layoutY="459.0" mnemonicParsing="false" onMouseClicked="#shopStepTwo" prefHeight="80.0" prefWidth="331.0" styleClass="bigButton" text="Fortsätt till leverans" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0" />
+                        <TextField fx:id="numberInput1" layoutX="45.0" layoutY="348.0" prefHeight="56.0" prefWidth="392.0" promptText="0737363825" styleClass="accountInput" AnchorPane.leftAnchor="45.0" />
+                        <Label layoutX="63.0" layoutY="336.0" styleClass="titledBorder" text="Mobilnummer" />
+                        <Separator layoutX="508.0" layoutY="144.0" orientation="VERTICAL" prefHeight="260.0" AnchorPane.leftAnchor="508.0" AnchorPane.rightAnchor="508.0" />
+                        <TextField fx:id="streetInput1" layoutX="586.0" layoutY="150.0" prefHeight="56.0" prefWidth="392.0" promptText="Vägenvägen 23" styleClass="accountInput" AnchorPane.rightAnchor="45.0" />
+                        <Label layoutX="616.0" layoutY="139.0" styleClass="titledBorder" text="Adress" AnchorPane.rightAnchor="342.0" />
+                        <TextField fx:id="postInput1" layoutX="586.0" layoutY="247.0" prefHeight="56.0" prefWidth="392.0" promptText="42658" styleClass="accountInput" AnchorPane.rightAnchor="45.0" />
+                        <Label layoutX="625.0" layoutY="236.0" styleClass="titledBorder" text="Postnummer" AnchorPane.rightAnchor="280.0" />
+                        <TextField fx:id="ortInput1" layoutX="586.0" layoutY="348.0" prefHeight="56.0" prefWidth="392.0" promptText="Västra Frölunda" styleClass="accountInput" AnchorPane.rightAnchor="45.0" />
+                        <Label layoutX="611.5" layoutY="336.0" prefHeight="28.0" styleClass="titledBorder" text="Ort" AnchorPane.rightAnchor="382.0" />
+                        <AnchorPane prefHeight="70.0" prefWidth="613.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="22.0">
+                           <children>
+                              <Button layoutX="53.0" layoutY="14.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0" styleClass="wizard-on" text="Användaruppgifter" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="41.0" AnchorPane.topAnchor="14.0">
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor></Button>
+                              <Button layoutX="380.0" layoutY="13.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0" styleClass="wizard" text="Leverans" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="13.0">
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor></Button>
+                              <Button layoutX="732.0" layoutY="18.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0" styleClass="wizard" text="Betalning" AnchorPane.bottomAnchor="13.0" AnchorPane.rightAnchor="41.0" AnchorPane.topAnchor="13.0">
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor></Button>
+                           </children>
+                        </AnchorPane>
+                        <Label fx:id="errorMessage" alignment="CENTER" layoutY="410.0" prefHeight="50.0" prefWidth="1018.0" text="Du måste fylla i alla rutor!" textAlignment="CENTER" textFill="RED" visible="false" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="stepThree" layoutX="10.0" layoutY="10.0" prefHeight="525.0" style="-fx-background-color: white;" styleClass="shoppingCartSteps" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Button fx:id="saveAccount112" layoutX="186.0" layoutY="459.0" mnemonicParsing="false" onAction="#completePurchase" onMouseClicked="#shopStepThree" prefHeight="80.0" prefWidth="676.0" styleClass="bigButton" text="Slutför köp" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="43.0" />
+                        <Button id="backStep" layoutX="186.0" layoutY="471.0" mnemonicParsing="false" onAction="#BackTwo" prefHeight="60.0" prefWidth="203.0" styleClass="bigButton" text="Tillbaka" AnchorPane.leftAnchor="54.0" />
+                        <TextField fx:id="cardInput" layoutX="277.0" layoutY="144.0" onMouseExited="#checkNameInput" prefHeight="56.0" prefWidth="392.0" promptText="16-siffrig kod" styleClass="accountInput" AnchorPane.leftAnchor="277.0" />
+                        <Label layoutX="295.0" layoutY="133.0" styleClass="titledBorder" text="Kortnummer" />
+                        <TextField fx:id="nameOnCard" layoutX="277.0" layoutY="236.0" onMouseExited="#checkNameInput" prefHeight="56.0" prefWidth="392.0" promptText="Förnamn Efternamn" styleClass="accountInput" AnchorPane.leftAnchor="277.0" />
+                        <Label layoutX="295.0" layoutY="225.0" styleClass="titledBorder" text="Namn på kortet" />
+                        <TextField fx:id="cardDate" layoutX="277.0" layoutY="329.0" onMouseExited="#checkNameInput" prefHeight="56.0" prefWidth="188.0" promptText="Månad/År" styleClass="accountInput" AnchorPane.leftAnchor="277.0" />
+                        <Label layoutX="295.0" layoutY="317.0" styleClass="titledBorder" text="Utgångsdatum" />
+                        <AnchorPane prefHeight="70.0" prefWidth="613.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="22.0">
+                           <children>
+                              <Button layoutX="53.0" layoutY="14.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0" styleClass="wizard" text="Användaruppgifter" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="41.0" AnchorPane.topAnchor="14.0">
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor></Button>
+                              <Button layoutX="380.0" layoutY="13.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0" styleClass="wizard" text="Leverans" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="13.0">
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor></Button>
+                              <Button layoutX="732.0" layoutY="18.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0" styleClass="wizard-on" text="Betalning" AnchorPane.bottomAnchor="13.0" AnchorPane.rightAnchor="41.0" AnchorPane.topAnchor="13.0">
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor></Button>
+                           </children>
+                        </AnchorPane>
+                        <TextField fx:id="cvcCode" layoutX="478.0" layoutY="329.0" onMouseExited="#checkNameInput" prefHeight="56.0" prefWidth="188.0" promptText="3-siffrig CVC" styleClass="accountInput" />
+                        <Label layoutX="499.0" layoutY="317.0" styleClass="titledBorder" text="Säkerhetskod" />
+                        <Label fx:id="errorMessage1" alignment="CENTER" layoutY="410.0" prefHeight="50.0" prefWidth="1018.0" text="Du måste fylla i alla rutor!" textAlignment="CENTER" textFill="RED" visible="false" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
                   <AnchorPane fx:id="stepTwo" prefWidth="202.0" style="-fx-background-color: white;" styleClass="shoppingCartSteps" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <Button fx:id="saveAccount11" layoutX="376.0" layoutY="459.0" mnemonicParsing="false" onMouseClicked="#shopStepThree" prefHeight="80.0" prefWidth="676.0" styleClass="bigButton" text="Fortsätt till betalning" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="43.0" />
-                        <Button id="backStep" fx:id="saveAccount111" layoutX="54.0" layoutY="471.0" mnemonicParsing="false" onAction="#shopStepOne" prefHeight="60.0" prefWidth="203.0" styleClass="bigButton" text="Tillbaka" AnchorPane.leftAnchor="54.0" />
+                        <Button id="backStep" fx:id="saveAccount111" layoutX="54.0" layoutY="471.0" mnemonicParsing="false" onAction="#BackOne" prefHeight="60.0" prefWidth="203.0" styleClass="bigButton" text="Tillbaka" AnchorPane.leftAnchor="54.0" />
                         <ComboBox fx:id="dayPicker" layoutX="200.0" layoutY="229.0" prefHeight="65.0" prefWidth="260.0" promptText="Välj veckodag..." styleClass="pickers" AnchorPane.leftAnchor="200.0">
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -87,71 +161,11 @@
                                  </cursor></Button>
                            </children>
                         </AnchorPane>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane fx:id="stepOne" prefHeight="525.0" style="-fx-background-color: white;" styleClass="shoppingCartSteps" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <TextField fx:id="nameInput1" layoutX="45.0" layoutY="150.0" prefHeight="56.0" prefWidth="392.0" promptText="Förnamn Efternamn" styleClass="accountInput" AnchorPane.leftAnchor="45.0" />
-                        <Label layoutX="63.0" layoutY="139.0" styleClass="titledBorder" text="Namn" />
-                        <TextField fx:id="mailInput1" layoutX="45.0" layoutY="247.0" prefHeight="56.0" prefWidth="392.0" promptText="namn.namnsson@gmail.com" styleClass="accountInput" AnchorPane.leftAnchor="45.0" />
-                        <Label layoutX="63.0" layoutY="236.0" styleClass="titledBorder" text="Mailadress" />
-                        <Button fx:id="saveAccount1" layoutX="219.0" layoutY="459.0" mnemonicParsing="false" onMouseClicked="#shopStepTwo" prefHeight="80.0" prefWidth="331.0" styleClass="bigButton" text="Fortsätt till leverans" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0" />
-                        <TextField fx:id="numberInput1" layoutX="45.0" layoutY="348.0" prefHeight="56.0" prefWidth="392.0" promptText="0737363825" styleClass="accountInput" AnchorPane.leftAnchor="45.0" />
-                        <Label layoutX="63.0" layoutY="336.0" styleClass="titledBorder" text="Mobilnummer" />
-                        <Separator layoutX="508.0" layoutY="124.0" orientation="VERTICAL" prefHeight="300.0" AnchorPane.leftAnchor="508.0" AnchorPane.rightAnchor="508.0" />
-                        <TextField fx:id="streetInput1" layoutX="586.0" layoutY="150.0" prefHeight="56.0" prefWidth="392.0" promptText="Vägenvägen 23" styleClass="accountInput" AnchorPane.rightAnchor="45.0" />
-                        <Label layoutX="616.0" layoutY="139.0" styleClass="titledBorder" text="Adress" AnchorPane.rightAnchor="342.0" />
-                        <TextField fx:id="postInput1" layoutX="586.0" layoutY="247.0" prefHeight="56.0" prefWidth="392.0" promptText="42658" styleClass="accountInput" AnchorPane.rightAnchor="45.0" />
-                        <Label layoutX="625.0" layoutY="236.0" styleClass="titledBorder" text="Postnummer" AnchorPane.rightAnchor="280.0" />
-                        <TextField fx:id="ortInput1" layoutX="586.0" layoutY="348.0" prefHeight="56.0" prefWidth="392.0" promptText="Västra Frölunda" styleClass="accountInput" AnchorPane.rightAnchor="45.0" />
-                        <Label layoutX="611.5" layoutY="336.0" prefHeight="28.0" styleClass="titledBorder" text="Ort" AnchorPane.rightAnchor="382.0" />
-                        <AnchorPane prefHeight="70.0" prefWidth="613.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="22.0">
-                           <children>
-                              <Button layoutX="53.0" layoutY="14.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0" styleClass="wizard-on" text="Användaruppgifter" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="41.0" AnchorPane.topAnchor="14.0">
-                                 <cursor>
-                                    <Cursor fx:constant="DEFAULT" />
-                                 </cursor></Button>
-                              <Button layoutX="380.0" layoutY="13.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0" styleClass="wizard" text="Leverans" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="13.0">
-                                 <cursor>
-                                    <Cursor fx:constant="DEFAULT" />
-                                 </cursor></Button>
-                              <Button layoutX="732.0" layoutY="18.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0" styleClass="wizard" text="Betalning" AnchorPane.bottomAnchor="13.0" AnchorPane.rightAnchor="41.0" AnchorPane.topAnchor="13.0">
-                                 <cursor>
-                                    <Cursor fx:constant="DEFAULT" />
-                                 </cursor></Button>
-                           </children>
-                        </AnchorPane>
-                        <Label fx:id="nameError" layoutX="58.0" layoutY="213.0" styleClass="nameError" text="Endast bokstäver tillåtna!" textFill="RED" visible="false" />
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane fx:id="stepThree" layoutX="10.0" layoutY="10.0" prefHeight="525.0" style="-fx-background-color: white;" styleClass="shoppingCartSteps" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <Button fx:id="saveAccount112" layoutX="186.0" layoutY="459.0" mnemonicParsing="false" onAction="#completePurchase" onMouseClicked="#shopStepThree" prefHeight="80.0" prefWidth="676.0" styleClass="bigButton" text="Slutför köp" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="43.0" />
-                        <Button id="backStep" fx:id="saveAccount1111" layoutX="186.0" layoutY="471.0" mnemonicParsing="false" onAction="#shopStepTwo" prefHeight="60.0" prefWidth="203.0" styleClass="bigButton" text="Tillbaka" AnchorPane.leftAnchor="54.0" />
-                        <TextField fx:id="cardInput" layoutX="277.0" layoutY="144.0" onMouseExited="#checkNameInput" prefHeight="56.0" prefWidth="392.0" promptText="16-siffrig kod" styleClass="accountInput" AnchorPane.leftAnchor="277.0" />
-                        <Label layoutX="295.0" layoutY="133.0" styleClass="titledBorder" text="Kortnummer" />
-                        <TextField fx:id="nameOnCard" layoutX="277.0" layoutY="236.0" onMouseExited="#checkNameInput" prefHeight="56.0" prefWidth="392.0" promptText="Förnamn Efternamn" styleClass="accountInput" AnchorPane.leftAnchor="277.0" />
-                        <Label layoutX="295.0" layoutY="225.0" styleClass="titledBorder" text="Namn på kortet" />
-                        <TextField fx:id="cardDate" layoutX="277.0" layoutY="329.0" onMouseExited="#checkNameInput" prefHeight="56.0" prefWidth="188.0" promptText="Månad/År" styleClass="accountInput" AnchorPane.leftAnchor="277.0" />
-                        <Label layoutX="295.0" layoutY="317.0" styleClass="titledBorder" text="Utgångsdatum" />
-                        <AnchorPane prefHeight="70.0" prefWidth="613.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="22.0">
-                           <children>
-                              <Button layoutX="53.0" layoutY="14.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0" styleClass="wizard" text="Användaruppgifter" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="41.0" AnchorPane.topAnchor="14.0">
-                                 <cursor>
-                                    <Cursor fx:constant="DEFAULT" />
-                                 </cursor></Button>
-                              <Button layoutX="380.0" layoutY="13.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0" styleClass="wizard" text="Leverans" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="13.0">
-                                 <cursor>
-                                    <Cursor fx:constant="DEFAULT" />
-                                 </cursor></Button>
-                              <Button layoutX="732.0" layoutY="18.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="45.0" prefWidth="250.0" styleClass="wizard-on" text="Betalning" AnchorPane.bottomAnchor="13.0" AnchorPane.rightAnchor="41.0" AnchorPane.topAnchor="13.0">
-                                 <cursor>
-                                    <Cursor fx:constant="DEFAULT" />
-                                 </cursor></Button>
-                           </children>
-                        </AnchorPane>
-                        <TextField fx:id="cvcCode" layoutX="478.0" layoutY="329.0" onMouseExited="#checkNameInput" prefHeight="56.0" prefWidth="188.0" promptText="3-siffrig CVC" styleClass="accountInput" />
-                        <Label layoutX="499.0" layoutY="317.0" styleClass="titledBorder" text="Säkerhetskod" />
+                        <Label fx:id="noChosen" alignment="CENTER" layoutY="320.0" prefHeight="50.0" prefWidth="1018.0" text="Du måste välja dag och tid!" textAlignment="CENTER" textFill="RED" visible="false" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
                </children>
@@ -752,52 +766,6 @@
             </ScrollPane>
          </children>
       </AnchorPane>
-      <AnchorPane layoutY="126.0" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" styleClass="sideMap" AnchorPane.leftAnchor="0.0">
-         <children>
-            <Label fx:id="home" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#toStartPage" prefHeight="67.0" prefWidth="300.0" styleClass="sideItem" text="Hem" AnchorPane.topAnchor="0.0">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <padding>
-                  <Insets left="65.0" />
-               </padding>
-            </Label>
-            <Label fx:id="favorites" layoutY="67.0" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#toFavorites" prefHeight="67.0" prefWidth="300.0" styleClass="sideItem" text="Dina Favoriter">
-               <font>
-                  <Font name="Kailasa Regular" size="13.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <padding>
-                  <Insets left="65.0" />
-               </padding>
-            </Label>
-            <Label id="lastItem" fx:id="help" layoutY="134.0" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#toHelp" prefHeight="67.0" prefWidth="300.0" styleClass="sideItem" text="Hjälp">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <padding>
-                  <Insets left="65.0" />
-               </padding>
-            </Label>
-            <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="19.0" layoutY="15.0" pickOnBounds="true" styleClass="icons">
-               <image>
-                  <Image url="@icons/shop/24/Outline.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="19.0" layoutY="81.0" pickOnBounds="true" styleClass="icons">
-               <image>
-                  <Image url="@icons/Outline.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="19.0" layoutY="148.0" pickOnBounds="true" styleClass="icons">
-               <image>
-                  <Image url="@icons/Help/24/Outline.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
       <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutY="350.0" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="493.0" prefWidth="300.0" styleClass="categoryList" vbarPolicy="NEVER">
          <content>
             <FlowPane fx:id="categoryList" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="493.0" prefWidth="300.0" styleClass="categoryList" />
@@ -850,6 +818,52 @@
          <padding>
             <Insets right="40.0" />
          </padding>
+      </AnchorPane>
+      <AnchorPane layoutY="126.0" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" styleClass="sideMap" AnchorPane.leftAnchor="0.0">
+         <children>
+            <Label fx:id="home" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#toStartPage" prefHeight="67.0" prefWidth="300.0" styleClass="sideItem" text="Hem" AnchorPane.topAnchor="0.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <padding>
+                  <Insets left="65.0" />
+               </padding>
+            </Label>
+            <Label fx:id="favorites" layoutY="67.0" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#toFavorites" prefHeight="67.0" prefWidth="300.0" styleClass="sideItem" text="Dina Favoriter">
+               <font>
+                  <Font name="Kailasa Regular" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <padding>
+                  <Insets left="65.0" />
+               </padding>
+            </Label>
+            <Label id="lastItem" fx:id="help" layoutY="134.0" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#toHelp" prefHeight="67.0" prefWidth="300.0" styleClass="sideItem" text="Hjälp">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <padding>
+                  <Insets left="65.0" />
+               </padding>
+            </Label>
+            <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="19.0" layoutY="15.0" pickOnBounds="true" styleClass="icons">
+               <image>
+                  <Image url="@icons/shop/24/Outline.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="19.0" layoutY="81.0" pickOnBounds="true" styleClass="icons">
+               <image>
+                  <Image url="@icons/Outline.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="19.0" layoutY="148.0" pickOnBounds="true" styleClass="icons">
+               <image>
+                  <Image url="@icons/Help/24/Outline.png" />
+               </image>
+            </ImageView>
+         </children>
       </AnchorPane>
       <Pane fx:id="cartNotification" disable="true" layoutX="1174.0" layoutY="129.0" prefHeight="76.0" prefWidth="282.0" styleClass="notification" visible="false" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="90.0">
          <children>

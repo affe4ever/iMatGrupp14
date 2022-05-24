@@ -7,15 +7,19 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Font;
 import javafx.util.Duration;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Product;
+import se.chalmers.cse.dat216.project.ShoppingItem;
 
+import javax.tools.Tool;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -35,9 +39,12 @@ public class ProductCard extends AnchorPane {
     private Product product;
     private iMatController controller;
     private boolean clickedBuy = false;
+    Tooltip tooltip, tooltip2;
+    Image blacked, red;
 
 
     public ProductCard(IMatDataHandler dataHandler, iMatController controller, Product product){
+
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("productCard.fxml"));
         fxmlLoader.setRoot(this);
@@ -48,6 +55,14 @@ public class ProductCard extends AnchorPane {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
+
+        tooltip = new Tooltip("Lägg till favorit");
+        tooltip.setFont(Font.font("Lexend Deca Bold", 20));
+        tooltip2 = new Tooltip("Ta bort favorit");
+        tooltip2.setFont(Font.font("Lexend Deca Bold", 20));
+
+        blacked = new Image("icons/blackheart.png");
+        red = new Image("icons/red.png");
         this.controller = controller;
         this.product = product;
         this.dataHandler = dataHandler;
@@ -70,27 +85,31 @@ public class ProductCard extends AnchorPane {
 
     public void updateFavoriteIcon(){
         if (!dataHandler.isFavorite(product)){
-            heart.setImage(new Image("icons/blackheart.png"));
+            heart.setImage(blacked);
             heart.setAccessibleText("blacked");
+            Tooltip.install(heart, tooltip);
         }else{
-            heart.setImage(new Image("icons/red.png"));
+            heart.setImage(red);
             heart.setAccessibleText("red");
+            Tooltip.install(heart, tooltip2);
         }
     }
 
     @FXML
     private void addFavorite(){
         if (heart.getAccessibleText().equals("blacked")){
-            heart.setImage(new Image("icons/red.png"));
+            heart.setImage(red);
             heart.setAccessibleText("red");
             dataHandler.addFavorite(this.product);
             controller.addToFavorites(this.product);
             controller.stringFavoriteList.add(this.product.getName());
+            Tooltip.install(heart, tooltip2);
         }else{
-            heart.setImage(new Image("icons/blackheart.png"));
+            heart.setImage(blacked);
             heart.setAccessibleText("blacked");
             dataHandler.removeFavorite(this.product);
             controller.stringFavoriteList.add(this.product.getName());
+            Tooltip.install(heart, tooltip);
         }
 
     }
@@ -105,40 +124,54 @@ public class ProductCard extends AnchorPane {
             subBuy.setDisable(false);
             nmrBuy.setDisable(false);
         }
-        else if (clickedBuy){ //second step
+        else if (clickedBuy) { //second step
+
             try {
+                if (!(Integer.valueOf(nmrBuy.getText()) > 0)) {
+                    nmrBuy.setText("1");
+                } else {
 
-                addProducts();
-                buyButton.setPrefWidth(290);
-                addBuy.setDisable(true);
-                subBuy.setDisable(true);
-                nmrBuy.setDisable(true);
+                    addProducts();
+                    buyButton.setPrefWidth(290);
+                    addBuy.setDisable(true);
+                    subBuy.setDisable(true);
+                    nmrBuy.setDisable(true);
 
-                clickedBuy = false;
+                    clickedBuy = false;
 
-                Animation animation = new Timeline(
-                        new KeyFrame(Duration.millis(0),
-                                new KeyValue(buyButton.textProperty(), nmrBuy.getText() + "st Tillagd!")),
-                        new KeyFrame(Duration.millis(0),
-                                new KeyValue(buyButton.disableProperty(), true)),
+                    Animation animation = new Timeline(
+                            new KeyFrame(Duration.millis(0),
+                                    new KeyValue(buyButton.textProperty(), nmrBuy.getText() + " " + product.getUnit().replace("kr/", "") + " Tillagd!")),
+                            new KeyFrame(Duration.millis(0),
+                                    new KeyValue(buyButton.disableProperty(), true)),
 
-                        new KeyFrame(Duration.millis(4000),
-                                new KeyValue(buyButton.textProperty(),  "VÄLJ ANTAL")),
-                        new KeyFrame(Duration.millis(4000),
-                                new KeyValue(buyButton.disableProperty(),  false)));
+                            new KeyFrame(Duration.millis(4000),
+                                    new KeyValue(buyButton.textProperty(), "VÄLJ ANTAL")),
+                            new KeyFrame(Duration.millis(4000),
+                                    new KeyValue(buyButton.disableProperty(), false)));
 
-                animation.play();
-                nmrBuy.setText("1");
-            }
-            catch(Exception e){
-                nmrBuy.setText("1");
-            }
+                    animation.play();
+                    nmrBuy.setText("1");
+
+                }
+
+                } catch(Exception e){
+                    nmrBuy.setText("1");
+                }
 
 
         } //change to 290
     }
 
     private void addProducts(){
+            for (ShoppingItem item : dataHandler.getShoppingCart().getItems()){
+                if (item.getProduct().equals(this.product)){
+                    item.setAmount(item.getAmount() + Integer.valueOf(nmrBuy.getText()));
+                    controller.notifyCart();
+                    controller.updateCart();
+                    return;
+                }
+            }
             dataHandler.getShoppingCart().addProduct(this.product, Integer.valueOf(nmrBuy.getText()));
             controller.notifyCart();
             controller.updateCart();
@@ -146,26 +179,28 @@ public class ProductCard extends AnchorPane {
 
     @FXML
     private void addOne(){
-        if (!nmrBuy.getText().equals("99")){
-            Integer temp = (Integer.parseInt(nmrBuy.getText()) + 1);
-            nmrBuy.setText(temp.toString());
-        }
-        else{
-            //todo error
-        }
+
+        try {
+            if (!nmrBuy.getText().equals("99")) {
+                Integer temp = (Integer.parseInt(nmrBuy.getText()) + 1);
+                nmrBuy.setText(temp.toString());
+            }
+        } catch (Exception e){
+                nmrBuy.setText("1");
+
+            }
     }
     @FXML
     private void subOne(){
-        if (!nmrBuy.getText().equals("0")){
-            Integer temp = (Integer.parseInt(nmrBuy.getText()) - 1);
-            nmrBuy.setText(temp.toString());
-        }
-        else{
-            //todo error
+        try {
+            if (!nmrBuy.getText().equals("0")) {
+                Integer temp = (Integer.parseInt(nmrBuy.getText()) - 1);
+                nmrBuy.setText(temp.toString());
+            }
+        }catch (Exception e){
+            nmrBuy.setText("1");
         }
     }
-
-
 
 
     public Product getProduct(){
