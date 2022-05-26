@@ -446,7 +446,7 @@
                   </Label>
                   <Accordion layoutX="180.0" layoutY="202.0" prefHeight="264.0" prefWidth="792.0">
                      <panes>
-                        <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="180.0" prefWidth="792.0" styleClass="questions" text="Hur tar jag bort en vara från kundvagnen?">
+                        <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="180.0" prefWidth="792.0" styleClass="questions" text="Hur tar jag bort en vara från kundvagnen?" wrapText="true">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="790.0" styleClass="answer">
                                  <children>
@@ -455,25 +455,25 @@
                               </AnchorPane>
                            </content>
                         </TitledPane>
-                        <TitledPane animated="false" minHeight="-Infinity" prefHeight="140.0" styleClass="questions" text="Hur lägger jag till en produkt som favorit?">
+                        <TitledPane animated="false" minHeight="-Infinity" prefHeight="150.0" styleClass="questions" text="Hur lägger jag till en produkt som favorit?" wrapText="true">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="answer">
                                  <children>
-                                    <Label alignment="TOP_LEFT" layoutX="54.0" layoutY="38.0" minHeight="-Infinity" prefHeight="140.0" text="Klicka på hjärtat vid en produkt, när hjärtat lyser rött är den tillagd som favorit." AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <Label alignment="TOP_LEFT" layoutX="54.0" layoutY="38.0" minHeight="-Infinity" prefHeight="140.0" text="Klicka på hjärtat vid en produkt, när hjärtat lyser rött är den tillagd som favorit." wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                  </children>
                               </AnchorPane>
                            </content>
                         </TitledPane>
-                        <TitledPane animated="false" minHeight="-Infinity" prefHeight="120.0" styleClass="questions" text="Hur hittar jag ett tidigare köp?">
+                        <TitledPane animated="false" minHeight="-Infinity" prefHeight="150.0" styleClass="questions" text="Hur hittar jag ett tidigare köp?" wrapText="true">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="answer">
                                  <children>
-                                    <Label alignment="TOP_LEFT" layoutX="16.0" layoutY="38.0" minHeight="-Infinity" prefHeight="120.0" text="Klicka på &quot;Mitt Konto&quot; uppe till höger och sedan på fliken &quot;Tidigare köp&quot;." AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <Label alignment="TOP_LEFT" layoutX="16.0" layoutY="38.0" minHeight="-Infinity" prefHeight="120.0" text="Klicka på &quot;Mitt Konto&quot; uppe till höger och sedan på fliken &quot;Tidigare köp&quot;." wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                  </children>
                               </AnchorPane>
                            </content>
                         </TitledPane>
-                        <TitledPane animated="false" minHeight="-Infinity" prefHeight="150.0" styleClass="questions" text="Hur ändrar jag mina uppgifter?">
+                        <TitledPane animated="false" minHeight="-Infinity" prefHeight="150.0" styleClass="questions" text="Hur ändrar jag mina uppgifter?" wrapText="true">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="answer">
                                  <children>

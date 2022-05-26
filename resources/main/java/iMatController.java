@@ -215,10 +215,7 @@ public class iMatController implements Initializable {
             favoriteCarousel.getChildren().add(new ProductCard(dataHandler, this, favorite));
 
         }
-        dataHandler.getOrders().sort(Comparator.comparing(Order::getDate).reversed());
-        for (Order order : dataHandler.getOrders()){
-            previousOrders.getChildren().add(new PlacedOrder(dataHandler, this, order));
-        }
+        updateOrderHistory();
 
         Tooltip tooltip = new Tooltip("Gå till dryck");
         tooltip.setFont(Font.font("Lexend Deca Bold", 24));
@@ -260,6 +257,14 @@ public class iMatController implements Initializable {
         fillShoppingList();
 
 
+    }
+
+    private void updateOrderHistory(){
+        previousOrders.getChildren().clear();
+        dataHandler.getOrders().sort(Comparator.comparing(Order::getDate).reversed());
+        for (Order order : dataHandler.getOrders()){
+            previousOrders.getChildren().add(new PlacedOrder(dataHandler, this, order));
+        }
     }
 
     @FXML
@@ -869,6 +874,7 @@ public class iMatController implements Initializable {
             checkoutPage.toBack();
             thankYouPage.toFront();
             updateCart();
+            updateOrderHistory();
             dataHandler.getCreditCard().setCardNumber(cardInput.getText());
             dataHandler.getCreditCard().setHoldersName(nameOnCard.getText());
             dataHandler.getCreditCard().setValidMonth(Integer.valueOf(cardDate.getText()));

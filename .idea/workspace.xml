@@ -4,18 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="988e677b-70a1-4310-94cb-1291b35e21e8" name="Changes" comment="finslip">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="988e677b-70a1-4310-94cb-1291b35e21e8" name="Changes" comment="sortera historik, errorhantering">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-05-18_13_09_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-05-18_13_09__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-05-18_14_35_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-05-18_14_35__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-05-18_14_49_[Changes]/ProductCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-05-18_14_49_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-05-18_14_49__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/iMat/CartItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/CartItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/iMat/ProductCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/ProductCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/iMat/iMatController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/iMatController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/iMat/iMatController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/iMatController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/iMat/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/iMatHomePage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/iMat/main/resources/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/main/resources/iMatHomePage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/iMat/resources/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/iMat/resources/iMatHomePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/main/java/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/java/CartItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/main/java/ProductCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/java/ProductCard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/main/java/iMatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/java/iMatController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/main/resources/iMatHomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/main/resources/iMatHomePage.fxml" afterDir="false" />
     </list>
@@ -140,7 +141,7 @@
       <workItem from="1652728421125" duration="55393000" />
       <workItem from="1652949552857" duration="15050000" />
       <workItem from="1652988928017" duration="643000" />
-      <workItem from="1652989584705" duration="30653000" />
+      <workItem from="1652989584705" duration="34446000" />
     </task>
     <task id="LOCAL-00001" summary="den riktiga, plz work">
       <created>1651829212641</created>
@@ -282,7 +283,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653297976260</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="sortera historik, errorhantering">
+      <created>1653402079561</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1653402079561</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,7 +323,8 @@
     <MESSAGE value="checkout" />
     <MESSAGE value="kr/kg" />
     <MESSAGE value="finslip" />
-    <option name="LAST_COMMIT_MESSAGE" value="finslip" />
+    <MESSAGE value="sortera historik, errorhantering" />
+    <option name="LAST_COMMIT_MESSAGE" value="sortera historik, errorhantering" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
